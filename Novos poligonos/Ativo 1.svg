@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Camada_2" data-name="Camada 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192.35 194.27">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #14142c;
+      }
+
+      .cls-2 {
+        fill: #3c9;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+
+      .cls-2, .cls-3 {
+        stroke: #14142c;
+      }
+
+      .cls-3 {
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 3px;
+      }
+    </style>
+  </defs>
+  <g id="Camada_1-2" data-name="Camada 1">
+    <g id="sticker">
+      <polygon class="cls-2" points="83.08 1.21 1.23 88.37 58.82 193.15 176.27 170.75 191.26 52.13 83.08 1.21"/>
+      <g>
+        <path class="cls-1" d="M84.04,83.12c2.01,8.56.27,16.3-3.89,17.27-4.16.98-9.16-5.17-11.17-13.73-2.01-8.56-.27-16.29,3.88-17.27,4.16-.98,9.16,5.17,11.18,13.73Z"/>
+        <path class="cls-1" d="M125.24,73.44c2.01,8.56.27,16.3-3.89,17.27-4.16.98-9.16-5.17-11.17-13.73-2.01-8.56-.28-16.29,3.88-17.27,4.16-.98,9.16,5.17,11.18,13.73Z"/>
+      </g>
+      <g>
+        <path class="cls-3" d="M145.73,97.65c5.42,23.05-10.64,39.2-33.69,44.62-23.05,5.42-44.55-2.82-49.97-25.87"/>
+        <path class="cls-3" d="M153.08,96.49c-5.62,2.24-9.49,1.2-12.33-4.3"/>
+        <path class="cls-3" d="M54.11,119.77c6.03-.5,9.04-3.15,9.12-9.35"/>
+      </g>
+    </g>
+  </g>
+</svg>
