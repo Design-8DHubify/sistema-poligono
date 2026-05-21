@@ -290,7 +290,7 @@
 
         <!-- HEADER DA DOC -->
         <div class="mb-8 md:mb-12">
-            <h1 class="tipo-h1 !text-brand-pink !text-4xl md:!text-5xl lg:!text-7xl !mb-2 drop-shadow-[2px_2px_0px_#14142c] md:drop-shadow-[4px_4px_0px_#14142c]">Identidade <br>Alto Impacto</h1>
+            <h1 class="tipo-h1 !text-brand-pink !text-4xl md:!text-5xl lg:!text-7xl !mb-2">Design System</h1>
             <p class="tipo-p !text-lg md:!text-xl max-w-3xl">Educação com energia, posicionamento e direção estratégica. Nada minimalista. Nada neutro demais. Sempre com presença forte e visual contemporâneo.</p>
         </div>
 
@@ -401,10 +401,10 @@
 
             <h3 class="tipo-h4 mt-8 mb-4 border-b-2 border-brand-cream-dark pb-2">Galeria de Ativos (Copie a URL)</h3>
             <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4 mb-10">
-                <!-- Gerando blocos para os 23 SVGs com a base de URL correta (raw) -->
+                <!-- Gerando blocos para os 27 SVGs com a base de URL correta (raw) -->
                 <script>
-                    const baseUrl = "https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/0b96d106a66ac430f7e8a651ee057fe62a3f1dad/Novos%20poligonos/";
-                    for(let i = 1; i <= 23; i++) {
+                    const baseUrl = "https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/Novos%20poligonos/";
+                    for(let i = 1; i <= 27; i++) {
                         let url = `${baseUrl}Ativo%20${i}.svg`;
                         document.write(`
                             <div class="bg-white p-2 flex flex-col items-center justify-center hover:-translate-y-2 transition-transform cursor-pointer shadow-[4px_4px_0px_#14142c]" onclick="copyToClipboard('${url}', 'URL do Ativo ${i} copiada!')">
@@ -533,26 +533,24 @@
             <h3 class="tipo-h4 mt-8 mb-6">Cards Dinâmicos</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-12 pb-8">
                 <div class="cmp-card-media bg-brand-blue">
-                    <div class="cmp-card-media__hdr relative overflow-hidden">
-                        <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/0b96d106a66ac430f7e8a651ee057fe62a3f1dad/Novos%20poligonos/Ativo%2014.svg" class="absolute -top-4 -right-4 w-24 h-24 opacity-80" alt="">
-                        <i class="fi fi-rs-graduation-cap text-4xl md:text-5xl text-brand-yellow mb-4 relative z-10 block"></i>
-                        <h4 class="tipo-h4 text-brand-cream relative z-10">Velit Esse</h4>
-                        <p class="tipo-p text-brand-cream-dark relative z-10 text-sm md:text-base">Cillum dolore eu fugiat nulla pariatur excepteur sint occaecat.</p>
+                    <div class="cmp-card-media__hdr">
+                        <i class="fi fi-rs-graduation-cap text-4xl md:text-5xl text-brand-yellow mb-4 block"></i>
+                        <h4 class="tipo-h4 text-brand-cream">Velit Esse</h4>
+                        <p class="tipo-p text-brand-cream-dark text-sm md:text-base">Cillum dolore eu fugiat nulla pariatur excepteur sint occaecat.</p>
                     </div>
                 </div>
                 <div class="cmp-card-media bg-brand-pink">
-                    <div class="cmp-card-media__hdr relative overflow-hidden">
-                        <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/0b96d106a66ac430f7e8a651ee057fe62a3f1dad/Novos%20poligonos/Ativo%208.svg" class="absolute -bottom-6 -right-6 w-32 h-32 opacity-90" alt="">
-                        <i class="fi fi-rs-rocket text-4xl md:text-5xl text-brand-blue-dark mb-4 relative z-10 block"></i>
-                        <h4 class="tipo-h4 !text-brand-blue-dark relative z-10">Sint Occaecat</h4>
-                        <p class="tipo-p !text-brand-blue-dark font-bold relative z-10 text-sm md:text-base">Cupidatat non proident, sunt in culpa qui officia deserunt.</p>
+                    <div class="cmp-card-media__hdr">
+                        <i class="fi fi-rs-rocket text-4xl md:text-5xl text-brand-blue-dark mb-4 block"></i>
+                        <h4 class="tipo-h4 !text-brand-blue-dark">Sint Occaecat</h4>
+                        <p class="tipo-p !text-brand-blue-dark font-bold text-sm md:text-base">Cupidatat non proident, sunt in culpa qui officia deserunt.</p>
                     </div>
                 </div>
                 <div class="cmp-card-media bg-brand-yellow">
-                    <div class="cmp-card-media__hdr relative overflow-hidden">
-                        <i class="fi fi-rs-puzzle-piece text-4xl md:text-5xl text-brand-blue mb-4 relative z-10 block"></i>
-                        <h4 class="tipo-h4 text-brand-blue-dark relative z-10">Officia</h4>
-                        <p class="tipo-p text-brand-blue-dark relative z-10 text-sm md:text-base">Deserunt mollit anim id est laborum nemo enim ipsam.</p>
+                    <div class="cmp-card-media__hdr">
+                        <i class="fi fi-rs-puzzle-piece text-4xl md:text-5xl text-brand-blue mb-4 block"></i>
+                        <h4 class="tipo-h4 text-brand-blue-dark">Officia</h4>
+                        <p class="tipo-p text-brand-blue-dark text-sm md:text-base">Deserunt mollit anim id est laborum nemo enim ipsam.</p>
                     </div>
                 </div>
             </div>
