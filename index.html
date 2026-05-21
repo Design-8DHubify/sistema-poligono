@@ -95,19 +95,28 @@
         }
 
         /* Reset e Fundos Respiro */
-        body { background-color: var(--color-cream); color: var(--color-blue-dark); font-family: var(--font-open); }
+        body { background-color: var(--color-cream); color: var(--color-blue-dark); font-family: var(--font-open); overflow-x: hidden; }
         .poligono-app { font-family: var(--font-open); line-height: 1.6; }
 
-        /* --- NOVA TIPOGRAFIA EDITORIAL --- */
-        .tipo-h1 { font-family: var(--font-anton); font-size: 3.5rem; text-transform: uppercase; line-height: 1.05; letter-spacing: 0.02em; color: var(--color-blue-dark); margin-bottom: 1rem; }
-        .tipo-h2 { font-family: var(--font-anton); font-size: 3rem; text-transform: uppercase; line-height: 1.1; letter-spacing: 0.02em; color: var(--color-blue-dark); margin-bottom: 1rem; }
-        .tipo-h3 { font-family: var(--font-kanit); font-size: 2.25rem; font-weight: 700; line-height: 1.2; color: var(--color-blue); margin-bottom: 0.875rem; text-transform: uppercase;}
-        .tipo-h4 { font-family: var(--font-kanit); font-size: 1.75rem; font-weight: 700; line-height: 1.3; color: var(--color-blue-dark); margin-bottom: 0.75rem; }
-        .tipo-h5 { font-family: var(--font-kanit); font-size: 1.375rem; font-weight: 600; line-height: 1.3; color: var(--color-blue-dark); margin-bottom: 0.5rem; }
+        /* --- NOVA TIPOGRAFIA EDITORIAL RESPONSIVA --- */
+        .tipo-h1 { font-family: var(--font-anton); font-size: 2.5rem; text-transform: uppercase; line-height: 1.05; letter-spacing: 0.02em; color: var(--color-blue-dark); margin-bottom: 1rem; }
+        .tipo-h2 { font-family: var(--font-anton); font-size: 2rem; text-transform: uppercase; line-height: 1.1; letter-spacing: 0.02em; color: var(--color-blue-dark); margin-bottom: 1rem; }
+        .tipo-h3 { font-family: var(--font-kanit); font-size: 1.75rem; font-weight: 700; line-height: 1.2; color: var(--color-blue); margin-bottom: 0.875rem; text-transform: uppercase;}
+        .tipo-h4 { font-family: var(--font-kanit); font-size: 1.5rem; font-weight: 700; line-height: 1.3; color: var(--color-blue-dark); margin-bottom: 0.75rem; }
+        .tipo-h5 { font-family: var(--font-kanit); font-size: 1.25rem; font-weight: 600; line-height: 1.3; color: var(--color-blue-dark); margin-bottom: 0.5rem; }
         .tipo-h6 { font-family: var(--font-kanit); font-size: 1rem; font-weight: 700; line-height: 1.4; text-transform: uppercase; letter-spacing: 1px; color: var(--color-pink); margin-bottom: 0.5rem; }
-        .tipo-p { font-family: var(--font-open); font-size: 1.125rem; font-weight: 400; line-height: 1.6; color: var(--color-blue-dark); margin-bottom: 1rem; }
+        .tipo-p { font-family: var(--font-open); font-size: 1rem; font-weight: 400; line-height: 1.6; color: var(--color-blue-dark); margin-bottom: 1rem; }
 
         @media (min-width: 768px) {
+            .tipo-h1 { font-size: 4rem; }
+            .tipo-h2 { font-size: 3rem; }
+            .tipo-h3 { font-size: 2.25rem; }
+            .tipo-h4 { font-size: 1.75rem; }
+            .tipo-h5 { font-size: 1.375rem; }
+            .tipo-p { font-size: 1.125rem; }
+        }
+
+        @media (min-width: 1024px) {
             .tipo-h1 { font-size: 5rem; }
             .tipo-h2 { font-size: 4rem; }
             .tipo-h3 { font-size: 2.75rem; }
@@ -123,16 +132,19 @@
             box-shadow: none;
         }
         .cmp-card-media:hover { transform: translate(-4px, -4px); box-shadow: 12px 12px 0px var(--color-blue-dark); }
-        .cmp-card-media__hdr { padding: 2rem; display: flex; flex-direction: column; flex-grow: 1; }
+        .cmp-card-media__hdr { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
+        @media (min-width: 768px) { .cmp-card-media__hdr { padding: 2rem; } }
 
         /* --- UI BASE: BOTÕES PADRÃO 2026 --- */
         .cmp-button {
             display: inline-flex; align-items: center; justify-content: center;
             font-family: var(--font-kanit); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
-            padding: 1rem 2rem; text-decoration: none; border: 2px solid transparent;
+            padding: 0.875rem 1.5rem; text-decoration: none; border: 2px solid transparent;
             cursor: pointer; transition: var(--transition-default); text-align: center; gap: 0.5rem;
-            box-shadow: none;
+            box-shadow: none; font-size: 0.875rem;
         }
+        @media (min-width: 768px) { .cmp-button { padding: 1rem 2rem; font-size: 1rem; } }
+        
         .cmp-button:disabled { opacity: 0.5; cursor: not-allowed; box-shadow: none !important; transform: none !important; }
         
         /* Primário: Preenchido, no hover muda de cor e adiciona sombra dura */
@@ -162,7 +174,7 @@
         
         .cmp-checkbox-wrap, .cmp-radio-wrap { display: flex; align-items: center; gap: 0.75rem; cursor: pointer; margin-bottom: 0.5rem;}
         .cmp-checkbox-wrap input, .cmp-radio-wrap input { display: none; }
-        .cmp-checkbox-box, .cmp-radio-box { width: 24px; height: 24px; border: none; background: #fff; display: flex; justify-content: center; align-items: center; transition: 0.3s; }
+        .cmp-checkbox-box, .cmp-radio-box { width: 24px; height: 24px; border: none; background: #fff; display: flex; justify-content: center; align-items: center; transition: 0.3s; flex-shrink: 0;}
         .cmp-radio-box { border-radius: 50%; }
         .cmp-checkbox-wrap:hover .cmp-checkbox-box, .cmp-radio-wrap:hover .cmp-radio-box { transform: translate(-2px, -2px); box-shadow: 4px 4px 0px var(--color-blue-dark); }
         .cmp-checkbox-wrap input:checked + .cmp-checkbox-box { background: var(--color-pink); }
@@ -180,29 +192,41 @@
         .cmp-alert--error { border-left: 8px solid var(--color-pink); background: var(--color-cream-dark); }
 
         /* --- UI BASE: TABS E CARROUSSEL (STATIC VIEW) --- */
-        .cmp-tabs__nav { display: flex; border: none; overflow-x: auto; background: transparent; gap: 0.5rem; }
-        .cmp-tabs__btn { padding: 1rem 1.5rem; font-family: var(--font-kanit); font-weight: 700; text-transform: uppercase; color: var(--color-blue-dark); border: none; background: var(--color-cream-dark); cursor: pointer; transition: 0.3s; opacity: 0.6; }
+        .cmp-tabs__nav { display: flex; border: none; overflow-x: auto; background: transparent; gap: 0.5rem; scrollbar-width: none; }
+        .cmp-tabs__nav::-webkit-scrollbar { display: none; }
+        .cmp-tabs__btn { padding: 1rem 1.5rem; font-family: var(--font-kanit); font-weight: 700; text-transform: uppercase; color: var(--color-blue-dark); border: none; background: var(--color-cream-dark); cursor: pointer; transition: 0.3s; opacity: 0.6; white-space: nowrap; }
         .cmp-tabs__btn:hover { transform: translate(-4px, -4px); box-shadow: 6px 6px 0px var(--color-blue-dark); opacity: 1; }
         .cmp-tabs__btn.active { background: var(--color-blue-dark); color: var(--color-yellow); transform: none; box-shadow: none; opacity: 1; }
-        .cmp-tabs__pane { display: none; padding: 2rem; border: none; background: #fff; box-shadow: none; margin-top: 1rem;}
+        .cmp-tabs__pane { display: none; padding: 1.5rem; border: none; background: #fff; box-shadow: none; margin-top: 1rem;}
+        @media (min-width: 768px) { .cmp-tabs__pane { padding: 2rem; } }
         .cmp-tabs__pane.active { display: block; }
 
         /* --- COMPONENTES (TABS E ACCORDIONS) --- */
         details.cmp-accordion { border: none; margin-bottom: 1rem; background: var(--color-cream); transition: 0.3s ease; box-shadow: none; }
         details.cmp-accordion:hover { transform: translate(-4px, -4px); box-shadow: 6px 6px 0px var(--color-blue-dark); }
-        details.cmp-accordion summary { font-family: var(--font-kanit); padding: 1.5rem; font-size: 1.25rem; font-weight: 700; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--color-blue-dark); text-transform: uppercase; }
+        details.cmp-accordion summary { font-family: var(--font-kanit); padding: 1.25rem 1.5rem; font-size: 1.125rem; font-weight: 700; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; color: var(--color-blue-dark); text-transform: uppercase; }
+        @media (min-width: 768px) { details.cmp-accordion summary { font-size: 1.25rem; padding: 1.5rem; } }
         details.cmp-accordion summary::-webkit-details-marker { display: none; }
         details.cmp-accordion summary:hover { background-color: var(--color-yellow); }
         details.cmp-accordion[open] summary { background-color: var(--color-blue-electric); color: white; }
         .cmp-accordion__content { padding: 1.5rem; font-family: var(--font-open); background: var(--color-cream-dark); border-top: none; }
 
-        /* --- ESTILOS DA DOCUMENTAÇÃO --- */
-        .ds-sidebar { height: 100vh; position: fixed; width: 280px; overflow-y: auto; background-color: var(--color-blue-dark); border-right: none; }
-        .ds-main { margin-left: 280px; padding: 3rem; }
-        @media(max-width: 1024px) { .ds-sidebar { display: none; } .ds-main { margin-left: 0; padding: 1.5rem; } }
+        /* --- ESTILOS DA DOCUMENTAÇÃO RESPONSIVA --- */
+        .ds-sidebar { position: fixed; inset-y: 0; left: 0; width: 280px; background-color: var(--color-blue-dark); overflow-y: auto; transition: transform 0.3s ease; transform: translateX(-100%); z-index: 50; }
+        .ds-sidebar.open { transform: translateX(0); }
         
-        .ds-section { margin-bottom: 4rem; background: var(--color-cream-dark); padding: 2.5rem; border: none; box-shadow: none; position: relative; overflow: hidden;}
-        .ds-title { font-family: var(--font-anton); font-size: 3rem; text-transform: uppercase; color: var(--color-blue-dark); margin-bottom: 0.5rem; border-bottom: none; padding-bottom: 0.5rem; }
+        .ds-main { width: 100%; min-height: 100vh; padding: 1.5rem; padding-top: 5rem; transition: margin-left 0.3s ease; }
+        
+        @media(min-width: 1024px) { 
+            .ds-sidebar { transform: translateX(0); } 
+            .ds-main { margin-left: 280px; padding: 3rem; width: calc(100% - 280px); } 
+        }
+        
+        .ds-section { margin-bottom: 3rem; background: var(--color-cream-dark); padding: 1.5rem; border: none; box-shadow: none; position: relative; overflow: hidden;}
+        @media (min-width: 768px) { .ds-section { margin-bottom: 4rem; padding: 2.5rem; } }
+
+        .ds-title { font-family: var(--font-anton); font-size: 2.5rem; text-transform: uppercase; color: var(--color-blue-dark); margin-bottom: 0.5rem; border-bottom: none; padding-bottom: 0.5rem; }
+        @media (min-width: 768px) { .ds-title { font-size: 3rem; } }
         
         .color-swatch { width: 100%; height: 100px; border: none; cursor: pointer; transition: transform 0.3s;}
         .color-swatch:hover { transform: translate(-4px, -4px); box-shadow: 6px 6px 0px var(--color-blue-dark); }
@@ -216,16 +240,30 @@
         /* Efeitos Editoriais (Overlays) */
         .highlight-pink { background-color: var(--color-pink); color: var(--color-blue-dark); padding: 0 0.5rem; display: inline-block; transform: skew(-5deg); }
         .highlight-yellow { background-color: var(--color-yellow); color: var(--color-blue-dark); padding: 0 0.5rem; display: inline-block; transform: skew(5deg); }
+
+        /* Overlay do Menu Mobile */
+        .sidebar-overlay { position: fixed; inset: 0; background: rgba(20,20,44,0.7); z-index: 40; display: none; backdrop-filter: blur(2px); }
+        .sidebar-overlay.open { display: block; }
+        @media(min-width: 1024px) { .sidebar-overlay { display: none !important; } }
     </style>
 </head>
 <body class="flex bg-brand-cream">
 
+    <!-- MOBILE HEADER TOGLE -->
+    <header class="lg:hidden fixed top-0 w-full bg-brand-blue-dark border-b-2 border-brand-pink z-[60] px-4 py-3 flex justify-between items-center shadow-md">
+        <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/logos/logo-poligono-white%201.png" alt="Polígono" class="h-8 object-contain">
+        <button id="mobile-menu-btn" class="text-brand-pink text-3xl focus:outline-none"><i class="fi fi-rs-menu-burger"></i></button>
+    </header>
+
+    <!-- OVERLAY MOBILE -->
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
     <!-- SIDEBAR -->
-    <aside class="ds-sidebar text-brand-cream flex flex-col z-50">
-        <div class="p-6 bg-brand-blue flex items-center justify-center">
+    <aside id="sidebar" class="ds-sidebar text-brand-cream flex flex-col z-50">
+        <div class="p-6 bg-brand-blue hidden lg:flex items-center justify-center">
             <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/logos/logo-poligono-white%201.png" alt="Lorem Ipsum" class="h-10 object-contain">
         </div>
-        <nav class="flex-1 py-4">
+        <nav class="flex-1 py-4 overflow-y-auto pb-24 lg:pb-4">
             <ul class="space-y-1">
                 <li><a href="#cores" class="nav-link block px-6 py-3 text-brand-cream hover:bg-brand-blue transition-colors active">Cores</a></li>
                 <li><a href="#tipografia" class="nav-link block px-6 py-3 text-brand-cream hover:bg-brand-blue transition-colors">Tipografia</a></li>
@@ -242,18 +280,18 @@
                 <li><a href="#template-popups" class="nav-link block px-6 py-3 text-brand-cream hover:bg-brand-blue transition-colors">Pop-ups</a></li>
             </ul>
         </nav>
-        <div class="p-6 bg-brand-blue-dark text-xs font-kanit text-brand-blue-light">
+        <div class="p-6 bg-brand-blue-dark text-xs font-kanit text-brand-blue-light hidden lg:block">
             V 2.0 - Identidade Visual de Alto Impacto
         </div>
     </aside>
 
     <!-- MAIN CONTENT -->
-    <main class="ds-main flex-1 w-full max-w-full">
+    <main class="ds-main">
 
         <!-- HEADER DA DOC -->
-        <div class="mb-12">
-            <h1 class="tipo-h1 !text-brand-pink !text-5xl md:!text-7xl !mb-2" style="text-shadow: 4px 4px 0px var(--color-blue-dark);">Identidade <br>Alto Impacto</h1>
-            <p class="tipo-p !text-xl max-w-3xl">Educação com energia, posicionamento e direção estratégica. Nada minimalista. Nada neutro demais. Sempre com presença forte e visual contemporâneo.</p>
+        <div class="mb-8 md:mb-12">
+            <h1 class="tipo-h1 !text-brand-pink !text-4xl md:!text-5xl lg:!text-7xl !mb-2 drop-shadow-[2px_2px_0px_#14142c] md:drop-shadow-[4px_4px_0px_#14142c]">Identidade <br>Alto Impacto</h1>
+            <p class="tipo-p !text-lg md:!text-xl max-w-3xl">Educação com energia, posicionamento e direção estratégica. Nada minimalista. Nada neutro demais. Sempre com presença forte e visual contemporâneo.</p>
         </div>
 
         <!-- CORES -->
@@ -298,13 +336,13 @@
             <h2 class="ds-title">Tipografia Protagonista</h2>
             <p class="tipo-p mb-8">Uso obrigatório de <strong>Anton</strong> para manchetes e <strong>Kanit</strong> para subtítulos. O corpo do texto mantém <strong>Open Sans</strong> para legibilidade.</p>
 
-            <div class="overflow-x-auto bg-brand-cream">
+            <div class="overflow-x-auto bg-brand-cream shadow-sm">
                 <table class="w-full text-left border-collapse min-w-[600px]">
                     <thead>
                         <tr class="bg-brand-blue-dark text-white font-kanit uppercase">
                             <th class="p-4">Classe</th>
                             <th class="p-4">Aplicação</th>
-                            <th class="p-4">Desktop (px/rem)</th>
+                            <th class="p-4 hidden md:table-cell">Desktop (px/rem)</th>
                             <th class="p-4">Mobile (px/rem)</th>
                         </tr>
                     </thead>
@@ -312,44 +350,44 @@
                         <tr>
                             <td class="p-4 border-b-2 border-brand-cream-dark font-kanit font-bold">H1</td>
                             <td class="p-4 border-b-2 border-brand-cream-dark"><h1 class="tipo-h1 !mb-0">Manchete H1</h1></td>
-                            <td class="p-4 border-b-2 border-brand-cream-dark font-sans text-sm"><span class="highlight-yellow">Anton</span><br>80px / 5rem</td>
-                            <td class="p-4 border-b-2 border-brand-cream-dark font-sans text-sm"><span class="highlight-yellow">Anton</span><br>56px / 3.5rem</td>
+                            <td class="p-4 border-b-2 border-brand-cream-dark font-sans text-sm hidden md:table-cell"><span class="highlight-yellow">Anton</span><br>80px / 5rem</td>
+                            <td class="p-4 border-b-2 border-brand-cream-dark font-sans text-sm"><span class="highlight-yellow">Anton</span><br>40px / 2.5rem</td>
                         </tr>
                         <tr>
                             <td class="p-4 border-b-2 border-brand-cream-dark font-kanit font-bold">H2</td>
                             <td class="p-4 border-b-2 border-brand-cream-dark"><h2 class="tipo-h2 !mb-0">Manchete H2</h2></td>
-                            <td class="p-4 border-b-2 border-brand-cream-dark font-sans text-sm"><span class="highlight-yellow">Anton</span><br>64px / 4rem</td>
-                            <td class="p-4 border-b-2 border-brand-cream-dark font-sans text-sm"><span class="highlight-yellow">Anton</span><br>48px / 3rem</td>
+                            <td class="p-4 border-b-2 border-brand-cream-dark font-sans text-sm hidden md:table-cell"><span class="highlight-yellow">Anton</span><br>64px / 4rem</td>
+                            <td class="p-4 border-b-2 border-brand-cream-dark font-sans text-sm"><span class="highlight-yellow">Anton</span><br>32px / 2rem</td>
                         </tr>
                         <tr>
                             <td class="p-4 border-b-2 border-brand-cream-dark font-kanit font-bold">H3</td>
                             <td class="p-4 border-b-2 border-brand-cream-dark"><h3 class="tipo-h3 !mb-0">Subtítulo H3</h3></td>
-                            <td class="p-4 border-b-2 border-brand-cream-dark font-sans text-sm"><span class="highlight-pink">Kanit Bold</span><br>44px / 2.75rem</td>
-                            <td class="p-4 border-b-2 border-brand-cream-dark font-sans text-sm"><span class="highlight-pink">Kanit Bold</span><br>36px / 2.25rem</td>
+                            <td class="p-4 border-b-2 border-brand-cream-dark font-sans text-sm hidden md:table-cell"><span class="highlight-pink">Kanit Bold</span><br>44px / 2.75rem</td>
+                            <td class="p-4 border-b-2 border-brand-cream-dark font-sans text-sm"><span class="highlight-pink">Kanit Bold</span><br>28px / 1.75rem</td>
                         </tr>
                         <tr>
                             <td class="p-4 border-b-2 border-brand-cream-dark font-kanit font-bold">H4</td>
                             <td class="p-4 border-b-2 border-brand-cream-dark"><h4 class="tipo-h4 !mb-0">Subtítulo H4</h4></td>
-                            <td class="p-4 border-b-2 border-brand-cream-dark font-sans text-sm"><span class="highlight-pink">Kanit Bold</span><br>32px / 2rem</td>
-                            <td class="p-4 border-b-2 border-brand-cream-dark font-sans text-sm"><span class="highlight-pink">Kanit Bold</span><br>28px / 1.75rem</td>
+                            <td class="p-4 border-b-2 border-brand-cream-dark font-sans text-sm hidden md:table-cell"><span class="highlight-pink">Kanit Bold</span><br>32px / 2rem</td>
+                            <td class="p-4 border-b-2 border-brand-cream-dark font-sans text-sm"><span class="highlight-pink">Kanit Bold</span><br>24px / 1.5rem</td>
                         </tr>
                         <tr>
                             <td class="p-4 border-b-2 border-brand-cream-dark font-kanit font-bold">H5</td>
                             <td class="p-4 border-b-2 border-brand-cream-dark"><h5 class="tipo-h5 !mb-0">Subtítulo H5</h5></td>
-                            <td class="p-4 border-b-2 border-brand-cream-dark font-sans text-sm">Kanit SemiBold<br>24px / 1.5rem</td>
-                            <td class="p-4 border-b-2 border-brand-cream-dark font-sans text-sm">Kanit SemiBold<br>22px / 1.375rem</td>
+                            <td class="p-4 border-b-2 border-brand-cream-dark font-sans text-sm hidden md:table-cell">Kanit SemiBold<br>24px / 1.5rem</td>
+                            <td class="p-4 border-b-2 border-brand-cream-dark font-sans text-sm">Kanit SemiBold<br>20px / 1.25rem</td>
                         </tr>
                         <tr>
                             <td class="p-4 border-b-2 border-brand-cream-dark font-kanit font-bold">H6 (Tag)</td>
                             <td class="p-4 border-b-2 border-brand-cream-dark"><h6 class="tipo-h6 !mb-0">Overline H6</h6></td>
-                            <td class="p-4 border-b-2 border-brand-cream-dark font-sans text-sm">Kanit Bold UPPER<br>16px / 1rem</td>
+                            <td class="p-4 border-b-2 border-brand-cream-dark font-sans text-sm hidden md:table-cell">Kanit Bold UPPER<br>16px / 1rem</td>
                             <td class="p-4 border-b-2 border-brand-cream-dark font-sans text-sm">Kanit Bold UPPER<br>16px / 1rem</td>
                         </tr>
                         <tr>
                             <td class="p-4 font-kanit font-bold">Paragraph</td>
                             <td class="p-4"><p class="tipo-p !mb-0">Texto educacional longo garantindo legibilidade para materiais extensos.</p></td>
-                            <td class="p-4 font-sans text-sm">Open Sans Regular<br>18px / 1.125rem</td>
-                            <td class="p-4 font-sans text-sm">Open Sans Regular<br>18px / 1.125rem</td>
+                            <td class="p-4 font-sans text-sm hidden md:table-cell">Open Sans Regular<br>18px / 1.125rem</td>
+                            <td class="p-4 font-sans text-sm">Open Sans Regular<br>16px / 1rem</td>
                         </tr>
                     </tbody>
                 </table>
@@ -362,16 +400,16 @@
             <p class="tipo-p">Polígonos com *smileys*, *starbursts* e recortes geométricos substituem a rigidez matemática antiga. Use como colagens absolutas nas seções.</p>
 
             <h3 class="tipo-h4 mt-8 mb-4 border-b-2 border-brand-cream-dark pb-2">Galeria de Ativos (Copie a URL)</h3>
-            <div class="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-8 gap-4 mb-10">
+            <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4 mb-10">
                 <!-- Gerando blocos para os 23 SVGs com a base de URL correta (raw) -->
                 <script>
                     const baseUrl = "https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/0b96d106a66ac430f7e8a651ee057fe62a3f1dad/Novos%20poligonos/";
                     for(let i = 1; i <= 23; i++) {
                         let url = `${baseUrl}Ativo%20${i}.svg`;
                         document.write(`
-                            <div class="bg-white p-2 flex flex-col items-center justify-center hover:-translate-y-2 transition-transform cursor-pointer shadow-hard" onclick="copyToClipboard('${url}', 'URL do Ativo ${i} copiada!')">
-                                <img src="${url}" class="h-16 w-16 object-contain mb-2" alt="Ativo ${i}">
-                                <span class="text-xs font-kanit font-bold uppercase">Ativo ${i}</span>
+                            <div class="bg-white p-2 flex flex-col items-center justify-center hover:-translate-y-2 transition-transform cursor-pointer shadow-[4px_4px_0px_#14142c]" onclick="copyToClipboard('${url}', 'URL do Ativo ${i} copiada!')">
+                                <img src="${url}" class="h-12 w-12 md:h-16 md:w-16 object-contain mb-2" alt="Ativo ${i}">
+                                <span class="text-[10px] md:text-xs font-kanit font-bold uppercase text-center">Ativo ${i}</span>
                             </div>
                         `);
                     }
@@ -384,8 +422,8 @@
             <h2 class="ds-title">Galeria de Ícones</h2>
             <p class="tipo-p mb-8">Biblioteca Uicons integrada. Altere a cor, pesquise, copie o HTML para uso web ou descarregue em PNG no tamanho exato para as suas artes.</p>
 
-            <div class="bg-brand-cream-dark p-6 shadow-hard mb-12">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-brand-cream-dark p-4 md:p-6 shadow-none md:shadow-[8px_8px_0px_#14142c] mb-12">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                     <!-- Search -->
                     <div>
                         <label class="font-kanit font-bold text-brand-blue-dark uppercase text-sm mb-2 block">Pesquisar Ícone</label>
@@ -410,7 +448,7 @@
                 </div>
             </div>
 
-            <div id="icon-grid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+            <div id="icon-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
                 <!-- Ícones injetados via JS -->
             </div>
         </section>
@@ -418,16 +456,16 @@
         <!-- COMPONENTES UI -->
         <section id="componentes" class="ds-section poligono-app">
             <h2 class="ds-title">Componentes UI Base</h2>
-            <p class="tipo-p mb-10">Biblioteca estática de componentes para uso geral na interface com interações limpas.</p>
+            <p class="tipo-p mb-8 md:mb-10">Biblioteca estática de componentes para uso geral na interface com interações limpas e perfeitamente responsivas.</p>
 
             <!-- Botões -->
             <div class="mb-12 pb-8">
                 <h3 class="tipo-h4">Botões (CTAs)</h3>
-                <div class="flex flex-wrap gap-6 mt-4">
-                    <button class="cmp-button cmp-button--primary">Lorem</button>
-                    <button class="cmp-button cmp-button--secondary">Ipsum</button>
-                    <button class="cmp-button cmp-button--ghost">Dolor / Sit</button>
-                    <button class="cmp-button cmp-button--primary" disabled>Amet</button>
+                <div class="flex flex-col sm:flex-row flex-wrap gap-4 md:gap-6 mt-4">
+                    <button class="cmp-button cmp-button--primary w-full sm:w-auto">Lorem</button>
+                    <button class="cmp-button cmp-button--secondary w-full sm:w-auto">Ipsum</button>
+                    <button class="cmp-button cmp-button--ghost w-full sm:w-auto">Dolor / Sit</button>
+                    <button class="cmp-button cmp-button--primary w-full sm:w-auto" disabled>Amet</button>
                 </div>
             </div>
 
@@ -445,21 +483,21 @@
                         <option>Labore Et</option>
                     </select>
                 </div>
-                <div class="cmp-input-group flex gap-6 mt-6">
+                <div class="cmp-input-group flex flex-col sm:flex-row gap-4 sm:gap-6 mt-6">
                     <label class="cmp-checkbox-wrap">
                         <input type="checkbox" checked>
                         <span class="cmp-checkbox-box"></span>
-                        <span class="font-open font-bold">Magna Aliqua</span>
+                        <span class="font-open font-bold text-sm sm:text-base">Magna Aliqua</span>
                     </label>
                     <label class="cmp-radio-wrap">
                         <input type="radio" name="r1" checked>
                         <span class="cmp-radio-box"></span>
-                        <span class="font-open font-bold">Ut Enim</span>
+                        <span class="font-open font-bold text-sm sm:text-base">Ut Enim</span>
                     </label>
                     <label class="cmp-radio-wrap">
                         <input type="radio" name="r1">
                         <span class="cmp-radio-box"></span>
-                        <span class="font-open font-bold">Ad Minim</span>
+                        <span class="font-open font-bold text-sm sm:text-base">Ad Minim</span>
                     </label>
                 </div>
             </div>
@@ -467,23 +505,23 @@
             <!-- Badges e Toasts -->
             <div class="mb-12 pb-8">
                 <h3 class="tipo-h4">Badges & Tags</h3>
-                <div class="flex gap-4 mb-8 mt-4">
+                <div class="flex flex-wrap gap-2 md:gap-4 mb-8 mt-4">
                     <span class="cmp-badge cmp-badge--pink">Veniam</span>
                     <span class="cmp-badge cmp-badge--yellow">Quis Nostrud</span>
                     <span class="cmp-badge cmp-badge--green">Ullamco</span>
                 </div>
 
                 <h3 class="tipo-h4">Alertas (Toasts)</h3>
-                <div class="max-w-xl mt-4">
+                <div class="max-w-xl mt-4 space-y-4">
                     <div class="cmp-alert cmp-alert--success">
-                        <i class="fi fi-rs-check-circle text-2xl text-brand-green"></i>
+                        <i class="fi fi-rs-check-circle text-2xl text-brand-green shrink-0"></i>
                         <div>
                             <h5 class="font-kanit font-bold text-lg leading-tight uppercase">Maxime!</h5>
                             <p class="text-sm m-0">Facere possimus omnis voluptas assumenda est.</p>
                         </div>
                     </div>
                     <div class="cmp-alert cmp-alert--error">
-                        <i class="fi fi-rs-cross-circle text-2xl text-brand-pink"></i>
+                        <i class="fi fi-rs-cross-circle text-2xl text-brand-pink shrink-0"></i>
                         <div>
                             <h5 class="font-kanit font-bold text-lg leading-tight uppercase">Assumenda Est!</h5>
                             <p class="text-sm m-0">Omnis dolor repellendus temporibus autem quibusdam.</p>
@@ -493,26 +531,28 @@
             </div>
             
             <h3 class="tipo-h4 mt-8 mb-6">Cards Dinâmicos</h3>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 pb-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-12 pb-8">
                 <div class="cmp-card-media bg-brand-blue">
-                    <div class="cmp-card-media__hdr">
-                        <i class="fi fi-rs-graduation-cap text-5xl text-brand-yellow mb-4 block"></i>
-                        <h4 class="tipo-h4 text-brand-cream">Velit Esse</h4>
-                        <p class="tipo-p text-brand-cream-dark">Cillum dolore eu fugiat nulla pariatur excepteur sint occaecat.</p>
+                    <div class="cmp-card-media__hdr relative overflow-hidden">
+                        <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/0b96d106a66ac430f7e8a651ee057fe62a3f1dad/Novos%20poligonos/Ativo%2014.svg" class="absolute -top-4 -right-4 w-24 h-24 opacity-80" alt="">
+                        <i class="fi fi-rs-graduation-cap text-4xl md:text-5xl text-brand-yellow mb-4 relative z-10 block"></i>
+                        <h4 class="tipo-h4 text-brand-cream relative z-10">Velit Esse</h4>
+                        <p class="tipo-p text-brand-cream-dark relative z-10 text-sm md:text-base">Cillum dolore eu fugiat nulla pariatur excepteur sint occaecat.</p>
                     </div>
                 </div>
                 <div class="cmp-card-media bg-brand-pink">
-                    <div class="cmp-card-media__hdr">
-                        <i class="fi fi-rs-rocket text-5xl text-brand-blue-dark mb-4 block"></i>
-                        <h4 class="tipo-h4 !text-brand-blue-dark">Sint Occaecat</h4>
-                        <p class="tipo-p !text-brand-blue-dark font-bold">Cupidatat non proident, sunt in culpa qui officia deserunt.</p>
+                    <div class="cmp-card-media__hdr relative overflow-hidden">
+                        <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/0b96d106a66ac430f7e8a651ee057fe62a3f1dad/Novos%20poligonos/Ativo%208.svg" class="absolute -bottom-6 -right-6 w-32 h-32 opacity-90" alt="">
+                        <i class="fi fi-rs-rocket text-4xl md:text-5xl text-brand-blue-dark mb-4 relative z-10 block"></i>
+                        <h4 class="tipo-h4 !text-brand-blue-dark relative z-10">Sint Occaecat</h4>
+                        <p class="tipo-p !text-brand-blue-dark font-bold relative z-10 text-sm md:text-base">Cupidatat non proident, sunt in culpa qui officia deserunt.</p>
                     </div>
                 </div>
                 <div class="cmp-card-media bg-brand-yellow">
-                    <div class="cmp-card-media__hdr">
-                        <i class="fi fi-rs-puzzle-piece text-5xl text-brand-blue mb-4 block"></i>
-                        <h4 class="tipo-h4 text-brand-blue-dark">Officia</h4>
-                        <p class="tipo-p text-brand-blue-dark">Deserunt mollit anim id est laborum nemo enim ipsam.</p>
+                    <div class="cmp-card-media__hdr relative overflow-hidden">
+                        <i class="fi fi-rs-puzzle-piece text-4xl md:text-5xl text-brand-blue mb-4 relative z-10 block"></i>
+                        <h4 class="tipo-h4 text-brand-blue-dark relative z-10">Officia</h4>
+                        <p class="tipo-p text-brand-blue-dark relative z-10 text-sm md:text-base">Deserunt mollit anim id est laborum nemo enim ipsam.</p>
                     </div>
                 </div>
             </div>
@@ -520,11 +560,11 @@
             <h3 class="tipo-h4 mt-8 mb-6">Accordion Forte</h3>
             <div class="mb-12 max-w-3xl pb-8">
                 <details class="cmp-accordion" name="faq">
-                    <summary>Ipsam Voluptatem Quia <i class="fi fi-rs-plus text-2xl"></i></summary>
+                    <summary>Ipsam Voluptatem Quia <i class="fi fi-rs-plus text-xl md:text-2xl"></i></summary>
                     <div class="cmp-accordion__content"><p class="tipo-p mb-0">Voluptas sit aspernatur aut odit aut fugit sed quia consequuntur.</p></div>
                 </details>
                 <details class="cmp-accordion" name="faq" open>
-                    <summary>Consequuntur Magni <i class="fi fi-rs-minus text-2xl"></i></summary>
+                    <summary>Consequuntur Magni <i class="fi fi-rs-minus text-xl md:text-2xl"></i></summary>
                     <div class="cmp-accordion__content"><p class="tipo-p mb-0">Dolores eos qui ratione voluptatem sequi nesciunt neque porro quisquam.</p></div>
                 </details>
             </div>
@@ -532,26 +572,26 @@
             <h3 class="tipo-h4 mt-8 mb-6">Tabs (Abas) e Carrossel (Exemplos Estáticos)</h3>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
                 <div>
-                    <div class="cmp-tabs__nav">
+                    <div class="cmp-tabs__nav flex-nowrap overflow-x-auto pb-2">
                         <button class="cmp-tabs__btn active">Neque</button>
                         <button class="cmp-tabs__btn">Porro</button>
                     </div>
                     <div class="cmp-tabs__pane active">
                         <h4 class="tipo-h4 text-brand-blue">Quisquam Est</h4>
                         <p class="tipo-p">Qui dolorem ipsum quia dolor sit amet consectetur.</p>
-                        <button class="cmp-button cmp-button--primary mt-4">Adipisci Velit</button>
+                        <button class="cmp-button cmp-button--primary w-full sm:w-auto mt-4">Adipisci Velit</button>
                     </div>
                 </div>
-                <div class="bg-brand-cream p-8 text-center flex flex-col items-center justify-center relative min-h-[300px] transition-transform hover:-translate-y-2 hover:shadow-[8px_8px_0px_#14142c]">
-                    <i class="fi fi-rs-angle-left absolute left-4 text-3xl cursor-pointer hover:text-brand-pink transition-colors"></i>
+                <div class="bg-brand-cream p-6 md:p-8 text-center flex flex-col items-center justify-center relative min-h-[250px] md:min-h-[300px] transition-transform hover:-translate-y-2 hover:shadow-[8px_8px_0px_#14142c]">
+                    <i class="fi fi-rs-angle-left absolute left-2 md:left-4 text-2xl md:text-3xl cursor-pointer hover:text-brand-pink transition-colors"></i>
                     <h4 class="tipo-h4 text-brand-pink">Numquam Eius</h4>
-                    <p class="tipo-p">Modi tempora incidunt ut labore et dolore.</p>
+                    <p class="tipo-p text-sm md:text-base">Modi tempora incidunt ut labore et dolore.</p>
                     <div class="flex gap-2 mt-4">
-                        <span class="w-4 h-4 rounded-full bg-brand-blue-dark cursor-pointer transition-transform hover:scale-110"></span>
-                        <span class="w-4 h-4 rounded-full bg-white cursor-pointer transition-transform hover:scale-110"></span>
-                        <span class="w-4 h-4 rounded-full bg-white cursor-pointer transition-transform hover:scale-110"></span>
+                        <span class="w-3 h-3 md:w-4 md:h-4 rounded-full bg-brand-blue-dark cursor-pointer transition-transform hover:scale-110"></span>
+                        <span class="w-3 h-3 md:w-4 md:h-4 rounded-full bg-white cursor-pointer transition-transform hover:scale-110"></span>
+                        <span class="w-3 h-3 md:w-4 md:h-4 rounded-full bg-white cursor-pointer transition-transform hover:scale-110"></span>
                     </div>
-                    <i class="fi fi-rs-angle-right absolute right-4 text-3xl cursor-pointer hover:text-brand-pink transition-colors"></i>
+                    <i class="fi fi-rs-angle-right absolute right-2 md:right-4 text-2xl md:text-3xl cursor-pointer hover:text-brand-pink transition-colors"></i>
                 </div>
             </div>
         </section>
@@ -561,17 +601,17 @@
              ========================================== -->
         <section id="builder-advanced" class="ds-section poligono-app bg-white">
             <h2 class="ds-title !text-brand-pink">RD Station Builder 🚀</h2>
-            <p class="tipo-p">Atualizado com as fontes Anton e Kanit, e css global que foca em sombras dinâmicas no hover, alinhado à nova identidade mais limpa.</p>
+            <p class="tipo-p">Atualizado com as fontes Anton e Kanit, com media queries inclusas no CSS global para reajuste automático do layout em *smartphones*.</p>
 
-            <div class="mb-10 bg-brand-cream-dark p-6">
-                <div class="flex justify-between items-center mb-4">
-                    <h3 class="tipo-h4 !mb-0 text-brand-blue-dark">1. CSS Global do RD</h3>
-                    <button class="cmp-button cmp-button--dark py-2 px-4 !text-sm" onclick="copyCSSGlobal()">
+            <div class="mb-8 md:mb-10 bg-brand-cream-dark p-4 md:p-6">
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-4">
+                    <h3 class="tipo-h4 !mb-0 text-brand-blue-dark text-lg md:text-2xl">1. CSS Global do RD</h3>
+                    <button class="cmp-button cmp-button--dark py-2 px-4 !text-sm w-full sm:w-auto" onclick="copyCSSGlobal()">
                         <i class="fi fi-rs-copy"></i> Copiar
                     </button>
                 </div>
-                <pre class="bg-brand-blue-dark text-brand-cream p-4 text-xs overflow-x-auto font-mono" id="css-global-code">/* =========================================
-   NOVA IDENTIDADE POLÍGONO 2026 (SEM BORDAS)
+                <pre class="bg-brand-blue-dark text-brand-cream p-4 text-xs md:text-sm overflow-x-auto font-mono" id="css-global-code">/* =========================================
+   NOVA IDENTIDADE POLÍGONO 2026 (RESPONSIVA)
    ========================================= */
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Kanit:wght@400;600;700&family=Open+Sans:wght@400;600;700&display=swap');
 @import url('https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-straight/css/uicons-regular-straight.css');
@@ -594,19 +634,28 @@ h3, h3 *, h4, h4 * { font-family: "Kanit", sans-serif !important; font-weight: 7
 h3, h3 * { font-size: 36px !important; color: #FF3399 !important; text-transform: uppercase !important;}
 h4, h4 * { font-size: 28px !important; }
 
-/* Botões Nativos RD (Padrão Primário) */
+/* Botões Nativos RD (Padrão Primário Responsivo) */
 .rd-button {
     font-family: "Kanit", sans-serif !important; font-weight: 700 !important; text-transform: uppercase !important;
     padding: 16px 32px !important; background-color: #FF3399 !important; color: #14142C !important;
     border: 2px solid transparent !important; border-radius: 0px !important; box-shadow: none !important;
     transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    width: 100% !important; /* Full width em mobile por default */
 }
-.rd-button:hover { background-color: #FFB001 !important; transform: translate(-4px, -4px) !important; box-shadow: 6px 6px 0px #14142C !important; }</pre>
+@media(min-width: 768px) { .rd-button { width: auto !important; } }
+.rd-button:hover { background-color: #FFB001 !important; transform: translate(-4px, -4px) !important; box-shadow: 6px 6px 0px #14142C !important; }
+
+/* Correções Mobile Nativas */
+@media(max-width: 767px) {
+    h1, h1 * { font-size: 40px !important; }
+    h2, h2 * { font-size: 32px !important; }
+    h3, h3 * { font-size: 28px !important; }
+}</pre>
             </div>
             
-            <div class="grid grid-cols-1 xl:grid-cols-12 gap-8 mt-12 pt-12">
+            <div class="grid grid-cols-1 xl:grid-cols-12 gap-8 mt-8 md:mt-12 pt-8 md:pt-12 border-t-2 border-brand-cream-dark">
                 <!-- PAINEL DE CONTROLO (ESQUERDA) -->
-                <div class="xl:col-span-5 bg-brand-cream-dark p-6 h-fit">
+                <div class="xl:col-span-5 bg-brand-cream-dark p-4 md:p-6 h-fit">
                     <div class="mb-6 pb-6">
                         <label class="font-kanit font-bold text-brand-blue-dark uppercase text-sm mb-2 block">Escolher Componente</label>
                         <select id="builder-type" class="builder-input !bg-brand-yellow font-bold" onchange="builderChangeType()">
@@ -617,7 +666,7 @@ h4, h4 * { font-size: 28px !important; }
                         </select>
                     </div>
 
-                    <div id="builder-items" class="space-y-4 mb-6 max-h-[600px] overflow-y-auto pr-2">
+                    <div id="builder-items" class="space-y-4 mb-6 max-h-[400px] md:max-h-[600px] overflow-y-auto pr-2">
                         <!-- Itens renderizados dinamicamente via JS -->
                     </div>
 
@@ -632,11 +681,11 @@ h4, h4 * { font-size: 28px !important; }
 
                 <!-- PAINEL DE PREVIEW (DIREITA) -->
                 <div class="xl:col-span-7 flex flex-col">
-                    <h3 class="font-kanit font-bold uppercase text-brand-blue-dark mb-4 tracking-wider flex justify-between items-center">
+                    <h3 class="font-kanit font-bold uppercase text-brand-blue-dark mb-4 tracking-wider flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
                         Preview em Tempo Real
                         <span class="cmp-badge cmp-badge--green text-xs">Isolamento Ativo</span>
                     </h3>
-                    <div id="builder-preview" class="flex-1 bg-[#f8fafc] p-8 min-h-[600px] relative overflow-hidden">
+                    <div id="builder-preview" class="flex-1 bg-[#f8fafc] p-4 md:p-8 min-h-[400px] md:min-h-[600px] relative overflow-hidden border-2 border-dashed border-brand-cream-dark">
                         <!-- Código gerado injetado aqui -->
                     </div>
                 </div>
@@ -649,58 +698,58 @@ h4, h4 * { font-size: 28px !important; }
 
         <!-- TEMPLATE LANDING PAGE -->
         <section id="template-lp" class="ds-section !bg-transparent !border-0 !p-0 !shadow-none mt-16">
-            <div class="mb-4 bg-brand-cream-dark p-6">
-                <h2 class="ds-title !border-0 !mb-0">Template: Landing Page (Alta Conversão)</h2>
+            <div class="mb-4 bg-brand-cream-dark p-4 md:p-6">
+                <h2 class="ds-title !border-0 !mb-0 text-3xl md:text-5xl">Template: Landing Page (Alta Conversão)</h2>
                 <p class="tipo-p mb-0">10 Secções responsivas com formulário mockup, carrossel, tabs interativas e blocos de conteúdo estratégico.</p>
             </div>
             
-            <div class="bg-brand-cream overflow-hidden max-w-[1440px] mx-auto w-full relative shadow-[20px_20px_0px_rgba(20,20,44,1)]">
+            <div class="bg-brand-cream overflow-hidden max-w-[1440px] mx-auto w-full relative shadow-none md:shadow-[20px_20px_0px_rgba(20,20,44,1)]">
                 
                 <!-- 1. LP Header -->
-                <header class="bg-brand-blue-dark py-4 px-6 flex justify-between items-center">
-                    <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/logos/logo-poligono-white%201.png" alt="Lorem Ipsum" class="h-8 md:h-10 object-contain">
-                    <a href="#form-lp" class="cmp-button cmp-button--primary !py-2 !px-4 !text-sm hidden md:flex">Phasellus</a>
+                <header class="bg-brand-blue-dark py-4 px-4 md:px-6 flex justify-between items-center">
+                    <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/logos/logo-poligono-white%201.png" alt="Lorem Ipsum" class="h-6 md:h-10 object-contain">
+                    <a href="#form-lp" class="cmp-button cmp-button--primary !py-2 !px-4 !text-sm hidden sm:flex">Phasellus</a>
                 </header>
 
                 <!-- 2. LP Hero com Formulário -->
-                <section class="bg-brand-blue py-16 px-6 relative overflow-hidden">
-                    <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/0b96d106a66ac430f7e8a651ee057fe62a3f1dad/Novos%20poligonos/Ativo%2014.svg" class="absolute -top-10 left-10 w-48 h-48 opacity-30 animate-pulse" alt="">
-                    <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/0b96d106a66ac430f7e8a651ee057fe62a3f1dad/Novos%20poligonos/Ativo%2022.svg" class="absolute bottom-10 right-0 w-64 h-64 opacity-80 z-0" alt="">
+                <section class="bg-brand-blue py-12 md:py-24 px-6 relative overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/0b96d106a66ac430f7e8a651ee057fe62a3f1dad/Novos%20poligonos/Ativo%2014.svg" class="absolute -top-10 left-10 w-32 h-32 md:w-48 md:h-48 opacity-30 animate-pulse hidden sm:block" alt="">
+                    <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/0b96d106a66ac430f7e8a651ee057fe62a3f1dad/Novos%20poligonos/Ativo%2022.svg" class="absolute bottom-10 right-0 w-48 h-48 md:w-64 md:h-64 opacity-80 z-0 hidden lg:block" alt="">
                     
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10 max-w-6xl mx-auto">
-                        <div>
-                            <span class="highlight-yellow text-sm font-kanit font-bold uppercase mb-4">Lorem Ipsum Dolor</span>
-                            <h1 class="tipo-h1 !text-white !text-5xl md:!text-6xl mt-4">Consectetur<br>Adipiscing <span class="text-brand-pink">Elit</span> Sit.</h1>
-                            <p class="tipo-p text-brand-blue-ice !text-xl mt-6 font-bold">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                            <ul class="mt-8 space-y-4 text-white font-open font-semibold">
-                                <li class="flex items-center gap-3"><i class="fi fi-rs-check-circle text-brand-green text-xl"></i> Quis nostrud exercitation ullamco</li>
-                                <li class="flex items-center gap-3"><i class="fi fi-rs-check-circle text-brand-green text-xl"></i> Laboris nisi ut aliquip ex ea</li>
-                                <li class="flex items-center gap-3"><i class="fi fi-rs-check-circle text-brand-green text-xl"></i> Duis aute irure dolor in reprehenderit</li>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10 max-w-6xl mx-auto">
+                        <div class="text-center lg:text-left">
+                            <span class="highlight-yellow text-xs md:text-sm font-kanit font-bold uppercase mb-4 inline-block">Lorem Ipsum Dolor</span>
+                            <h1 class="tipo-h1 !text-white !text-4xl sm:!text-5xl lg:!text-6xl xl:!text-7xl mt-4">Consectetur<br>Adipiscing <span class="text-brand-pink">Elit</span> Sit.</h1>
+                            <p class="tipo-p text-brand-blue-ice !text-lg md:!text-xl mt-6 font-bold">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                            <ul class="mt-8 space-y-4 text-white font-open font-semibold text-left mx-auto max-w-md lg:mx-0">
+                                <li class="flex items-start gap-3"><i class="fi fi-rs-check-circle text-brand-green text-xl shrink-0 mt-1"></i> Quis nostrud exercitation ullamco</li>
+                                <li class="flex items-start gap-3"><i class="fi fi-rs-check-circle text-brand-green text-xl shrink-0 mt-1"></i> Laboris nisi ut aliquip ex ea</li>
+                                <li class="flex items-start gap-3"><i class="fi fi-rs-check-circle text-brand-green text-xl shrink-0 mt-1"></i> Duis aute irure dolor in reprehenderit</li>
                             </ul>
                         </div>
                         
                         <!-- Form Area -->
-                        <div id="form-lp" class="bg-brand-cream p-8 shadow-[12px_12px_0px_#ff3399]">
-                            <h3 class="tipo-h3 !text-brand-blue-dark mb-6 text-center">Aenean Faucibus</h3>
-                            <form onsubmit="event.preventDefault(); alert('Lorem Ipsum Dolor Sit Amet!');" class="space-y-4">
+                        <div id="form-lp" class="bg-brand-cream p-6 md:p-8 shadow-none md:shadow-[12px_12px_0px_#ff3399]">
+                            <h3 class="tipo-h3 !text-brand-blue-dark mb-6 text-center !text-2xl md:!text-3xl">Aenean Faucibus</h3>
+                            <form onsubmit="event.preventDefault(); alert('Lorem Ipsum Dolor Sit Amet!');" class="space-y-4 text-left">
                                 <div>
                                     <label class="font-kanit font-bold text-sm uppercase text-brand-blue-dark mb-1 block">Lorem Ipsum</label>
-                                    <input type="text" class="builder-input" placeholder="Dolor sit amet" required>
+                                    <input type="text" class="builder-input w-full" placeholder="Dolor sit amet" required>
                                 </div>
                                 <div>
                                     <label class="font-kanit font-bold text-sm uppercase text-brand-blue-dark mb-1 block">Consectetur Adipiscing</label>
-                                    <input type="email" class="builder-input" placeholder="Elit sed do" required>
+                                    <input type="email" class="builder-input w-full" placeholder="Elit sed do" required>
                                 </div>
                                 <div>
                                     <label class="font-kanit font-bold text-sm uppercase text-brand-blue-dark mb-1 block">Tempor Incididunt</label>
-                                    <select class="builder-input bg-white" required>
+                                    <select class="builder-input bg-white w-full" required>
                                         <option value="">Labore et dolore</option>
                                         <option>Magna aliqua</option>
                                         <option>Ut enim ad</option>
                                         <option>Minim veniam</option>
                                     </select>
                                 </div>
-                                <button type="submit" class="cmp-button cmp-button--primary w-full !text-lg mt-4">
+                                <button type="submit" class="cmp-button cmp-button--primary w-full !text-base md:!text-lg mt-4">
                                     Quis Nostrud <i class="fi fi-rs-download ml-2"></i>
                                 </button>
                                 <p class="text-xs font-open text-center mt-4 text-brand-blue-dark">Exercitation ullamco laboris nisi ut aliquip ex ea commodo <a href="#" class="font-bold underline text-brand-pink">Consequat</a>.</p>
@@ -710,61 +759,61 @@ h4, h4 * { font-size: 28px !important; }
                 </section>
 
                 <!-- 3. Social Proof (Logos) -->
-                <section class="py-12 bg-white relative z-10">
+                <section class="py-10 md:py-16 bg-white relative z-10">
                     <div class="max-w-6xl mx-auto px-6 text-center">
-                        <p class="font-kanit font-bold text-slate-400 uppercase tracking-widest text-sm mb-6">Duis aute irure dolor in reprehenderit in voluptate</p>
-                        <div class="flex flex-wrap justify-center items-center gap-12 opacity-40 grayscale">
-                            <i class="fi fi-rs-school text-5xl"></i>
-                            <i class="fi fi-rs-building text-5xl"></i>
-                            <i class="fi fi-rs-book-alt text-5xl"></i>
-                            <i class="fi fi-rs-globe text-5xl"></i>
-                            <i class="fi fi-rs-microscope text-5xl"></i>
+                        <p class="font-kanit font-bold text-slate-400 uppercase tracking-widest text-xs md:text-sm mb-6 md:mb-8">Duis aute irure dolor in reprehenderit in voluptate</p>
+                        <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-40 grayscale">
+                            <i class="fi fi-rs-school text-4xl md:text-5xl"></i>
+                            <i class="fi fi-rs-building text-4xl md:text-5xl"></i>
+                            <i class="fi fi-rs-book-alt text-4xl md:text-5xl"></i>
+                            <i class="fi fi-rs-globe text-4xl md:text-5xl"></i>
+                            <i class="fi fi-rs-microscope text-4xl md:text-5xl"></i>
                         </div>
                     </div>
                 </section>
 
                 <!-- 4. Problema / Colagem Editorial -->
-                <section class="py-24 bg-brand-cream relative overflow-hidden">
+                <section class="py-12 md:py-24 bg-brand-cream relative overflow-hidden">
                     <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/0b96d106a66ac430f7e8a651ee057fe62a3f1dad/Novos%20poligonos/Ativo%208.svg" class="absolute top-20 right-20 w-32 h-32 hidden lg:block animate-pulse" style="animation-duration: 3s;" alt="">
                     
-                    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                        <div class="relative order-2 lg:order-1">
+                    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                        <div class="relative order-2 lg:order-1 flex justify-center lg:justify-start">
                             <!-- Colagem Imagem + Poligono -->
-                            <div class="p-2 bg-brand-yellow relative z-10 w-4/5">
-                                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80" alt="" class="w-full grayscale contrast-125">
+                            <div class="p-2 bg-brand-yellow relative z-10 w-full max-w-sm lg:w-4/5 lg:max-w-none">
+                                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80" alt="" class="w-full grayscale contrast-125 object-cover aspect-square md:aspect-auto">
                             </div>
-                            <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/0b96d106a66ac430f7e8a651ee057fe62a3f1dad/Novos%20poligonos/Ativo%2018.svg" class="absolute -bottom-10 right-0 w-48 h-48 z-20 drop-shadow-xl" alt="">
+                            <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/0b96d106a66ac430f7e8a651ee057fe62a3f1dad/Novos%20poligonos/Ativo%2018.svg" class="absolute -bottom-8 right-0 md:-bottom-10 md:-right-10 w-32 h-32 md:w-48 md:h-48 z-20 drop-shadow-xl" alt="">
                         </div>
-                        <div class="order-1 lg:order-2 relative z-30">
-                            <h2 class="tipo-h2">Velit esse,<br><span class="highlight-pink !text-white">Cillum dolore.</span></h2>
-                            <p class="tipo-p text-lg mt-6">Eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <p class="tipo-p text-lg">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.</p>
-                            <a href="#form-lp" class="cmp-button cmp-button--primary mt-6">Neque Porro Quisquam</a>
+                        <div class="order-1 lg:order-2 relative z-30 text-center lg:text-left">
+                            <h2 class="tipo-h2 !text-3xl md:!text-4xl lg:!text-5xl">Velit esse,<br><span class="highlight-pink !text-white">Cillum dolore.</span></h2>
+                            <p class="tipo-p text-base md:text-lg mt-6">Eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p class="tipo-p text-base md:text-lg">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.</p>
+                            <a href="#form-lp" class="cmp-button cmp-button--primary w-full sm:w-auto mt-6">Neque Porro Quisquam</a>
                         </div>
                     </div>
                 </section>
 
                 <!-- 5. LP Cards Dinâmicos -->
-                <section class="py-24 bg-brand-orange relative">
+                <section class="py-12 md:py-24 bg-brand-orange relative">
                     <div class="max-w-6xl mx-auto px-6 relative z-10">
-                        <h2 class="tipo-h2 text-center text-brand-blue-dark mb-16 uppercase">Est qui dolorem ipsum quia dolor:</h2>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            <div class="cmp-card-media bg-brand-cream hover:-translate-y-2 hover:shadow-[12px_12px_0px_#14142c]">
-                                <div class="cmp-card-media__hdr">
-                                    <h4 class="tipo-h3 !text-brand-orange mb-4 text-6xl">01</h4>
-                                    <p class="tipo-p font-bold">Sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat.</p>
+                        <h2 class="tipo-h2 text-center text-brand-blue-dark mb-10 md:mb-16 uppercase !text-3xl md:!text-4xl">Est qui dolorem ipsum quia dolor:</h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+                            <div class="cmp-card-media bg-brand-cream hover:-translate-y-2 hover:shadow-[8px_8px_0px_#14142c] md:hover:shadow-[12px_12px_0px_#14142c]">
+                                <div class="cmp-card-media__hdr p-6 md:p-8">
+                                    <h4 class="tipo-h3 !text-brand-orange mb-4 text-5xl md:text-6xl">01</h4>
+                                    <p class="tipo-p font-bold text-sm md:text-base">Sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat.</p>
                                 </div>
                             </div>
-                            <div class="cmp-card-media bg-brand-blue hover:-translate-y-2 hover:shadow-[12px_12px_0px_#14142c]">
-                                <div class="cmp-card-media__hdr">
-                                    <h4 class="tipo-h3 !text-brand-pink mb-4 text-6xl">02</h4>
-                                    <p class="tipo-p !text-white font-bold">Voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea.</p>
+                            <div class="cmp-card-media bg-brand-blue hover:-translate-y-2 hover:shadow-[8px_8px_0px_#14142c] md:hover:shadow-[12px_12px_0px_#14142c]">
+                                <div class="cmp-card-media__hdr p-6 md:p-8">
+                                    <h4 class="tipo-h3 !text-brand-pink mb-4 text-5xl md:text-6xl">02</h4>
+                                    <p class="tipo-p !text-white font-bold text-sm md:text-base">Voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea.</p>
                                 </div>
                             </div>
-                            <div class="cmp-card-media bg-brand-pink hover:-translate-y-2 hover:shadow-[12px_12px_0px_#14142c]">
-                                <div class="cmp-card-media__hdr">
-                                    <h4 class="tipo-h3 !text-brand-yellow mb-4 text-6xl">03</h4>
-                                    <p class="tipo-p !text-brand-blue-dark font-bold">Commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.</p>
+                            <div class="cmp-card-media bg-brand-pink hover:-translate-y-2 hover:shadow-[8px_8px_0px_#14142c] md:hover:shadow-[12px_12px_0px_#14142c]">
+                                <div class="cmp-card-media__hdr p-6 md:p-8">
+                                    <h4 class="tipo-h3 !text-brand-yellow mb-4 text-5xl md:text-6xl">03</h4>
+                                    <p class="tipo-p !text-brand-blue-dark font-bold text-sm md:text-base">Commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.</p>
                                 </div>
                             </div>
                         </div>
@@ -772,41 +821,41 @@ h4, h4 * { font-size: 28px !important; }
                 </section>
 
                 <!-- 6. LP Tabs Interativas -->
-                <section class="py-24 bg-brand-cream-dark relative">
-                    <div class="max-w-4xl mx-auto px-6 relative z-10">
-                        <h2 class="tipo-h2 text-center mb-12">At vero eos <span class="text-brand-blue">Accusamus</span></h2>
+                <section class="py-12 md:py-24 bg-brand-cream-dark relative">
+                    <div class="max-w-4xl mx-auto px-4 md:px-6 relative z-10">
+                        <h2 class="tipo-h2 text-center mb-8 md:mb-12 !text-3xl md:!text-4xl">At vero eos <span class="text-brand-blue">Accusamus</span></h2>
                         
-                        <div class="bg-white shadow-hard flex flex-col">
-                            <div class="flex overflow-x-auto bg-transparent p-2">
-                                <button class="lp-tab-btn flex-1 p-4 font-kanit font-bold uppercase text-brand-blue-dark bg-brand-cream hover:-translate-y-1 hover:shadow-[4px_4px_0px_#14142c] transition-all active !bg-brand-blue-dark !text-brand-yellow !shadow-none" data-target="lp-tab-1">Iusto odio</button>
-                                <button class="lp-tab-btn flex-1 p-4 font-kanit font-bold uppercase text-brand-blue-dark bg-brand-cream hover:-translate-y-1 hover:shadow-[4px_4px_0px_#14142c] transition-all" data-target="lp-tab-2">Dignissimos</button>
-                                <button class="lp-tab-btn flex-1 p-4 font-kanit font-bold uppercase text-brand-blue-dark bg-brand-cream hover:-translate-y-1 hover:shadow-[4px_4px_0px_#14142c] transition-all" data-target="lp-tab-3">Ducimus</button>
+                        <div class="bg-white shadow-none md:shadow-hard flex flex-col">
+                            <div class="flex overflow-x-auto bg-transparent p-2 gap-2 scrollbar-hide">
+                                <button class="lp-tab-btn flex-1 min-w-[120px] p-3 md:p-4 font-kanit font-bold uppercase text-brand-blue-dark bg-brand-cream hover:-translate-y-1 hover:shadow-[4px_4px_0px_#14142c] transition-all active !bg-brand-blue-dark !text-brand-yellow !shadow-none text-xs md:text-base" data-target="lp-tab-1">Iusto odio</button>
+                                <button class="lp-tab-btn flex-1 min-w-[120px] p-3 md:p-4 font-kanit font-bold uppercase text-brand-blue-dark bg-brand-cream hover:-translate-y-1 hover:shadow-[4px_4px_0px_#14142c] transition-all text-xs md:text-base" data-target="lp-tab-2">Dignissimos</button>
+                                <button class="lp-tab-btn flex-1 min-w-[120px] p-3 md:p-4 font-kanit font-bold uppercase text-brand-blue-dark bg-brand-cream hover:-translate-y-1 hover:shadow-[4px_4px_0px_#14142c] transition-all text-xs md:text-base" data-target="lp-tab-3">Ducimus</button>
                             </div>
-                            <div class="p-8 md:p-12">
+                            <div class="p-6 md:p-12">
                                 <div id="lp-tab-1" class="lp-tab-pane animate-[fadeIn_0.3s_ease]">
-                                    <div class="flex flex-col md:flex-row gap-8 items-center">
-                                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&q=80" alt="[Image of Schola]" class="w-full md:w-1/2 shadow-[6px_6px_0px_#34c995]">
+                                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-center text-center md:text-left">
+                                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&q=80" alt="[Image of Schola]" class="w-full md:w-1/2 shadow-none md:shadow-[6px_6px_0px_#34c995] aspect-video object-cover">
                                         <div>
-                                            <h4 class="tipo-h3 text-brand-green">Blanditiis Praesentium</h4>
-                                            <p class="tipo-p">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia.</p>
+                                            <h4 class="tipo-h3 text-brand-green !text-2xl md:!text-3xl">Blanditiis Praesentium</h4>
+                                            <p class="tipo-p text-sm md:text-base">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia.</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div id="lp-tab-2" class="lp-tab-pane hidden animate-[fadeIn_0.3s_ease]">
-                                    <div class="flex flex-col md:flex-row gap-8 items-center">
-                                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400&q=80" alt="" class="w-full md:w-1/2 shadow-[6px_6px_0px_#0a00bd]">
+                                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-center text-center md:text-left">
+                                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400&q=80" alt="" class="w-full md:w-1/2 shadow-none md:shadow-[6px_6px_0px_#0a00bd] aspect-video object-cover">
                                         <div>
-                                            <h4 class="tipo-h3 text-brand-blue">Deserunt Mollitia</h4>
-                                            <p class="tipo-p">Anim id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi.</p>
+                                            <h4 class="tipo-h3 text-brand-blue !text-2xl md:!text-3xl">Deserunt Mollitia</h4>
+                                            <p class="tipo-p text-sm md:text-base">Anim id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi.</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div id="lp-tab-3" class="lp-tab-pane hidden animate-[fadeIn_0.3s_ease]">
-                                    <div class="flex flex-col md:flex-row gap-8 items-center">
-                                        <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=400&q=80" alt="[Image of Magister]" class="w-full md:w-1/2 shadow-[6px_6px_0px_#ff3399]">
+                                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-center text-center md:text-left">
+                                        <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=400&q=80" alt="" class="w-full md:w-1/2 shadow-none md:shadow-[6px_6px_0px_#ff3399] aspect-video object-cover">
                                         <div>
-                                            <h4 class="tipo-h3 text-brand-pink">Optio Cumque</h4>
-                                            <p class="tipo-p">Nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam.</p>
+                                            <h4 class="tipo-h3 text-brand-pink !text-2xl md:!text-3xl">Optio Cumque</h4>
+                                            <p class="tipo-p text-sm md:text-base">Nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -816,107 +865,107 @@ h4, h4 * { font-size: 28px !important; }
                 </section>
 
                 <!-- 7. LP Quote / Testimonial -->
-                <section class="py-24 bg-brand-blue-dark text-center relative">
-                    <div class="max-w-4xl mx-auto px-6 relative z-10">
-                        <i class="fi fi-rs-quote-right text-6xl text-brand-pink mb-6 block"></i>
-                        <h2 class="font-anton text-4xl md:text-5xl uppercase text-white leading-tight mb-8">"Et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae."</h2>
-                        <p class="font-kanit font-bold text-brand-yellow uppercase tracking-widest text-lg">Itaque Earum</p>
-                        <p class="font-open text-brand-blue-light">Rerum Hic Tenetur</p>
+                <section class="py-16 md:py-24 bg-brand-blue-dark text-center relative px-6">
+                    <div class="max-w-4xl mx-auto relative z-10">
+                        <i class="fi fi-rs-quote-right text-4xl md:text-6xl text-brand-pink mb-4 md:mb-6 block"></i>
+                        <h2 class="font-anton text-2xl md:text-4xl lg:text-5xl uppercase text-white leading-tight mb-6 md:mb-8">"Et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae."</h2>
+                        <p class="font-kanit font-bold text-brand-yellow uppercase tracking-widest text-base md:text-lg">Itaque Earum</p>
+                        <p class="font-open text-brand-blue-light text-sm md:text-base">Rerum Hic Tenetur</p>
                     </div>
                 </section>
 
                 <!-- 8. LP Carrossel (Vanilla JS) -->
-                <section class="py-24 bg-white overflow-hidden relative">
-                    <div class="max-w-6xl mx-auto px-6 relative z-10">
-                        <h2 class="tipo-h2 text-center mb-16">Sapiente <span class="highlight-yellow">Delectus</span></h2>
+                <section class="py-12 md:py-24 bg-white overflow-hidden relative">
+                    <div class="max-w-6xl mx-auto px-4 md:px-6 relative z-10">
+                        <h2 class="tipo-h2 text-center mb-10 md:mb-16 !text-3xl md:!text-4xl">Sapiente <span class="highlight-yellow">Delectus</span></h2>
                         
                         <div class="relative w-full">
-                            <div class="overflow-hidden pb-10 px-2">
+                            <div class="overflow-hidden pb-8 md:pb-10 px-0 md:px-2">
                                 <div class="flex transition-transform duration-500 ease-in-out" id="lp-carousel-track">
                                     <!-- Slides -->
-                                    <div class="flex-none w-full md:w-1/2 lg:w-1/3 px-4">
-                                        <div class="bg-brand-cream p-8 h-full shadow-[8px_8px_0px_#ff3399] flex flex-col hover:-translate-y-2 transition-transform">
-                                            <i class="fi fi-rs-puzzle-piece text-5xl text-brand-pink mb-6 block"></i>
-                                            <h4 class="tipo-h4 text-brand-blue-dark">Reiciendis</h4>
-                                            <p class="tipo-p text-sm flex-grow">Voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Neque porro quisquam est qui dolorem.</p>
+                                    <div class="flex-none w-full sm:w-1/2 lg:w-1/3 px-2 md:px-4">
+                                        <div class="bg-brand-cream p-6 md:p-8 h-full shadow-none md:shadow-[8px_8px_0px_#ff3399] flex flex-col hover:-translate-y-2 transition-transform border border-brand-cream-dark md:border-none">
+                                            <i class="fi fi-rs-puzzle-piece text-4xl md:text-5xl text-brand-pink mb-4 md:mb-6 block"></i>
+                                            <h4 class="tipo-h4 text-brand-blue-dark !text-xl md:!text-2xl">Reiciendis</h4>
+                                            <p class="tipo-p text-xs md:text-sm flex-grow">Voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Neque porro quisquam est qui dolorem.</p>
                                         </div>
                                     </div>
-                                    <div class="flex-none w-full md:w-1/2 lg:w-1/3 px-4">
-                                        <div class="bg-brand-cream p-8 h-full shadow-[8px_8px_0px_#34c995] flex flex-col hover:-translate-y-2 transition-transform">
-                                            <i class="fi fi-rs-chart-histogram text-5xl text-brand-green mb-6 block"></i>
-                                            <h4 class="tipo-h4 text-brand-blue-dark">Consequatur</h4>
-                                            <p class="tipo-p text-sm flex-grow">Ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore.</p>
+                                    <div class="flex-none w-full sm:w-1/2 lg:w-1/3 px-2 md:px-4">
+                                        <div class="bg-brand-cream p-6 md:p-8 h-full shadow-none md:shadow-[8px_8px_0px_#34c995] flex flex-col hover:-translate-y-2 transition-transform border border-brand-cream-dark md:border-none">
+                                            <i class="fi fi-rs-chart-histogram text-4xl md:text-5xl text-brand-green mb-4 md:mb-6 block"></i>
+                                            <h4 class="tipo-h4 text-brand-blue-dark !text-xl md:!text-2xl">Consequatur</h4>
+                                            <p class="tipo-p text-xs md:text-sm flex-grow">Ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore.</p>
                                         </div>
                                     </div>
-                                    <div class="flex-none w-full md:w-1/2 lg:w-1/3 px-4">
-                                        <div class="bg-brand-cream p-8 h-full shadow-[8px_8px_0px_#ffb001] flex flex-col hover:-translate-y-2 transition-transform">
-                                            <i class="fi fi-rs-bulb text-5xl text-brand-yellow mb-6 block"></i>
-                                            <h4 class="tipo-h4 text-brand-blue-dark">Perspiciatis</h4>
-                                            <p class="tipo-p text-sm flex-grow">Unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+                                    <div class="flex-none w-full sm:w-1/2 lg:w-1/3 px-2 md:px-4">
+                                        <div class="bg-brand-cream p-6 md:p-8 h-full shadow-none md:shadow-[8px_8px_0px_#ffb001] flex flex-col hover:-translate-y-2 transition-transform border border-brand-cream-dark md:border-none">
+                                            <i class="fi fi-rs-bulb text-4xl md:text-5xl text-brand-yellow mb-4 md:mb-6 block"></i>
+                                            <h4 class="tipo-h4 text-brand-blue-dark !text-xl md:!text-2xl">Perspiciatis</h4>
+                                            <p class="tipo-p text-xs md:text-sm flex-grow">Unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
                                         </div>
                                     </div>
-                                    <div class="flex-none w-full md:w-1/2 lg:w-1/3 px-4">
-                                        <div class="bg-brand-cream p-8 h-full shadow-[8px_8px_0px_#0080ff] flex flex-col hover:-translate-y-2 transition-transform">
-                                            <i class="fi fi-rs-rocket text-5xl text-brand-blue-electric mb-6 block"></i>
-                                            <h4 class="tipo-h4 text-brand-blue-dark">Architecto</h4>
-                                            <p class="tipo-p text-sm flex-grow">Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+                                    <div class="flex-none w-full sm:w-1/2 lg:w-1/3 px-2 md:px-4">
+                                        <div class="bg-brand-cream p-6 md:p-8 h-full shadow-none md:shadow-[8px_8px_0px_#0080ff] flex flex-col hover:-translate-y-2 transition-transform border border-brand-cream-dark md:border-none">
+                                            <i class="fi fi-rs-rocket text-4xl md:text-5xl text-brand-blue-electric mb-4 md:mb-6 block"></i>
+                                            <h4 class="tipo-h4 text-brand-blue-dark !text-xl md:!text-2xl">Architecto</h4>
+                                            <p class="tipo-p text-xs md:text-sm flex-grow">Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             
                             <!-- Controles do Carrossel -->
-                            <div class="flex justify-center gap-6 mt-2">
-                                <button id="lp-car-prev" class="w-14 h-14 bg-brand-cream text-brand-blue-dark hover:bg-brand-pink transition-colors font-bold text-2xl flex items-center justify-center hover:-translate-y-1 hover:shadow-[4px_4px_0px_#14142c]"><i class="fi fi-rs-angle-left"></i></button>
-                                <button id="lp-car-next" class="w-14 h-14 bg-brand-cream text-brand-blue-dark hover:bg-brand-pink transition-colors font-bold text-2xl flex items-center justify-center hover:-translate-y-1 hover:shadow-[4px_4px_0px_#14142c]"><i class="fi fi-rs-angle-right"></i></button>
+                            <div class="flex justify-center gap-4 md:gap-6 mt-2">
+                                <button id="lp-car-prev" class="w-12 h-12 md:w-14 md:h-14 bg-brand-cream text-brand-blue-dark hover:bg-brand-pink transition-colors font-bold text-xl md:text-2xl flex items-center justify-center hover:-translate-y-1 hover:shadow-[4px_4px_0px_#14142c]"><i class="fi fi-rs-angle-left"></i></button>
+                                <button id="lp-car-next" class="w-12 h-12 md:w-14 md:h-14 bg-brand-cream text-brand-blue-dark hover:bg-brand-pink transition-colors font-bold text-xl md:text-2xl flex items-center justify-center hover:-translate-y-1 hover:shadow-[4px_4px_0px_#14142c]"><i class="fi fi-rs-angle-right"></i></button>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 <!-- 9. LP FAQ Accordion -->
-                <section class="py-24 bg-brand-cream relative">
+                <section class="py-12 md:py-24 bg-brand-cream relative">
                     <div class="max-w-3xl mx-auto px-6 relative z-10">
-                        <h2 class="tipo-h2 text-center mb-16">Dolores Eos <span class="text-brand-pink">Ratione</span></h2>
+                        <h2 class="tipo-h2 text-center mb-10 md:mb-16 !text-3xl md:!text-4xl">Dolores Eos <span class="text-brand-pink">Ratione</span></h2>
                         
                         <details class="cmp-accordion group" name="lp-faq" open>
-                            <summary class="hover:bg-brand-yellow">Neque porro quisquam est qui dolorem ipsum? <i class="fi fi-rs-angle-down group-open:rotate-180 transition-transform"></i></summary>
-                            <div class="cmp-accordion__content"><p class="tipo-p m-0">Quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p></div>
+                            <summary class="hover:bg-brand-yellow text-sm sm:text-base md:text-lg">Neque porro quisquam est qui dolorem ipsum? <i class="fi fi-rs-angle-down group-open:rotate-180 transition-transform"></i></summary>
+                            <div class="cmp-accordion__content"><p class="tipo-p m-0 text-sm md:text-base">Quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p></div>
                         </details>
                         <details class="cmp-accordion group" name="lp-faq">
-                            <summary class="hover:bg-brand-yellow">Ut enim ad minima veniam quis nostrum? <i class="fi fi-rs-angle-down group-open:rotate-180 transition-transform"></i></summary>
-                            <div class="cmp-accordion__content"><p class="tipo-p m-0">Exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate.</p></div>
+                            <summary class="hover:bg-brand-yellow text-sm sm:text-base md:text-lg">Ut enim ad minima veniam quis nostrum? <i class="fi fi-rs-angle-down group-open:rotate-180 transition-transform"></i></summary>
+                            <div class="cmp-accordion__content"><p class="tipo-p m-0 text-sm md:text-base">Exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate.</p></div>
                         </details>
                         <details class="cmp-accordion group" name="lp-faq">
-                            <summary class="hover:bg-brand-yellow">Velit esse quam nihil molestiae consequatur? <i class="fi fi-rs-angle-down group-open:rotate-180 transition-transform"></i></summary>
-                            <div class="cmp-accordion__content"><p class="tipo-p m-0">Vel illum qui dolorem eum fugiat quo voluptas nulla pariatur. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.</p></div>
+                            <summary class="hover:bg-brand-yellow text-sm sm:text-base md:text-lg">Velit esse quam nihil molestiae consequatur? <i class="fi fi-rs-angle-down group-open:rotate-180 transition-transform"></i></summary>
+                            <div class="cmp-accordion__content"><p class="tipo-p m-0 text-sm md:text-base">Vel illum qui dolorem eum fugiat quo voluptas nulla pariatur. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.</p></div>
                         </details>
                     </div>
                 </section>
 
                 <!-- 10. LP Final CTA + Footer -->
-                <section class="bg-brand-pink py-24 px-6 text-center relative overflow-hidden">
-                    <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/0b96d106a66ac430f7e8a651ee057fe62a3f1dad/Novos%20poligonos/Ativo%2014.svg" class="absolute -bottom-10 -left-10 w-48 h-48 opacity-50 mix-blend-overlay" alt="">
-                    <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/0b96d106a66ac430f7e8a651ee057fe62a3f1dad/Novos%20poligonos/Ativo%2019.svg" class="absolute top-10 right-10 w-32 h-32 opacity-80 mix-blend-overlay animate-spin-slow" alt="">
+                <section class="bg-brand-pink py-16 md:py-24 px-6 text-center relative overflow-hidden">
+                    <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/0b96d106a66ac430f7e8a651ee057fe62a3f1dad/Novos%20poligonos/Ativo%2014.svg" class="absolute -bottom-10 -left-10 w-32 h-32 md:w-48 md:h-48 opacity-50 mix-blend-overlay" alt="">
+                    <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/0b96d106a66ac430f7e8a651ee057fe62a3f1dad/Novos%20poligonos/Ativo%2019.svg" class="absolute top-10 right-10 w-24 h-24 md:w-32 md:h-32 opacity-80 mix-blend-overlay animate-spin-slow" alt="">
                     
                     <div class="max-w-3xl mx-auto relative z-10">
-                        <h2 class="tipo-h1 !text-brand-blue-dark mb-6">Deleniti Atque?</h2>
-                        <p class="tipo-p !text-brand-blue-dark font-bold text-xl mb-10">Corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi.</p>
-                        <a href="#form-lp" class="cmp-button cmp-button--yellow !text-xl !py-4 !px-10">Id Est Laborum <i class="fi fi-rs-download ml-2"></i></a>
+                        <h2 class="tipo-h1 !text-brand-blue-dark mb-4 md:mb-6 !text-4xl md:!text-5xl lg:!text-6xl">Deleniti Atque?</h2>
+                        <p class="tipo-p !text-brand-blue-dark font-bold text-base md:text-xl mb-8 md:mb-10">Corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi.</p>
+                        <a href="#form-lp" class="cmp-button cmp-button--yellow w-full sm:w-auto !text-base md:!text-xl !py-3 md:!py-4 px-6 md:!px-10">Id Est Laborum <i class="fi fi-rs-download ml-2"></i></a>
                     </div>
                 </section>
                 
-                <footer class="bg-brand-blue-dark py-12 px-8 text-center md:text-left relative z-10">
-                    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+                <footer class="bg-brand-blue-dark py-10 md:py-12 px-6 md:px-8 text-center md:text-left relative z-10">
+                    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8">
                         <div>
                             <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/logos/logo-poligono-white%201.png" alt="Lorem Ipsum" class="h-8 md:h-10 object-contain mb-4 mx-auto md:mx-0">
                             <p class="font-open text-brand-blue-light text-sm font-bold">Et dolorum fuga et harum quidem.</p>
                         </div>
                         <div class="flex gap-4">
-                            <a href="#" class="w-12 h-12 bg-white text-brand-blue-dark flex items-center justify-center text-xl hover:bg-brand-pink hover:-translate-y-1 hover:shadow-[4px_4px_0px_#ffb001] transition-all"><i class="fi fi-rs-basketball"></i></a>
-                            <a href="#" class="w-12 h-12 bg-white text-brand-blue-dark flex items-center justify-center text-xl hover:bg-brand-yellow hover:-translate-y-1 hover:shadow-[4px_4px_0px_#ff3399] transition-all"><i class="fi fi-rs-camera"></i></a>
+                            <a href="#" class="w-10 h-10 md:w-12 md:h-12 bg-white text-brand-blue-dark flex items-center justify-center text-lg md:text-xl hover:bg-brand-pink hover:-translate-y-1 hover:shadow-[4px_4px_0px_#ffb001] transition-all"><i class="fi fi-rs-basketball"></i></a>
+                            <a href="#" class="w-10 h-10 md:w-12 md:h-12 bg-white text-brand-blue-dark flex items-center justify-center text-lg md:text-xl hover:bg-brand-yellow hover:-translate-y-1 hover:shadow-[4px_4px_0px_#ff3399] transition-all"><i class="fi fi-rs-camera"></i></a>
                         </div>
-                        <p class="font-open text-brand-cream-dark text-sm opacity-60">© 2026 Lorem Ipsum.<br>Rerum facilis est et expedita.</p>
+                        <p class="font-open text-brand-cream-dark text-xs md:text-sm opacity-60">© 2026 Lorem Ipsum.<br>Rerum facilis est et expedita.</p>
                     </div>
                 </footer>
 
@@ -957,7 +1006,8 @@ h4, h4 * { font-size: 28px !important; }
                                 const w = track.parentElement.clientWidth;
                                 
                                 if (w >= 1024) visibleItems = 3;
-                                else if (w >= 768) visibleItems = 2;
+                                else if (w >= 640) visibleItems = 2; // sm breakpoint
+                                else visibleItems = 1;
                                 
                                 const maxIdx = Math.max(0, items.length - visibleItems);
                                 if (idx > maxIdx) idx = maxIdx;
@@ -985,28 +1035,28 @@ h4, h4 * { font-size: 28px !important; }
 
         <!-- TEMPLATE THANK YOU PAGE -->
         <section id="template-ty" class="ds-section !bg-transparent !border-0 !p-0 !shadow-none mt-16">
-            <div class="mb-4 bg-brand-cream-dark p-6 shadow-hard">
-                <h2 class="ds-title !border-0 !mb-0">Template: Thank You Page</h2>
+            <div class="mb-4 bg-brand-cream-dark p-4 md:p-6 shadow-none md:shadow-hard">
+                <h2 class="ds-title !border-0 !mb-0 text-3xl md:text-5xl">Template: Thank You Page</h2>
                 <p class="tipo-p mb-0">Página de conversão final (Agradecimento). Focada em entregar o material com clareza e alto contraste e manter o utilizador interessado no seu site.</p>
             </div>
 
-            <div class="shadow-[20px_20px_0px_rgba(20,20,44,1)] bg-brand-cream overflow-hidden max-w-[1440px] mx-auto w-full min-h-[75vh] flex flex-col relative">
+            <div class="shadow-none md:shadow-[20px_20px_0px_rgba(20,20,44,1)] bg-brand-cream overflow-hidden max-w-[1440px] mx-auto w-full min-h-[75vh] flex flex-col relative">
                 
                 <!-- TY Header -->
-                <header class="bg-white py-6 px-6 flex justify-center">
-                    <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/logos/logo-poligono-color%201.png" alt="Lorem Ipsum" class="h-8 md:h-10 object-contain">
+                <header class="bg-white py-4 md:py-6 px-4 md:px-6 flex justify-center">
+                    <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/logos/logo-poligono-color%201.png" alt="Lorem Ipsum" class="h-6 md:h-10 object-contain">
                 </header>
 
                 <!-- TY Content (Centro) -->
-                <section class="flex-1 flex flex-col items-center justify-center p-6 bg-[url('https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/0b96d106a66ac430f7e8a651ee057fe62a3f1dad/Novos%20poligonos/Ativo%2014.svg')] bg-[length:350px] bg-center bg-no-repeat relative">
+                <section class="flex-1 flex flex-col items-center justify-center p-4 md:p-6 bg-[url('https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/0b96d106a66ac430f7e8a651ee057fe62a3f1dad/Novos%20poligonos/Ativo%2014.svg')] bg-[length:250px] md:bg-[length:350px] bg-center bg-no-repeat relative">
                     <div class="absolute inset-0 bg-brand-cream opacity-90 z-0"></div>
                     
                     <!-- Bloco de Agradecimento Principal -->
-                    <div class="bg-white p-10 md:p-16 max-w-2xl text-center shadow-[12px_12px_0px_#34c995] relative z-10 hover:-translate-y-2 transition-transform duration-300">
-                        <i class="fi fi-rs-check-circle text-7xl text-brand-green mb-6 block drop-shadow-[2px_2px_0px_#14142c]"></i>
+                    <div class="bg-white p-8 md:p-16 max-w-2xl text-center shadow-none md:shadow-[12px_12px_0px_#34c995] relative z-10 md:hover:-translate-y-2 transition-transform duration-300 w-full mx-4 md:mx-0">
+                        <i class="fi fi-rs-check-circle text-5xl md:text-7xl text-brand-green mb-4 md:mb-6 block drop-shadow-[2px_2px_0px_#14142c]"></i>
                         
-                        <h2 class="tipo-h2 !text-brand-blue-dark !text-4xl md:!text-5xl">Distinctio!</h2>
-                        <p class="tipo-p text-lg mt-4 mb-8">Nam libero tempore, <strong>Cum Soluta Nobis 2026</strong> est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est.</p>
+                        <h2 class="tipo-h2 !text-brand-blue-dark !text-3xl sm:!text-4xl md:!text-5xl">Distinctio!</h2>
+                        <p class="tipo-p text-sm md:text-lg mt-4 mb-8">Nam libero tempore, <strong>Cum Soluta Nobis 2026</strong> est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est.</p>
                         
                         <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
                             <button class="cmp-button cmp-button--primary w-full sm:w-auto"><i class="fi fi-rs-download mr-2"></i> Omnis Dolor</button>
@@ -1016,53 +1066,53 @@ h4, h4 * { font-size: 28px !important; }
                 </section>
                 
                 <!-- TY Footer -->
-                <footer class="bg-brand-blue-dark py-6 text-center relative z-10">
-                    <p class="font-open font-bold text-brand-blue-light text-sm">Autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet.</p>
+                <footer class="bg-brand-blue-dark py-4 md:py-6 px-4 text-center relative z-10">
+                    <p class="font-open font-bold text-brand-blue-light text-xs md:text-sm">Autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet.</p>
                 </footer>
             </div>
         </section>
 
         <!-- TEMPLATE DE E-MAIL 1 (ENTREGA DE MATERIAL) -->
         <section id="template-email-1" class="ds-section !bg-transparent !border-0 !p-0 !shadow-none mt-16">
-            <div class="mb-4 bg-brand-cream-dark p-6 shadow-hard">
-                <h2 class="ds-title !border-0 !mb-0">Template: E-mail (Entrega de Isca)</h2>
+            <div class="mb-4 bg-brand-cream-dark p-4 md:p-6 shadow-none md:shadow-hard">
+                <h2 class="ds-title !border-0 !mb-0 text-3xl md:text-5xl">Template: E-mail (Entrega de Isca)</h2>
                 <p class="tipo-p mb-0">E-mail de resposta rápida (Autoresponder). Design em bloco único garantindo a mais alta taxa de clique e conversão direta.</p>
             </div>
             
             <!-- Simulador de Cliente de E-mail (Browser Wrapper) -->
-            <div class="bg-slate-200 py-10 flex justify-center font-sans max-w-[1440px] mx-auto bg-[url('https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/0b96d106a66ac430f7e8a651ee057fe62a3f1dad/Novos%20poligonos/Ativo%2014.svg')] bg-[length:250px] bg-center relative z-0">
+            <div class="bg-slate-200 py-6 md:py-10 px-4 md:px-0 flex justify-center font-sans max-w-[1440px] mx-auto bg-[url('https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/0b96d106a66ac430f7e8a651ee057fe62a3f1dad/Novos%20poligonos/Ativo%2014.svg')] bg-[length:150px] md:bg-[length:250px] bg-center relative z-0">
                 <div class="absolute inset-0 bg-slate-900/10 z-0"></div>
                 
                 <!-- Wrapper do Email (Tabela estrutural simulada via CSS inline para compatibilidade com E-mail Marketing) -->
-                <div class="bg-brand-cream w-full max-w-[600px] shadow-[16px_16px_0px_#ff3399] relative z-10" style="background-color: #fff5d2; max-width: 600px; margin: 0 auto; width: 100%;">
+                <div class="bg-brand-cream w-full max-w-[600px] shadow-none md:shadow-[16px_16px_0px_#ff3399] relative z-10" style="background-color: #fff5d2; max-width: 600px; margin: 0 auto; width: 100%;">
                     
                     <!-- Header -->
-                    <div class="bg-brand-blue-dark py-8 px-8 text-center" style="background-color: #14142c; padding: 30px; text-align: center;">
-                        <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/logos/logo-poligono-white%201.png" alt="Lorem Ipsum" style="height: 35px; margin: 0 auto; display: block;">
+                    <div class="bg-brand-blue-dark py-6 px-6 text-center" style="background-color: #14142c; padding: 20px 30px; text-align: center;">
+                        <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/logos/logo-poligono-white%201.png" alt="Lorem Ipsum" style="height: 30px; margin: 0 auto; display: block; max-width: 100%;">
                     </div>
 
                     <!-- Hero Image & Titulo -->
-                    <div class="bg-brand-blue text-center py-12 px-6 relative overflow-hidden" style="background-color: #0a00bd; text-align: center; padding: 40px 20px;">
-                        <h2 style="font-family: 'Anton', sans-serif; font-size: 40px; text-transform: uppercase; color: #ffffff; margin: 0; line-height: 1.1; letter-spacing: 1px;">Sit Amet<br><span style="color: #ff3399;">Consectetur.</span></h2>
+                    <div class="bg-brand-blue text-center py-10 px-4 relative overflow-hidden" style="background-color: #0a00bd; text-align: center; padding: 40px 20px;">
+                        <h2 style="font-family: 'Anton', sans-serif; font-size: 32px; text-transform: uppercase; color: #ffffff; margin: 0; line-height: 1.1; letter-spacing: 1px;">Sit Amet<br><span style="color: #ff3399;">Consectetur.</span></h2>
                     </div>
 
                     <!-- Corpo da Mensagem -->
-                    <div class="p-8 md:p-10" style="padding: 40px;">
-                        <p style="font-family: 'Open Sans', sans-serif; font-size: 18px; color: #14142c; line-height: 1.6; margin: 0 0 20px 0; font-weight: 700;">Ut et voluptates,</p>
-                        <p style="font-family: 'Open Sans', sans-serif; font-size: 16px; color: #14142c; line-height: 1.6; margin: 0 0 30px 0;">Repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+                    <div class="p-6 md:p-10" style="padding: 30px 20px;">
+                        <p style="font-family: 'Open Sans', sans-serif; font-size: 16px; color: #14142c; line-height: 1.6; margin: 0 0 20px 0; font-weight: 700;">Ut et voluptates,</p>
+                        <p style="font-family: 'Open Sans', sans-serif; font-size: 15px; color: #14142c; line-height: 1.6; margin: 0 0 30px 0;">Repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
                         
-                        <div style="text-align: center; margin-top: 40px; margin-bottom: 20px;">
-                            <a href="#" style="display: inline-block; padding: 16px 32px; background-color: #ff3399; color: #14142c; text-decoration: none; font-family: 'Kanit', sans-serif; font-weight: 700; font-size: 18px; text-transform: uppercase; letter-spacing: 1px;">Neque Porro Quisquam</a>
+                        <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
+                            <a href="#" style="display: block; max-width: 300px; margin: 0 auto; padding: 16px 20px; background-color: #ff3399; color: #14142c; text-decoration: none; font-family: 'Kanit', sans-serif; font-weight: 700; font-size: 16px; text-transform: uppercase; letter-spacing: 1px;">Neque Porro Quisquam</a>
                         </div>
 
-                        <p style="font-family: 'Open Sans', sans-serif; font-size: 13px; color: #666; line-height: 1.5; margin: 40px 0 0 0; text-align: center;">Est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora:<br><a href="#" style="color: #0a00bd; font-weight: bold;">https://lorem-ipsum.com/dolor-sit</a></p>
+                        <p style="font-family: 'Open Sans', sans-serif; font-size: 12px; color: #666; line-height: 1.5; margin: 30px 0 0 0; text-align: center;">Est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora:<br><a href="#" style="color: #0a00bd; font-weight: bold; word-break: break-all;">https://lorem-ipsum.com/dolor-sit</a></p>
                     </div>
 
                     <!-- Footer do E-mail -->
-                    <div class="bg-brand-blue-dark p-8 text-center" style="background-color: #14142c; padding: 30px; text-align: center;">
-                        <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/logos/logo-poligono-white%201.png" alt="Lorem Ipsum" style="height: 25px; margin: 0 auto 15px auto; display: block; opacity: 0.8;">
-                        <p style="font-family: 'Kanit', sans-serif; font-size: 16px; font-weight: 700; color: #81ceea; margin: 0 0 10px 0; text-transform: uppercase; letter-spacing: 1px;">Incidunt Ut Labore.</p>
-                        <p style="font-family: 'Open Sans', sans-serif; font-size: 12px; color: #fff5d2; margin: 0; opacity: 0.7;">© 2026 Lorem Ipsum.</p>
+                    <div class="bg-brand-blue-dark p-6 text-center" style="background-color: #14142c; padding: 25px; text-align: center;">
+                        <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/logos/logo-poligono-white%201.png" alt="Lorem Ipsum" style="height: 20px; margin: 0 auto 15px auto; display: block; opacity: 0.8; max-width: 100%;">
+                        <p style="font-family: 'Kanit', sans-serif; font-size: 14px; font-weight: 700; color: #81ceea; margin: 0 0 10px 0; text-transform: uppercase; letter-spacing: 1px;">Incidunt Ut Labore.</p>
+                        <p style="font-family: 'Open Sans', sans-serif; font-size: 11px; color: #fff5d2; margin: 0; opacity: 0.7;">© 2026 Lorem Ipsum.</p>
                     </div>
 
                 </div>
@@ -1071,65 +1121,62 @@ h4, h4 * { font-size: 28px !important; }
 
         <!-- TEMPLATE DE E-MAIL 2 (NEWSLETTER RELACIONAL) -->
         <section id="template-email-2" class="ds-section !bg-transparent !border-0 !p-0 !shadow-none mt-16">
-            <div class="mb-4 bg-brand-cream-dark p-6 shadow-hard">
-                <h2 class="ds-title !border-0 !mb-0">Template: E-mail (Newsletter)</h2>
+            <div class="mb-4 bg-brand-cream-dark p-4 md:p-6 shadow-none md:shadow-hard">
+                <h2 class="ds-title !border-0 !mb-0 text-3xl md:text-5xl">Template: E-mail (Newsletter)</h2>
                 <p class="tipo-p mb-0">E-mail relacional. Desenvolvido para manter o utilizador atualizado e engajado, funcionando como um portal ou mini-blog editorial.</p>
             </div>
             
-            <div class="bg-slate-200 py-10 flex justify-center font-sans max-w-[1440px] mx-auto">
+            <div class="bg-slate-200 py-6 md:py-10 px-4 md:px-0 flex justify-center font-sans max-w-[1440px] mx-auto">
                 <!-- Wrapper do Email -->
-                <div class="bg-white w-full max-w-[600px] shadow-[16px_16px_0px_#14142c]" style="background-color: #ffffff; box-shadow: 16px 16px 0px #14142c; max-width: 600px; margin: 0 auto; width: 100%;">
+                <div class="bg-white w-full max-w-[600px] shadow-none md:shadow-[16px_16px_0px_#14142c]" style="background-color: #ffffff; max-width: 600px; margin: 0 auto; width: 100%;">
                     
                     <!-- Header -->
-                    <div class="bg-white py-6 px-8 text-center" style="background-color: #ffffff; padding: 25px; text-align: center;">
-                        <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/logos/logo-poligono-color%201.png" alt="Lorem Ipsum" style="height: 35px; margin: 0 auto; display: block;">
+                    <div class="bg-white py-6 px-6 text-center" style="background-color: #ffffff; padding: 25px; text-align: center;">
+                        <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/logos/logo-poligono-color%201.png" alt="Lorem Ipsum" style="height: 30px; margin: 0 auto; display: block; max-width: 100%;">
                     </div>
 
                     <!-- Artigo Principal Destacado -->
-                    <div class="p-8 bg-brand-cream" style="padding: 35px; background-color: #fff5d2;">
-                        <span style="display: inline-block; background: #ffb001; color: #14142c; font-family: 'Kanit', sans-serif; font-weight: 700; font-size: 12px; padding: 4px 8px; text-transform: uppercase; margin-bottom: 15px;">Dolore Magnam</span>
-                        <h2 style="font-family: 'Anton', sans-serif; font-size: 36px; text-transform: uppercase; color: #14142c; margin: 0 0 20px 0; line-height: 1.1;">Aliquam Quaerat Voluptatem Ut Enim Ad Minima?</h2>
-                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80" alt="[Image of Schola]" style="width: 100%; height: auto; margin-bottom: 20px; display: block;">
-                        <p style="font-family: 'Open Sans', sans-serif; font-size: 16px; color: #14142c; line-height: 1.6; margin: 0 0 20px 0;">Veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil.</p>
-                        <a href="#" style="display: inline-block; padding: 12px 24px; background-color: transparent; color: #14142c; border: 2px solid #14142c; text-decoration: none; font-family: 'Kanit', sans-serif; font-weight: 700; font-size: 14px; text-transform: uppercase;">Molestiae Consequatur &rarr;</a>
+                    <div class="p-6 md:p-8 bg-brand-cream" style="padding: 30px 20px; background-color: #fff5d2;">
+                        <span style="display: inline-block; background: #ffb001; color: #14142c; font-family: 'Kanit', sans-serif; font-weight: 700; font-size: 11px; padding: 4px 8px; text-transform: uppercase; margin-bottom: 15px;">Dolore Magnam</span>
+                        <h2 style="font-family: 'Anton', sans-serif; font-size: 28px; text-transform: uppercase; color: #14142c; margin: 0 0 15px 0; line-height: 1.1;">Aliquam Quaerat Voluptatem Ut Enim Ad Minima?</h2>
+                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80" alt="" style="width: 100%; height: auto; margin-bottom: 20px; display: block;">
+                        <p style="font-family: 'Open Sans', sans-serif; font-size: 15px; color: #14142c; line-height: 1.6; margin: 0 0 20px 0;">Veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil.</p>
+                        <a href="#" style="display: inline-block; padding: 12px 20px; background-color: transparent; color: #14142c; border: 2px solid #14142c; text-decoration: none; font-family: 'Kanit', sans-serif; font-weight: 700; font-size: 13px; text-transform: uppercase;">Molestiae Consequatur &rarr;</a>
                     </div>
 
-                    <!-- Secundários (2 colunas em formato seguro/flex-fallback) -->
-                    <div class="p-8 bg-white flex flex-col md:flex-row gap-8" style="padding: 35px; background-color: #ffffff;">
-                        <!-- Mockup side-by-side div para simular a tabela do email -->
-                        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="width: 100%; border-collapse: collapse;">
-                            <tr>
-                                <!-- Coluna 1 -->
-                                <td width="48%" valign="top" style="vertical-align: top; padding-right: 2%;">
-                                    <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=300&q=80" alt="" style="width: 100%; margin-bottom: 15px; display: block;">
-                                    <h3 style="font-family: 'Kanit', sans-serif; font-size: 20px; font-weight: 700; color: #0a00bd; margin: 0 0 10px 0; line-height: 1.2; text-transform: uppercase;">Vel Illum</h3>
-                                    <p style="font-family: 'Open Sans', sans-serif; font-size: 14px; color: #14142c; margin: 0 0 15px 0;">Qui dolorem eum fugiat quo voluptas nulla pariatur. At vero eos et accusamus.</p>
-                                    <a href="#" style="display: inline-block; padding: 10px 20px; background-color: transparent; color: #14142c; border: 2px solid #14142c; text-decoration: none; font-family: 'Kanit', sans-serif; font-weight: 700; font-size: 12px; text-transform: uppercase;">Et Iusto &rarr;</a>
-                                </td>
-                                <!-- Espaço -->
-                                <td width="4%" style="width: 4%;"></td>
-                                <!-- Coluna 2 -->
-                                <td width="48%" valign="top" style="vertical-align: top; padding-left: 2%;">
-                                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=300&q=80" alt="" style="width: 100%; margin-bottom: 15px; display: block;">
-                                    <h3 style="font-family: 'Kanit', sans-serif; font-size: 20px; font-weight: 700; color: #0a00bd; margin: 0 0 10px 0; line-height: 1.2; text-transform: uppercase;">Odio Dignissimos</h3>
-                                    <p style="font-family: 'Open Sans', sans-serif; font-size: 14px; color: #14142c; margin: 0 0 15px 0;">Ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.</p>
-                                    <a href="#" style="display: inline-block; padding: 10px 20px; background-color: transparent; color: #14142c; border: 2px solid #14142c; text-decoration: none; font-family: 'Kanit', sans-serif; font-weight: 700; font-size: 12px; text-transform: uppercase;">Et Quas &rarr;</a>
-                                </td>
-                            </tr>
-                        </table>
+                    <!-- Secundários (Substituído Table rigida por Flexbox / Blocos responsivos via CSS in-line simulation) -->
+                    <!-- Simulação: Em client de email verdadeiro usariamos media queries, aqui no HTML do sistema usamos classes Tailwind para fluidez visual -->
+                    <div class="p-6 md:p-8 bg-white flex flex-col md:flex-row gap-8" style="background-color: #ffffff;">
+                        
+                        <!-- Coluna 1 -->
+                        <div class="flex-1 w-full">
+                            <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=300&q=80" alt="" style="width: 100%; margin-bottom: 15px; display: block;">
+                            <h3 style="font-family: 'Kanit', sans-serif; font-size: 18px; font-weight: 700; color: #0a00bd; margin: 0 0 10px 0; line-height: 1.2; text-transform: uppercase;">Vel Illum</h3>
+                            <p style="font-family: 'Open Sans', sans-serif; font-size: 14px; color: #14142c; margin: 0 0 15px 0;">Qui dolorem eum fugiat quo voluptas nulla pariatur. At vero eos et accusamus.</p>
+                            <a href="#" style="display: inline-block; padding: 10px 16px; background-color: transparent; color: #14142c; border: 2px solid #14142c; text-decoration: none; font-family: 'Kanit', sans-serif; font-weight: 700; font-size: 12px; text-transform: uppercase;">Et Iusto &rarr;</a>
+                        </div>
+                        
+                        <!-- Coluna 2 -->
+                        <div class="flex-1 w-full">
+                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=300&q=80" alt="" style="width: 100%; margin-bottom: 15px; display: block;">
+                            <h3 style="font-family: 'Kanit', sans-serif; font-size: 18px; font-weight: 700; color: #0a00bd; margin: 0 0 10px 0; line-height: 1.2; text-transform: uppercase;">Odio Dignissimos</h3>
+                            <p style="font-family: 'Open Sans', sans-serif; font-size: 14px; color: #14142c; margin: 0 0 15px 0;">Ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.</p>
+                            <a href="#" style="display: inline-block; padding: 10px 16px; background-color: transparent; color: #14142c; border: 2px solid #14142c; text-decoration: none; font-family: 'Kanit', sans-serif; font-weight: 700; font-size: 12px; text-transform: uppercase;">Et Quas &rarr;</a>
+                        </div>
+
                     </div>
 
                     <!-- Promo CTA Final (Bloco Forte) -->
-                    <div class="bg-brand-blue p-10 text-center relative" style="background-color: #0a00bd; padding: 40px; text-align: center;">
-                        <h2 style="font-family: 'Anton', sans-serif; font-size: 32px; text-transform: uppercase; color: #fff; margin: 0 0 15px 0; line-height: 1.1; letter-spacing: 1px;">Molestias Excepturi Sint</h2>
-                        <p style="font-family: 'Open Sans', sans-serif; font-size: 16px; color: #fff; line-height: 1.6; margin: 0 0 30px 0;">Occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-                        <a href="#" style="display: inline-block; padding: 16px 32px; background-color: #ff3399; color: #14142c; text-decoration: none; font-family: 'Kanit', sans-serif; font-weight: 700; font-size: 16px; text-transform: uppercase;">Et Harum Quidem Rerum</a>
+                    <div class="bg-brand-blue p-8 md:p-10 text-center relative" style="background-color: #0a00bd; padding: 30px 20px; text-align: center;">
+                        <h2 style="font-family: 'Anton', sans-serif; font-size: 28px; text-transform: uppercase; color: #fff; margin: 0 0 15px 0; line-height: 1.1; letter-spacing: 1px;">Molestias Excepturi Sint</h2>
+                        <p style="font-family: 'Open Sans', sans-serif; font-size: 15px; color: #fff; line-height: 1.6; margin: 0 0 25px 0;">Occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+                        <a href="#" style="display: block; max-width: 300px; margin: 0 auto; padding: 16px 20px; background-color: #ff3399; color: #14142c; text-decoration: none; font-family: 'Kanit', sans-serif; font-weight: 700; font-size: 14px; text-transform: uppercase;">Et Harum Quidem Rerum</a>
                     </div>
 
                     <!-- Footer Utilitário (Unsubscribe) -->
-                    <div class="bg-brand-cream-dark p-6 text-center" style="background-color: #f3e7d7; padding: 25px; text-align: center;">
-                        <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/logos/logo-poligono-color%201.png" alt="Lorem Ipsum" style="height: 25px; margin: 0 auto 15px auto; display: block; filter: grayscale(100%); opacity: 0.5;">
-                        <p style="font-family: 'Open Sans', sans-serif; font-size: 12px; color: #14142c; margin: 0;">Facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque. <a href="#" style="color: #ff3399; text-decoration: underline; font-weight: bold;">Nihil impedit quo minus</a>.</p>
+                    <div class="bg-brand-cream-dark p-6 text-center" style="background-color: #f3e7d7; padding: 20px; text-align: center;">
+                        <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/logos/logo-poligono-color%201.png" alt="Lorem Ipsum" style="height: 20px; margin: 0 auto 15px auto; display: block; filter: grayscale(100%); opacity: 0.5; max-width: 100%;">
+                        <p style="font-family: 'Open Sans', sans-serif; font-size: 11px; color: #14142c; margin: 0;">Facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque. <a href="#" style="color: #ff3399; text-decoration: underline; font-weight: bold;">Nihil impedit quo minus</a>.</p>
                     </div>
 
                 </div>
@@ -1138,35 +1185,35 @@ h4, h4 * { font-size: 28px !important; }
 
         <!-- TEMPLATE DE POP-UPS (OVERLAYS DE CAPTURA) -->
         <section id="template-popups" class="ds-section !bg-transparent !border-0 !p-0 !shadow-none mt-16">
-            <div class="mb-4 bg-brand-cream-dark p-6 shadow-hard">
-                <h2 class="ds-title !border-0 !mb-0">Template: Pop-ups de Conversão</h2>
+            <div class="mb-4 bg-brand-cream-dark p-4 md:p-6 shadow-none md:shadow-hard">
+                <h2 class="ds-title !border-0 !mb-0 text-3xl md:text-5xl">Template: Pop-ups de Conversão</h2>
                 <p class="tipo-p mb-0">Modelos de Overlays (Lateral para Captura de Leads e Central Focado em Aviso/Escassez) prontos para serem programados via RD Station.</p>
             </div>
             
             <div class="grid grid-cols-1 xl:grid-cols-2 gap-8 max-w-[1440px] mx-auto w-full">
                 
                 <!-- Popup 1: Modal Lateral Slide-in -->
-                <div class="bg-slate-200 p-8 flex items-center justify-center relative min-h-[650px] overflow-hidden">
+                <div class="bg-slate-200 p-4 md:p-8 flex items-center justify-center relative min-h-[100vh] md:min-h-[650px] overflow-hidden">
                     <!-- Simulação do backdrop de fundo escuro -->
                     <div class="absolute inset-0 bg-brand-blue-dark/80 z-0 backdrop-blur-sm"></div>
                     
                     <!-- O Pop-up (Alinhado/Flutuando à direita na simulação real) -->
-                    <div class="relative bg-brand-cream shadow-[16px_16px_0px_#ffb001] w-full max-w-[450px] z-10 flex flex-col md:translate-x-6 hover:-translate-y-1 transition-transform">
+                    <div class="relative bg-brand-cream shadow-none md:shadow-[16px_16px_0px_#ffb001] w-full max-w-[450px] z-10 flex flex-col md:translate-x-6 md:hover:-translate-y-1 transition-transform">
                         <!-- Botão de Fechar Expresso -->
-                        <button class="absolute -top-4 -right-4 bg-brand-pink text-brand-blue-dark font-bold w-12 h-12 flex items-center justify-center hover:bg-brand-yellow transition-colors hover:translate-y-0 text-2xl" title="Claudere">&times;</button>
+                        <button class="absolute -top-3 -right-3 md:-top-4 md:-right-4 bg-brand-pink text-brand-blue-dark font-bold w-10 h-10 md:w-12 md:h-12 flex items-center justify-center hover:bg-brand-yellow transition-colors md:hover:translate-y-0 text-xl md:text-2xl z-20" title="Claudere">&times;</button>
                         
-                        <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=600&q=80" class="w-full h-48 object-cover grayscale contrast-125" alt="[Image of Notebooks]">
+                        <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=600&q=80" class="w-full h-40 md:h-48 object-cover grayscale contrast-125" alt="[Image of Notebooks]">
                         
-                        <div class="p-8">
-                            <span class="highlight-pink text-xs font-kanit font-bold uppercase mb-2">Id Quod Maxime</span>
-                            <h3 class="tipo-h3 mt-2 !text-brand-blue-dark leading-tight">Placeat Facere Possimus Omnis Voluptas</h3>
+                        <div class="p-6 md:p-8">
+                            <span class="highlight-pink text-[10px] md:text-xs font-kanit font-bold uppercase mb-2">Id Quod Maxime</span>
+                            <h3 class="tipo-h3 mt-2 !text-brand-blue-dark leading-tight !text-2xl md:!text-3xl">Placeat Facere Possimus Omnis Voluptas</h3>
                             <p class="tipo-p text-sm mt-3 font-semibold">Assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus.</p>
                             
                             <form onsubmit="event.preventDefault();" class="space-y-4 mt-6">
                                 <div>
                                     <input type="email" class="builder-input !p-3" placeholder="Saepe eveniet ut et voluptates..." required>
                                 </div>
-                                <button type="submit" class="cmp-button cmp-button--dark w-full !text-base !py-4">
+                                <button type="submit" class="cmp-button cmp-button--dark w-full !text-sm md:!text-base !py-3 md:!py-4">
                                     Repudiandae Sint <i class="fi fi-rs-paper-plane ml-2"></i>
                                 </button>
                             </form>
@@ -1175,27 +1222,27 @@ h4, h4 * { font-size: 28px !important; }
                 </div>
 
                 <!-- Popup 2: Aviso Central Escassez -->
-                <div class="bg-slate-200 p-8 flex items-center justify-center relative min-h-[650px] overflow-hidden">
+                <div class="bg-slate-200 p-4 md:p-8 flex items-center justify-center relative min-h-[100vh] md:min-h-[650px] overflow-hidden">
                     <!-- Simulação do backdrop de fundo escuro -->
                     <div class="absolute inset-0 bg-brand-blue-dark/80 z-0 backdrop-blur-sm"></div>
                     
                     <!-- O Pop-up Central -->
-                    <div class="relative bg-white shadow-[16px_16px_0px_#ee018d] w-full max-w-[420px] z-10 p-10 text-center hover:scale-[1.02] transition-transform">
+                    <div class="relative bg-white shadow-none md:shadow-[16px_16px_0px_#ee018d] w-full max-w-[420px] z-10 p-8 md:p-10 text-center md:hover:scale-[1.02] transition-transform mx-4 md:mx-0">
                         <!-- Botão Inline Transparente de Fechar -->
-                        <button class="absolute top-4 right-5 text-brand-blue-dark font-bold text-3xl hover:text-brand-pink transition-colors bg-transparent border-none cursor-pointer" title="Claudere">&times;</button>
+                        <button class="absolute top-2 right-4 md:top-4 md:right-5 text-brand-blue-dark font-bold text-2xl md:text-3xl hover:text-brand-pink transition-colors bg-transparent border-none cursor-pointer" title="Claudere">&times;</button>
                         
                         <!-- Ícone Extravagante Destaque -->
-                        <div class="w-20 h-20 bg-brand-pink text-brand-blue-dark flex items-center justify-center text-4xl mx-auto mb-8 transition-all">
+                        <div class="w-16 h-16 md:w-20 md:h-20 bg-brand-pink text-brand-blue-dark flex items-center justify-center text-3xl md:text-4xl mx-auto mb-6 md:mb-8 transition-all">
                             <i class="fi fi-rs-bell"></i>
                         </div>
                         
-                        <h3 class="tipo-h3 !text-brand-blue-dark !text-4xl">Et Molestiae!</h3>
-                        <p class="tipo-p text-base mb-8 font-semibold text-slate-700">Non recusandae. Itaque earum <span class="text-brand-pink font-bold">rerum hic</span> tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus.</p>
+                        <h3 class="tipo-h3 !text-brand-blue-dark !text-3xl md:!text-4xl">Et Molestiae!</h3>
+                        <p class="tipo-p text-sm md:text-base mb-6 md:mb-8 font-semibold text-slate-700">Non recusandae. Itaque earum <span class="text-brand-pink font-bold">rerum hic</span> tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus.</p>
                         
-                        <button class="cmp-button cmp-button--primary w-full !text-base mb-6 !py-4">
+                        <button class="cmp-button cmp-button--primary w-full !text-sm md:!text-base mb-4 md:mb-6 !py-3 md:!py-4">
                             Asperiores Repellat
                         </button>
-                        <button class="font-kanit font-bold text-xs uppercase text-slate-400 hover:text-brand-blue-dark transition-colors bg-transparent border-none cursor-pointer underline">
+                        <button class="font-kanit font-bold text-[10px] md:text-xs uppercase text-slate-400 hover:text-brand-blue-dark transition-colors bg-transparent border-none cursor-pointer underline">
                             Neque porro quisquam est qui dolorem.
                         </button>
                     </div>
@@ -1207,12 +1254,31 @@ h4, h4 * { font-size: 28px !important; }
     </main>
 
     <!-- TOAST GERAL -->
-    <div id="toast" class="fixed bottom-5 right-5 bg-brand-blue-dark text-white font-kanit font-bold px-6 py-4 opacity-0 transition-opacity duration-300 z-50 shadow-hard-yellow pointer-events-none flex items-center gap-2 text-lg">
+    <div id="toast" class="fixed bottom-5 right-5 bg-brand-blue-dark text-white font-kanit font-bold px-6 py-4 opacity-0 transition-opacity duration-300 z-50 shadow-hard-yellow pointer-events-none flex items-center gap-2 text-sm md:text-lg">
         <i class="fi fi-rs-check-circle text-brand-pink"></i> <span id="toast-msg">Copiado!</span>
     </div>
 
     <!-- JAVASCRIPT GERAL -->
     <script>
+        // Logica Menu Mobile
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('open');
+            document.getElementById('sidebar-overlay').classList.toggle('open');
+        });
+        document.getElementById('sidebar-overlay').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.remove('open');
+            document.getElementById('sidebar-overlay').classList.remove('open');
+        });
+        // Fechar menu ao clicar em link no mobile
+        document.querySelectorAll('.ds-sidebar .nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 1024) {
+                    document.getElementById('sidebar').classList.remove('open');
+                    document.getElementById('sidebar-overlay').classList.remove('open');
+                }
+            });
+        });
+
         function showToast(msg) {
             const toast = document.getElementById('toast');
             document.getElementById('toast-msg').innerText = msg;
@@ -1328,23 +1394,23 @@ h4, h4 * { font-size: 28px !important; }
             );
 
             if (filtered.length === 0) {
-                grid.innerHTML = '<p class="col-span-full text-center font-kanit font-bold text-brand-blue-dark py-10 text-lg uppercase">Nenhum ícone encontrado.</p>';
+                grid.innerHTML = '<p class="col-span-full text-center font-kanit font-bold text-brand-blue-dark py-10 text-base md:text-lg uppercase">Nenhum ícone encontrado.</p>';
                 return;
             }
 
             filtered.forEach(icon => {
                 const card = document.createElement('div');
-                card.className = 'bg-white p-4 flex flex-col items-center justify-between hover:-translate-y-2 transition-transform shadow-[6px_6px_0px_#14142c] text-brand-blue-dark h-full';
+                card.className = 'bg-white p-3 md:p-4 flex flex-col items-center justify-between hover:-translate-y-2 transition-transform shadow-[4px_4px_0px_#14142c] md:shadow-[6px_6px_0px_#14142c] text-brand-blue-dark h-full';
                 card.innerHTML = `
                     <div class="flex flex-col items-center w-full mb-4">
-                        <i class="fi ${icon.class} text-5xl mb-4 transition-colors" style="color: ${color};"></i>
-                        <span class="font-kanit font-bold text-sm text-center truncate w-full uppercase" title="${icon.name}">${icon.name}</span>
+                        <i class="fi ${icon.class} text-4xl md:text-5xl mb-4 transition-colors" style="color: ${color};"></i>
+                        <span class="font-kanit font-bold text-[10px] md:text-sm text-center truncate w-full uppercase" title="${icon.name}">${icon.name}</span>
                     </div>
                     <div class="w-full flex flex-col gap-2">
-                        <button class="cmp-button !px-2 !py-2 !text-xs !shadow-[3px_3px_0px_#14142c] w-full" onclick="copyIconHTML('${icon.class}', '${color}')">
+                        <button class="cmp-button !px-2 !py-2 text-[10px] md:!text-xs !shadow-[3px_3px_0px_#14142c] w-full" onclick="copyIconHTML('${icon.class}', '${color}')">
                             <i class="fi fi-rs-code mr-1"></i> HTML
                         </button>
-                        <button class="cmp-button cmp-button--primary !px-2 !py-2 !text-xs !shadow-[3px_3px_0px_#14142c] w-full" onclick="downloadIconPNG('${icon.class}')">
+                        <button class="cmp-button cmp-button--primary !px-2 !py-2 text-[10px] md:!text-xs !shadow-[3px_3px_0px_#14142c] w-full" onclick="downloadIconPNG('${icon.class}')">
                             <i class="fi fi-rs-download mr-1"></i> PNG
                         </button>
                     </div>
@@ -1436,7 +1502,7 @@ h4, h4 * { font-size: 28px !important; }
             const items = builderState[builderCurrentType];
             
             items.forEach((item, idx) => {
-                let html = `<div class="bg-white p-4 relative transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_#14142c]">
+                let html = `<div class="bg-white p-4 relative transition-transform hover:-translate-y-1 md:hover:shadow-[4px_4px_0px_#14142c]">
                     <button class="absolute top-2 right-2 text-brand-pink font-bold hover:text-red-700 uppercase text-xs" onclick="builderRemoveItem(${item.id})">Remover &times;</button>
                     <p class="font-kanit font-bold text-xs uppercase mb-3 text-brand-blue-light">Item ${idx + 1}</p>
                     
@@ -1448,7 +1514,7 @@ h4, h4 * { font-size: 28px !important; }
                 `;
 
                 if(builderCurrentType === 'cards') {
-                    html += `<div class="grid grid-cols-2 gap-2 mb-2">
+                    html += `<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-2">
                         <div><label class="text-xs font-bold uppercase block mb-1">Ícone (Flaticon)</label><input type="text" class="builder-input !p-2 bg-gray-50 hover:bg-white" value="${item.icon}" onkeyup="updateBuilderItem(${item.id}, 'icon', this.value)"></div>
                         <div><label class="text-xs font-bold uppercase block mb-1">Cor</label>
                             <select class="builder-input !p-2 bg-gray-50 hover:bg-white" onchange="updateBuilderItem(${item.id}, 'color', this.value)">
@@ -1459,7 +1525,7 @@ h4, h4 * { font-size: 28px !important; }
                     <div class="p-2 border border-dashed border-gray-300 bg-gray-50 mt-2">
                         <label class="text-xs font-bold uppercase block mb-1">Texto CTA (Vazio oculta)</label>
                         <input type="text" class="builder-input !p-2 mb-2 bg-white" value="${item.btnText}" onkeyup="updateBuilderItem(${item.id}, 'btnText', this.value)">
-                        <div class="grid grid-cols-2 gap-2">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
                             <div><label class="text-xs font-bold block">URL</label><input type="text" class="builder-input !p-2 bg-white" value="${item.btnUrl}" onkeyup="updateBuilderItem(${item.id}, 'btnUrl', this.value)"></div>
                             <div><label class="text-xs font-bold block">Alvo</label><select class="builder-input !p-2 bg-white" onchange="updateBuilderItem(${item.id}, 'btnTarget', this.value)"><option value="_blank" ${item.btnTarget === '_blank'?'selected':''}>Nova Aba</option><option value="_self" ${item.btnTarget === '_self'?'selected':''}>Mesma Aba</option></select></div>
                         </div>
@@ -1501,6 +1567,20 @@ h4, h4 * { font-size: 28px !important; }
 #${uid} * { box-sizing: border-box; }
 #${uid} h3, #${uid} h4 { font-family: 'Kanit', sans-serif; font-weight: 700; text-transform: uppercase; margin: 0 0 10px 0; color: #14142c; }
 #${uid} p { font-size: 16px; color: #14142C; line-height: 1.6; margin: 0; }
+
+@media(max-width: 767px) {
+    #${uid} h3 { font-size: 24px !important; }
+    #${uid} .plg-card { padding: 20px !important; }
+    #${uid} .plg-tab-pane { padding: 20px !important; }
+    #${uid} .plg-tabs-nav { gap: 4px !important; padding-bottom: 4px !important; }
+    #${uid} .plg-tab-btn { min-width: 120px !important; padding: 12px 16px !important; font-size: 14px !important; }
+    #${uid} .plg-car-wrap { padding: 20px !important; }
+    #${uid} summary { font-size: 16px !important; padding: 16px !important; }
+    #${uid} .plg-acc-content { padding: 16px !important; }
+    #${uid} .plg-car-item h3 { font-size: 28px !important; }
+    #${uid} .plg-tab-content h3 { font-size: 24px !important; }
+    #${uid} .plg-tab-grid { display: flex; flex-direction: column; gap: 16px !important; }
+}
 `;
             let html = '';
             let js = '';
@@ -1512,7 +1592,8 @@ h4, h4 * { font-size: 28px !important; }
 #${uid} .plg-card:hover { transform: translate(-4px, -4px); box-shadow: 12px 12px 0px var(--hover-color, #14142C); }
 #${uid} .plg-card-icon { font-size: 40px; margin-bottom: 16px; display: block; }
 #${uid} .plg-card-desc { flex-grow: 1; margin-bottom: 24px; }
-#${uid} .plg-card-btn { display: inline-block; padding: 16px 32px; font-family: 'Kanit', sans-serif; font-weight: 700; text-transform: uppercase; text-decoration: none; text-align: center; color: #14142C; transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1); border: 2px solid transparent; box-shadow: none; }
+#${uid} .plg-card-btn { display: inline-block; padding: 16px 32px; font-family: 'Kanit', sans-serif; font-weight: 700; text-transform: uppercase; text-decoration: none; text-align: center; color: #14142C; transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1); border: 2px solid transparent; box-shadow: none; width: 100%;}
+@media(min-width: 768px) { #${uid} .plg-card-btn { width: auto; } }
 #${uid} .plg-card-btn:hover { transform: translate(-4px, -4px); box-shadow: 6px 6px 0px #14142C; }
 `;
                 html = `<div id="${uid}"><div class="plg-cards-grid">` + items.map(i => {
@@ -1603,7 +1684,7 @@ ${'<'}/script>`;
 #${uid} .plg-car-item { flex: 0 0 100%; min-width: 100%; text-align: center; padding: 0 20px;}
 #${uid} .plg-car-item h3 { font-size: 40px; margin-bottom: 16px; line-height: 1.1; }
 #${uid} .plg-car-item p { font-size: 18px; }
-#${uid} .plg-car-controls { display: flex; justify-content: center; align-items: center; gap: 20px; margin-top: 32px; }
+#${uid} .plg-car-controls { display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 32px; flex-wrap: wrap; }
 #${uid} .plg-car-btn { background: #f3e7d7; color: #14142C; border: none; width: 48px; height: 48px; cursor: pointer; font-size: 20px; transition: 0.2s cubic-bezier(0.25, 0.8, 0.25, 1); font-family: 'Kanit', sans-serif; display: flex; align-items: center; justify-content: center;}
 #${uid} .plg-car-btn:hover { background: #ff3399; color: #fff; transform: translate(-4px, -4px); box-shadow: 6px 6px 0px #14142C; }
 #${uid} .plg-car-bullets { display: flex; gap: 12px; }
