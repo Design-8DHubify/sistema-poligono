@@ -18,7 +18,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Kanit:ital,wght@0,400;0,600;0,700;1,400&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
     <!-- Uicons (Flaticon) -->
-    <style>@import url('https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-straight/css/uicons-regular-straight.css');</style>
+    <style>
+        @import url('https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-straight/css/uicons-regular-straight.css');
+        @import url('https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-straight/css/uicons-solid-straight.css');
+    </style>
 
     <script>
         tailwind.config = {
@@ -42,9 +45,9 @@
                             'orange-dark': '#e05f01',
                             yellow: '#ffb001',
                             'yellow-light': '#ffc552',
-                            'cream-light': '#fff5e6',
-                            cream: '#fff5d2',
-                            'cream-dark': '#f3e7d7',
+                            'cream-light': '#fffbf5',
+                            cream: '#fff5e6',
+                            'cream-dark': '#fff5d2',
                         }
                     },
                     fontFamily: {
@@ -85,9 +88,9 @@
             --color-orange-dark: #e05f01;
             --color-yellow: #ffb001;
             --color-yellow-light: #ffc552;
-            --color-cream-light: #fff5e6;
-            --color-cream: #fff5d2;
-            --color-cream-dark: #f3e7d7;
+            --color-cream-light: #fffbf5;
+            --color-cream: #fff5e6;
+            --color-cream-dark: #fff5d2;
             
             /* Tipografia */
             --font-anton: 'Anton', sans-serif;
@@ -98,7 +101,7 @@
         }
 
         /* Reset e Fundos Respiro */
-        body { background-color: var(--color-cream); color: var(--color-blue-dark); font-family: var(--font-open); overflow-x: hidden; }
+        body { background-color: #ffffff; color: var(--color-blue-dark); font-family: var(--font-open); overflow-x: hidden; }
         .poligono-app { font-family: var(--font-open); line-height: 1.6; }
 
         /* --- NOVA TIPOGRAFIA EDITORIAL RESPONSIVA --- */
@@ -151,8 +154,8 @@
         .cmp-button:disabled { opacity: 0.5; cursor: not-allowed; box-shadow: none !important; transform: none !important; }
         
         /* Primário: Preenchido, no hover muda de cor e adiciona sombra dura */
-        .cmp-button--primary { background-color: var(--color-pink); color: var(--color-blue-dark); }
-        .cmp-button--primary:not(:disabled):hover { background-color: var(--color-yellow); transform: translate(-4px, -4px); box-shadow: 6px 6px 0px var(--color-blue-dark); }
+        .cmp-button--primary { background-color: var(--color-pink); color: #ffffff; }
+        .cmp-button--primary:not(:disabled):hover { background-color: var(--color-yellow); color: var(--color-blue-dark); transform: translate(-4px, -4px); box-shadow: 6px 6px 0px var(--color-blue-dark); }
 
         /* Secundário: Apenas contorno, no hover SÓ adiciona sombra dura */
         .cmp-button--secondary { background-color: transparent; color: var(--color-blue-dark); border-color: var(--color-blue-dark); }
@@ -164,7 +167,7 @@
         
         /* Variantes de Primário para Templates (Dark e Yellow) */
         .cmp-button--dark { background-color: var(--color-blue-dark); color: var(--color-cream); border-color: transparent; }
-        .cmp-button--dark:not(:disabled):hover { background-color: var(--color-pink); color: var(--color-blue-dark); transform: translate(-4px, -4px); box-shadow: 6px 6px 0px var(--color-blue-dark); }
+        .cmp-button--dark:not(:disabled):hover { background-color: var(--color-pink); color: #ffffff; transform: translate(-4px, -4px); box-shadow: 6px 6px 0px var(--color-blue-dark); }
 
         .cmp-button--yellow { background-color: var(--color-yellow); color: var(--color-blue-dark); border-color: transparent; }
         .cmp-button--yellow:not(:disabled):hover { background-color: var(--color-blue-dark); color: var(--color-yellow); transform: translate(-4px, -4px); box-shadow: 6px 6px 0px var(--color-blue-dark); }
@@ -186,7 +189,7 @@
 
         /* --- UI BASE: BADGES E ALERTAS --- */
         .cmp-badge { display: inline-block; font-family: var(--font-kanit); font-weight: 700; text-transform: uppercase; font-size: 0.75rem; padding: 0.25rem 0.75rem; border: none; box-shadow: none; background: #fff; }
-        .cmp-badge--pink { background: var(--color-pink); color: var(--color-blue-dark); }
+        .cmp-badge--pink { background: var(--color-pink); color: #ffffff; }
         .cmp-badge--yellow { background: var(--color-yellow); color: var(--color-blue-dark); }
         .cmp-badge--green { background: var(--color-green); color: var(--color-blue-dark); }
 
@@ -225,7 +228,7 @@
             .ds-main { margin-left: 280px; padding: 3rem; width: calc(100% - 280px); } 
         }
         
-        .ds-section { margin-bottom: 3rem; background: var(--color-cream-dark); padding: 1.5rem; border: none; box-shadow: none; position: relative; overflow: hidden;}
+        .ds-section { margin-bottom: 3rem; background: #fff5e6; padding: 1.5rem; border: none; box-shadow: none; position: relative; overflow: hidden;}
         @media (min-width: 768px) { .ds-section { margin-bottom: 4rem; padding: 2.5rem; } }
 
         .ds-title { font-family: var(--font-anton); font-size: 2.5rem; text-transform: uppercase; color: var(--color-blue-dark); margin-bottom: 0.5rem; border-bottom: none; padding-bottom: 0.5rem; }
@@ -241,7 +244,7 @@
         .builder-input:focus { box-shadow: 4px 4px 0px var(--color-pink); transform: translate(-2px, -2px); }
 
         /* Efeitos Editoriais (Overlays) */
-        .highlight-pink { background-color: var(--color-pink); color: var(--color-blue-dark); padding: 0 0.5rem; display: inline-block; transform: skew(-5deg); }
+        .highlight-pink { background-color: var(--color-pink); color: #ffffff; padding: 0 0.5rem; display: inline-block; transform: skew(-5deg); }
         .highlight-yellow { background-color: var(--color-yellow); color: var(--color-blue-dark); padding: 0 0.5rem; display: inline-block; transform: skew(5deg); }
 
         /* Overlay do Menu Mobile */
@@ -250,7 +253,7 @@
         @media(min-width: 1024px) { .sidebar-overlay { display: none !important; } }
     </style>
 </head>
-<body class="flex bg-brand-cream">
+<body class="flex bg-white">
 
     <!-- MOBILE HEADER TOGLE -->
     <header class="lg:hidden fixed top-0 w-full bg-brand-blue-dark border-b-2 border-brand-pink z-[60] px-4 py-3 flex justify-between items-center shadow-md">
@@ -302,7 +305,8 @@
             <h2 class="ds-title">Paleta Cromática</h2>
             <p class="tipo-p">A regra de ouro: combinar 1 cor principal + 1 secundária de contraste. O "Cream" é usado apenas como respiro.</p>
 
-            <h3 class="tipo-h4 mt-8 mb-4 border-b-2 border-brand-cream-dark pb-2">Cores Principais (Fundos e Destaques)</h3>
+            <h3 class="tipo-h4 mt-8 mb-6">Cores Principais (Destaques)</h3>
+            <p class="tipo-p mb-6">Uso em: títulos, caixas, molduras, detalhes e elementos de destaque. Evitar uso como fundo predominante.</p>
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
                 <div><div class="color-swatch bg-[#0a00bd]" onclick="copyColor('#0a00bd')"></div><p class="font-kanit font-bold mt-2 text-sm uppercase">Azul Polígono<br><span class="text-xs text-slate-500">#0A00BD</span></p></div>
                 <div><div class="color-swatch bg-[#34c995]" onclick="copyColor('#34c995')"></div><p class="font-kanit font-bold mt-2 text-sm uppercase">Verde Principal<br><span class="text-xs text-slate-500">#34C995</span></p></div>
@@ -310,7 +314,7 @@
                 <div><div class="color-swatch bg-[#ffb001]" onclick="copyColor('#ffb001')"></div><p class="font-kanit font-bold mt-2 text-sm uppercase">Amarelo Polígono<br><span class="text-xs text-slate-500">#FFB001</span></p></div>
             </div>
 
-            <h3 class="tipo-h4 mt-8 mb-4 border-b-2 border-brand-cream-dark pb-2">Cores Secundárias (Variações e Apoio)</h3>
+            <h3 class="tipo-h4 mt-8 mb-6">Cores Secundárias (Variações e Apoio)</h3>
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
                 <div><div class="color-swatch bg-[#14142c]" onclick="copyColor('#14142c')"></div><p class="font-kanit font-bold mt-2 text-sm uppercase">Azul Dark<br><span class="text-xs text-slate-500">#14142C</span></p></div>
                 <div><div class="color-swatch bg-[#039951]" onclick="copyColor('#039951')"></div><p class="font-kanit font-bold mt-2 text-sm uppercase">Verde Escuro<br><span class="text-xs text-slate-500">#039951</span></p></div>
@@ -326,18 +330,30 @@
                 <div><div class="color-swatch bg-[#ffc552]" onclick="copyColor('#ffc552')"></div><p class="font-kanit font-bold mt-2 text-sm uppercase">Amarelo Claro<br><span class="text-xs text-slate-500">#FFC552</span></p></div>
             </div>
 
-            <h3 class="tipo-h4 mt-8 mb-4 border-b-2 border-brand-cream-dark pb-2">Cores Neutras (Respiros)</h3>
+            <h3 class="tipo-h4 mt-8 mb-6">Cores Neutras (Fundos e respiros)</h3>
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <div><div class="color-swatch bg-[#fff5e6]" onclick="copyColor('#fff5e6')"></div><p class="font-kanit font-bold mt-2 text-sm uppercase">Cream Light<br><span class="text-xs text-slate-500">#FFF5E6</span></p></div>
-                <div><div class="color-swatch bg-[#fff5d2]" onclick="copyColor('#fff5d2')"></div><p class="font-kanit font-bold mt-2 text-sm uppercase">Cream Base<br><span class="text-xs text-slate-500">#FFF5D2</span></p></div>
-                <div><div class="color-swatch bg-[#f3e7d7]" onclick="copyColor('#f3e7d7')"></div><p class="font-kanit font-bold mt-2 text-sm uppercase">Cream Dark<br><span class="text-xs text-slate-500">#F3E7D7</span></p></div>
+                <div><div class="color-swatch bg-[#fffbf5]" onclick="copyColor('#fffbf5')"></div><p class="font-kanit font-bold mt-2 text-sm uppercase">Cream Light<br><span class="text-xs text-slate-500">#FFFBF5</span></p></div>
+                <div><div class="color-swatch bg-[#fff5e6]" onclick="copyColor('#fff5e6')"></div><p class="font-kanit font-bold mt-2 text-sm uppercase">Cream Base<br><span class="text-xs text-slate-500">#FFF5E6</span></p></div>
+                <div><div class="color-swatch bg-[#fff5d2]" onclick="copyColor('#fff5d2')"></div><p class="font-kanit font-bold mt-2 text-sm uppercase">Cream Dark<br><span class="text-xs text-slate-500">#FFF5D2</span></p></div>
+            </div>
+
+            <div class="mt-8 bg-white p-6 border-l-[8px] border-brand-pink">
+                <p class="font-kanit font-bold !text-brand-pink uppercase tracking-widest text-sm mb-4">OBSERVAÇÕES IMPORTANTES</p>
+                <p class="tipo-p mb-1 font-bold text-base">Evitar:</p>
+                <ul class="list-disc pl-5 font-open text-brand-blue-dark mb-4 space-y-1 text-base">
+                    <li>Preto sobre amarelo ou rosa</li>
+                    <li>Rosa no azul</li>
+                    <li>Azul no rosa</li>
+                    <li>Branco sobre amarelo em textos pequenos.</li>
+                </ul>
+                <p class="tipo-p font-bold m-0 text-base">Sempre avaliar contraste e leitura antes da aplicação das cores.</p>
             </div>
         </section>
 
         <!-- TIPOGRAFIA -->
         <section id="tipografia" class="ds-section poligono-app">
             <h2 class="ds-title">Tipografia</h2>
-            <p class="tipo-p mb-8">Uso obrigatório de <strong>Anton</strong> para manchetes e <strong>Kanit</strong> para subtítulos. O corpo do texto mantém <strong>Open Sans</strong> para legibilidade.</p>
+            <p class="tipo-p mb-8">Uso obrigatório de <strong>Anton</strong> para manchetes e <strong>Kanit</strong> para subtítulos. O corpo do texto mantém <strong>Open Sans</strong> para legibilidade. Não utilizar texto inclinado, itálico ou em diagonal.</p>
 
             <div class="overflow-x-auto bg-brand-cream shadow-sm">
                 <table class="w-full text-left border-collapse min-w-[600px]">
@@ -400,9 +416,9 @@
         <!-- GRAFISMOS E ATIVOS SVG -->
         <section id="grafismos" class="ds-section poligono-app">
             <h2 class="ds-title">Elementos Gráficos</h2>
-            <p class="tipo-p">Polígonos com *smileys*, *starbursts* e recortes geométricos substituem a rigidez matemática antiga. Use como colagens absolutas nas seções.</p>
+            <p class="tipo-p"><em>Starbursts</em> e recortes geométricos para serem usados como elementos de apoio. Polígonos e quadrados com <em>smileys</em> têm o uso extremamente controlado, veja as observações.</p>
 
-            <h3 class="tipo-h4 mt-8 mb-4 border-b-2 border-brand-cream-dark pb-2">Galeria de Ativos (Copie a URL)</h3>
+            <h3 class="tipo-h4 mt-8 mb-6">Galeria de Ativos (Copie a URL)</h3>
             <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4 mb-10">
                 <!-- Gerando blocos para os 27 SVGs com a base de URL correta (raw) -->
                 <script>
@@ -418,6 +434,21 @@
                     }
                 </script>
             </div>
+            
+            <div class="mt-8 bg-white p-6 border-l-[8px] border-brand-blue">
+                <p class="font-kanit font-bold !text-brand-blue uppercase tracking-widest text-sm mb-4">REGRAS DE USO DOS SMILEYS</p>
+                <ul class="list-disc pl-5 font-open text-brand-blue-dark mb-4 space-y-1 text-base">
+                    <li>Sempre pequenos</li>
+                    <li>Próximos ao texto</li>
+                    <li>Nunca como elemento principal</li>
+                </ul>
+                <p class="tipo-p mb-1 font-bold text-base">Evitar:</p>
+                <ul class="list-disc pl-5 font-open text-brand-blue-dark space-y-1 text-base">
+                    <li>Uso em landing pages como destaque</li>
+                    <li>Escala grande e/ou com pouca opacidade</li>
+                    <li>Uso isolado</li>
+                </ul>
+            </div>
         </section>
 
         <!-- GALERIA DE ÍCONES (UICONS) -->
@@ -426,7 +457,7 @@
             <p class="tipo-p mb-8">Biblioteca Uicons integrada. Altere a cor, pesquise, copie o HTML para uso web ou descarregue em PNG no tamanho exato para as suas artes.</p>
 
             <div class="bg-brand-cream-dark p-4 md:p-6 shadow-none md:shadow-[8px_8px_0px_#14142c] mb-12">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                     <!-- Search -->
                     <div>
                         <label class="font-kanit font-bold text-brand-blue-dark uppercase text-sm mb-2 block">Pesquisar Ícone</label>
@@ -448,6 +479,14 @@
                         <label class="font-kanit font-bold text-brand-blue-dark uppercase text-sm mb-2 block">Tamanho PNG (px)</label>
                         <input type="number" id="icon-size" class="builder-input" value="512" min="32" max="2048">
                     </div>
+                    <!-- Style Toggle -->
+                    <div>
+                        <label class="font-kanit font-bold text-brand-blue-dark uppercase text-sm mb-2 block">Estilo</label>
+                        <select id="icon-style" class="builder-input font-bold text-brand-blue-dark !pr-10 cursor-pointer" onchange="syncIconStyle()">
+                            <option value="rs">Outline (Linhas)</option>
+                            <option value="ss">Solid (Preenchidos)</option>
+                        </select>
+                    </div>
                 </div>
             </div>
 
@@ -466,6 +505,24 @@
         <section id="componentes" class="ds-section poligono-app">
             <h2 class="ds-title">Componentes UI Base</h2>
             <p class="tipo-p mb-8 md:mb-10">Biblioteca estática de componentes para uso geral na interface com interações limpas e perfeitamente responsivas.</p>
+
+            <!-- Headers (Navegação) -->
+            <div class="mb-12 pb-8">
+                <h3 class="tipo-h4">Headers (Navegação)</h3>
+                <div class="flex flex-col gap-6 mt-4">
+                    <!-- Dark Header -->
+                    <header class="bg-brand-blue-dark py-4 px-4 md:px-6 flex justify-between items-center shadow-sm">
+                        <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/logos/logo-poligono-white%201.png" alt="Polígono" class="h-6 md:h-10 object-contain">
+                        <a href="#" class="cmp-button cmp-button--primary !py-2 !px-4 !text-sm hidden sm:flex">Phasellus</a>
+                    </header>
+                    
+                    <!-- Light Header -->
+                    <header class="bg-brand-cream-dark py-4 px-4 md:px-6 flex justify-between items-center shadow-sm">
+                        <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/logos/logo-poligono-color%201.png" alt="Polígono" class="h-6 md:h-10 object-contain">
+                        <a href="#" class="cmp-button cmp-button--primary !py-2 !px-4 !text-sm hidden sm:flex">Phasellus</a>
+                    </header>
+                </div>
+            </div>
 
             <!-- Botões -->
             <div class="mb-12 pb-8">
@@ -551,8 +608,8 @@
                 <div class="cmp-card-media bg-brand-pink">
                     <div class="cmp-card-media__hdr">
                         <i class="fi fi-rs-rocket text-4xl md:text-5xl text-brand-blue-dark mb-4 block"></i>
-                        <h4 class="tipo-h4 !text-brand-blue-dark">Sint Occaecat</h4>
-                        <p class="tipo-p !text-brand-blue-dark font-bold text-sm md:text-base">Cupidatat non proident, sunt in culpa qui officia deserunt.</p>
+                        <h4 class="tipo-h4 !text-white">Sint Occaecat</h4>
+                        <p class="tipo-p !text-white font-bold text-sm md:text-base">Cupidatat non proident, sunt in culpa qui officia deserunt.</p>
                     </div>
                 </div>
                 <div class="cmp-card-media bg-brand-yellow">
@@ -644,13 +701,13 @@ h4, h4 * { font-size: 28px !important; }
 /* Botões Nativos RD (Padrão Primário Responsivo) */
 .rd-button {
     font-family: "Kanit", sans-serif !important; font-weight: 700 !important; text-transform: uppercase !important;
-    padding: 16px 32px !important; background-color: #FF3399 !important; color: #14142C !important;
+    padding: 16px 32px !important; background-color: #FF3399 !important; color: #ffffff !important;
     border: 2px solid transparent !important; border-radius: 0px !important; box-shadow: none !important;
     transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
     width: 100% !important; /* Full width em mobile por default */
 }
 @media(min-width: 768px) { .rd-button { width: auto !important; } }
-.rd-button:hover { background-color: #FFB001 !important; transform: translate(-4px, -4px) !important; box-shadow: 6px 6px 0px #14142C !important; }
+.rd-button:hover { background-color: #FFB001 !important; color: #14142C !important; transform: translate(-4px, -4px) !important; box-shadow: 6px 6px 0px #14142C !important; }
 
 /* Correções Mobile Nativas */
 @media(max-width: 767px) {
@@ -721,16 +778,17 @@ h4, h4 * { font-size: 28px !important; }
                 </header>
 
                 <!-- 2. LP Hero com Formulário -->
-                <section class="bg-brand-blue py-12 md:py-24 px-6 relative overflow-hidden">
-                    <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/0b96d106a66ac430f7e8a651ee057fe62a3f1dad/Novos%20poligonos/Ativo%2014.svg" class="absolute -top-10 left-10 w-32 h-32 md:w-48 md:h-48 opacity-30 animate-pulse hidden sm:block" alt="">
-                    <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/0b96d106a66ac430f7e8a651ee057fe62a3f1dad/Novos%20poligonos/Ativo%2022.svg" class="absolute bottom-10 right-0 w-48 h-48 md:w-64 md:h-64 opacity-80 z-0 hidden lg:block" alt="">
+                <section class="bg-brand-cream py-12 md:py-24 px-6 relative overflow-hidden">
                     
+                    <!-- Starburst de Fundo (Ativo 17 - Amarelo) -->
+                    <div class="absolute -bottom-16 -right-16 md:-bottom-32 md:-right-32 w-64 h-64 md:w-[500px] md:h-[500px] z-0 bg-brand-yellow hidden md:block" style="-webkit-mask-image: url('https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/Novos%20poligonos/Ativo%2017.svg'); -webkit-mask-size: contain; -webkit-mask-position: center; -webkit-mask-repeat: no-repeat; mask-image: url('https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/Novos%20poligonos/Ativo%2017.svg'); mask-size: contain; mask-position: center; mask-repeat: no-repeat;"></div>
+
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10 max-w-6xl mx-auto">
                         <div class="text-center lg:text-left">
-                            <span class="highlight-yellow text-xs md:text-sm font-kanit font-bold uppercase mb-4 inline-block">Lorem Ipsum Dolor</span>
-                            <h1 class="tipo-h1 !text-white !text-4xl sm:!text-5xl lg:!text-6xl xl:!text-7xl mt-4">Consectetur<br>Adipiscing <span class="text-brand-pink">Elit</span> Sit.</h1>
-                            <p class="tipo-p text-brand-blue-ice !text-lg md:!text-xl mt-6 font-bold">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                            <ul class="mt-8 space-y-4 text-white font-open font-semibold text-left mx-auto max-w-md lg:mx-0">
+                            <span class="bg-brand-yellow text-brand-blue-dark px-2 text-xs md:text-sm font-kanit font-bold uppercase mb-4 inline-block">Lorem Ipsum Dolor</span>
+                            <h1 class="tipo-h1 !text-brand-blue !text-4xl sm:!text-5xl lg:!text-6xl xl:!text-7xl mt-4">Consectetur<br>Adipiscing <span class="text-brand-pink">Elit</span> Sit.</h1>
+                            <p class="tipo-p !text-brand-blue-dark !text-lg md:!text-xl mt-6 font-bold">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                            <ul class="mt-8 space-y-4 text-brand-blue-dark font-open font-semibold text-left mx-auto max-w-md lg:mx-0">
                                 <li class="flex items-start gap-3"><i class="fi fi-rs-check-circle text-brand-green text-xl shrink-0 mt-1"></i> Quis nostrud exercitation ullamco</li>
                                 <li class="flex items-start gap-3"><i class="fi fi-rs-check-circle text-brand-green text-xl shrink-0 mt-1"></i> Laboris nisi ut aliquip ex ea</li>
                                 <li class="flex items-start gap-3"><i class="fi fi-rs-check-circle text-brand-green text-xl shrink-0 mt-1"></i> Duis aute irure dolor in reprehenderit</li>
@@ -738,20 +796,20 @@ h4, h4 * { font-size: 28px !important; }
                         </div>
                         
                         <!-- Form Area -->
-                        <div id="form-lp" class="bg-brand-cream p-6 md:p-8 shadow-none md:shadow-[12px_12px_0px_#ff3399]">
-                            <h3 class="tipo-h3 !text-brand-blue-dark mb-6 text-center !text-2xl md:!text-3xl">Aenean Faucibus</h3>
+                        <div id="form-lp" class="bg-brand-blue p-6 md:p-8 shadow-none md:shadow-[12px_12px_0px_#ff3399]">
+                            <h3 class="tipo-h3 !text-white mb-6 text-center !text-2xl md:!text-3xl">Aenean Faucibus</h3>
                             <form onsubmit="event.preventDefault(); alert('Lorem Ipsum Dolor Sit Amet!');" class="space-y-4 text-left">
                                 <div>
-                                    <label class="font-kanit font-bold text-sm uppercase text-brand-blue-dark mb-1 block">Lorem Ipsum</label>
+                                    <label class="font-kanit font-bold text-sm uppercase text-white mb-1 block">Lorem Ipsum</label>
                                     <input type="text" class="builder-input w-full" placeholder="Dolor sit amet" required>
                                 </div>
                                 <div>
-                                    <label class="font-kanit font-bold text-sm uppercase text-brand-blue-dark mb-1 block">Consectetur Adipiscing</label>
+                                    <label class="font-kanit font-bold text-sm uppercase text-white mb-1 block">Consectetur Adipiscing</label>
                                     <input type="email" class="builder-input w-full" placeholder="Elit sed do" required>
                                 </div>
                                 <div>
-                                    <label class="font-kanit font-bold text-sm uppercase text-brand-blue-dark mb-1 block">Tempor Incididunt</label>
-                                    <select class="builder-input bg-white w-full" required>
+                                    <label class="font-kanit font-bold text-sm uppercase text-white mb-1 block">Tempor Incididunt</label>
+                                    <select class="builder-input bg-white w-full text-brand-blue-dark" required>
                                         <option value="">Labore et dolore</option>
                                         <option>Magna aliqua</option>
                                         <option>Ut enim ad</option>
@@ -761,40 +819,56 @@ h4, h4 * { font-size: 28px !important; }
                                 <button type="submit" class="cmp-button cmp-button--primary w-full !text-base md:!text-lg mt-4">
                                     Quis Nostrud <i class="fi fi-rs-download ml-2"></i>
                                 </button>
-                                <p class="text-xs font-open text-center mt-4 text-brand-blue-dark">Exercitation ullamco laboris nisi ut aliquip ex ea commodo <a href="#" class="font-bold underline text-brand-pink">Consequat</a>.</p>
+                                <p class="text-xs font-open text-center mt-4 text-white">Exercitation ullamco laboris nisi ut aliquip ex ea commodo <a href="#" class="font-bold underline text-brand-yellow hover:text-brand-pink transition-colors">Consequat</a>.</p>
                             </form>
                         </div>
                     </div>
                 </section>
 
                 <!-- 3. Social Proof (Logos) -->
-                <section class="py-10 md:py-16 bg-white relative z-10">
+                <section class="py-10 md:py-16 bg-brand-pink relative z-10">
                     <div class="max-w-6xl mx-auto px-6 text-center">
-                        <p class="font-kanit font-bold text-slate-400 uppercase tracking-widest text-xs md:text-sm mb-6 md:mb-8">Duis aute irure dolor in reprehenderit in voluptate</p>
-                        <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-40 grayscale">
-                            <i class="fi fi-rs-school text-4xl md:text-5xl"></i>
-                            <i class="fi fi-rs-building text-4xl md:text-5xl"></i>
-                            <i class="fi fi-rs-book-alt text-4xl md:text-5xl"></i>
-                            <i class="fi fi-rs-globe text-4xl md:text-5xl"></i>
-                            <i class="fi fi-rs-microscope text-4xl md:text-5xl"></i>
+                        <div class="bg-brand-cream-light p-8 md:p-12 shadow-[6px_6px_0px_#14142c]">
+                            <p class="font-kanit font-bold text-brand-blue-dark uppercase tracking-widest text-xs md:text-sm mb-8 md:mb-10">Duis aute irure dolor in reprehenderit in voluptate</p>
+                            <div class="flex flex-wrap justify-center items-start gap-8 md:gap-12">
+                                <div class="flex flex-col items-center">
+                                    <i class="fi fi-ss-school text-4xl md:text-5xl text-brand-blue"></i>
+                                    <p class="font-kanit font-bold text-brand-blue-dark text-xs uppercase mt-3 tracking-widest">Scola</p>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <i class="fi fi-ss-building text-4xl md:text-5xl text-brand-blue"></i>
+                                    <p class="font-kanit font-bold text-brand-blue-dark text-xs uppercase mt-3 tracking-widest">Aedificium</p>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <i class="fi fi-ss-book-alt text-4xl md:text-5xl text-brand-blue"></i>
+                                    <p class="font-kanit font-bold text-brand-blue-dark text-xs uppercase mt-3 tracking-widest">Liber</p>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <i class="fi fi-ss-globe text-4xl md:text-5xl text-brand-blue"></i>
+                                    <p class="font-kanit font-bold text-brand-blue-dark text-xs uppercase mt-3 tracking-widest">Mundus</p>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <i class="fi fi-ss-microscope text-4xl md:text-5xl text-brand-blue"></i>
+                                    <p class="font-kanit font-bold text-brand-blue-dark text-xs uppercase mt-3 tracking-widest">Scientia</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
 
                 <!-- 4. Problema / Colagem Editorial -->
-                <section class="py-12 md:py-24 bg-brand-cream relative overflow-hidden">
-                    <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/0b96d106a66ac430f7e8a651ee057fe62a3f1dad/Novos%20poligonos/Ativo%208.svg" class="absolute top-20 right-20 w-32 h-32 hidden lg:block animate-pulse" style="animation-duration: 3s;" alt="">
+                <section class="py-12 md:py-24 bg-white relative overflow-hidden">
                     
                     <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                         <div class="relative order-2 lg:order-1 flex justify-center lg:justify-start">
                             <!-- Colagem Imagem + Poligono -->
-                            <div class="p-2 bg-brand-yellow relative z-10 w-full max-w-sm lg:w-4/5 lg:max-w-none">
-                                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80" alt="" class="w-full grayscale contrast-125 object-cover aspect-square md:aspect-auto">
+                            <div class="relative z-10 w-full max-w-sm lg:w-4/5 lg:max-w-none">
+                                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80" alt="" class="w-full grayscale contrast-125 object-cover aspect-square md:aspect-auto shadow-[12px_12px_0px_#14142c]">
                             </div>
                             <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/0b96d106a66ac430f7e8a651ee057fe62a3f1dad/Novos%20poligonos/Ativo%2018.svg" class="absolute -bottom-8 right-0 md:-bottom-10 md:-right-10 w-32 h-32 md:w-48 md:h-48 z-20 drop-shadow-xl" alt="">
                         </div>
                         <div class="order-1 lg:order-2 relative z-30 text-center lg:text-left">
-                            <h2 class="tipo-h2 !text-3xl md:!text-4xl lg:!text-5xl">Velit esse,<br><span class="highlight-pink !text-white">Cillum dolore.</span></h2>
+                            <h2 class="tipo-h2 !text-3xl md:!text-4xl lg:!text-5xl">Velit esse,<br><span class="bg-brand-pink px-2 inline-block !text-white">Cillum dolore.</span></h2>
                             <p class="tipo-p text-base md:text-lg mt-6">Eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                             <p class="tipo-p text-base md:text-lg">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.</p>
                             <a href="#form-lp" class="cmp-button cmp-button--primary w-full sm:w-auto mt-6">Neque Porro Quisquam</a>
@@ -810,18 +884,18 @@ h4, h4 * { font-size: 28px !important; }
                             <div class="cmp-card-media bg-brand-cream hover:-translate-y-2 hover:shadow-[8px_8px_0px_#14142c] md:hover:shadow-[12px_12px_0px_#14142c]">
                                 <div class="cmp-card-media__hdr p-6 md:p-8">
                                     <h4 class="tipo-h3 !text-brand-orange mb-4 text-5xl md:text-6xl">01</h4>
-                                    <p class="tipo-p font-bold text-sm md:text-base">Sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat.</p>
+                                    <p class="tipo-p !text-brand-blue-dark font-bold text-sm md:text-base">Sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat.</p>
                                 </div>
                             </div>
-                            <div class="cmp-card-media bg-brand-blue hover:-translate-y-2 hover:shadow-[8px_8px_0px_#14142c] md:hover:shadow-[12px_12px_0px_#14142c]">
+                            <div class="cmp-card-media bg-brand-cream hover:-translate-y-2 hover:shadow-[8px_8px_0px_#14142c] md:hover:shadow-[12px_12px_0px_#14142c]">
                                 <div class="cmp-card-media__hdr p-6 md:p-8">
-                                    <h4 class="tipo-h3 !text-brand-pink mb-4 text-5xl md:text-6xl">02</h4>
-                                    <p class="tipo-p !text-white font-bold text-sm md:text-base">Voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea.</p>
+                                    <h4 class="tipo-h3 !text-brand-blue mb-4 text-5xl md:text-6xl">02</h4>
+                                    <p class="tipo-p !text-brand-blue-dark font-bold text-sm md:text-base">Voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea.</p>
                                 </div>
                             </div>
-                            <div class="cmp-card-media bg-brand-pink hover:-translate-y-2 hover:shadow-[8px_8px_0px_#14142c] md:hover:shadow-[12px_12px_0px_#14142c]">
+                            <div class="cmp-card-media bg-brand-cream hover:-translate-y-2 hover:shadow-[8px_8px_0px_#14142c] md:hover:shadow-[12px_12px_0px_#14142c]">
                                 <div class="cmp-card-media__hdr p-6 md:p-8">
-                                    <h4 class="tipo-h3 !text-brand-yellow mb-4 text-5xl md:text-6xl">03</h4>
+                                    <h4 class="tipo-h3 !text-brand-pink mb-4 text-5xl md:text-6xl">03</h4>
                                     <p class="tipo-p !text-brand-blue-dark font-bold text-sm md:text-base">Commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.</p>
                                 </div>
                             </div>
@@ -830,7 +904,7 @@ h4, h4 * { font-size: 28px !important; }
                 </section>
 
                 <!-- 6. LP Tabs Interativas -->
-                <section class="py-12 md:py-24 bg-brand-cream-dark relative">
+                <section class="py-12 md:py-24 bg-brand-cream relative">
                     <div class="max-w-4xl mx-auto px-4 md:px-6 relative z-10">
                         <h2 class="tipo-h2 text-center mb-8 md:mb-12 !text-3xl md:!text-4xl">At vero eos <span class="text-brand-blue">Accusamus</span></h2>
                         
@@ -843,7 +917,7 @@ h4, h4 * { font-size: 28px !important; }
                             <div class="p-6 md:p-12">
                                 <div id="lp-tab-1" class="lp-tab-pane animate-[fadeIn_0.3s_ease]">
                                     <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-center text-center md:text-left">
-                                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&q=80" alt="[Image of Schola]" class="w-full md:w-1/2 shadow-none md:shadow-[6px_6px_0px_#34c995] aspect-video object-cover">
+                                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&q=80" alt="" class="w-full md:w-1/2 shadow-none md:shadow-[6px_6px_0px_#34c995] aspect-video object-cover">
                                         <div>
                                             <h4 class="tipo-h3 text-brand-green !text-2xl md:!text-3xl">Blanditiis Praesentium</h4>
                                             <p class="tipo-p text-sm md:text-base">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia.</p>
@@ -874,19 +948,18 @@ h4, h4 * { font-size: 28px !important; }
                 </section>
 
                 <!-- 7. LP Quote / Testimonial -->
-                <section class="py-16 md:py-24 bg-brand-blue-dark text-center relative px-6">
-                    <div class="max-w-4xl mx-auto relative z-10">
-                        <i class="fi fi-rs-quote-right text-4xl md:text-6xl text-brand-pink mb-4 md:mb-6 block"></i>
-                        <h2 class="font-anton text-2xl md:text-4xl lg:text-5xl uppercase text-white leading-tight mb-6 md:mb-8">"Et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae."</h2>
-                        <p class="font-kanit font-bold text-brand-yellow uppercase tracking-widest text-base md:text-lg">Itaque Earum</p>
-                        <p class="font-open text-brand-blue-light text-sm md:text-base">Rerum Hic Tenetur</p>
+                <section class="py-12 md:py-24 bg-brand-blue text-center relative px-4 md:px-6">
+                    <div class="w-full max-w-4xl mx-auto relative z-10 bg-brand-cream-light flex flex-col items-center justify-center p-8 shadow-[8px_8px_0px_#14142c] md:shadow-none md:[mask-image:url('https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/Novos%20poligonos/Ativo%2022.svg')] md:[-webkit-mask-image:url('https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/Novos%20poligonos/Ativo%2022.svg')] md:[mask-size:100%_100%] md:[-webkit-mask-size:100%_100%] md:[mask-position:center] md:[-webkit-mask-position:center] md:[mask-repeat:no-repeat] md:[-webkit-mask-repeat:no-repeat] md:pt-16 md:pb-28 md:px-16 lg:pt-20 lg:pb-36 lg:px-24 transition-all">
+                        <i class="fi fi-rs-quote-right text-4xl md:text-5xl text-brand-pink mb-4 md:mb-6 block"></i>
+                        <h2 class="font-anton text-2xl md:text-3xl lg:text-4xl uppercase text-brand-blue-dark leading-tight mb-4 md:mb-6">"Et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae."</h2>
+                        <p class="font-kanit font-bold text-brand-blue uppercase tracking-widest text-base md:text-lg m-0">Itaque Earum</p>
                     </div>
                 </section>
 
                 <!-- 8. LP Carrossel (Vanilla JS) -->
                 <section class="py-12 md:py-24 bg-white overflow-hidden relative">
                     <div class="max-w-6xl mx-auto px-4 md:px-6 relative z-10">
-                        <h2 class="tipo-h2 text-center mb-10 md:mb-16 !text-3xl md:!text-4xl">Sapiente <span class="highlight-yellow">Delectus</span></h2>
+                        <h2 class="tipo-h2 text-center mb-10 md:mb-16 !text-3xl md:!text-4xl">Sapiente <span class="bg-brand-yellow px-2 inline-block text-brand-blue-dark">Delectus</span></h2>
                         
                         <div class="relative w-full">
                             <div class="overflow-hidden pb-8 md:pb-10 px-0 md:px-2">
@@ -954,22 +1027,40 @@ h4, h4 * { font-size: 28px !important; }
 
                 <!-- 10. LP Final CTA + Footer -->
                 <section class="bg-brand-blue py-16 md:py-24 px-6 text-center relative overflow-hidden">
-                    <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/0b96d106a66ac430f7e8a651ee057fe62a3f1dad/Novos%20poligonos/Ativo%2014.svg" class="absolute -bottom-10 -left-10 w-32 h-32 md:w-48 md:h-48 opacity-50 mix-blend-overlay" alt="">
-                    <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/0b96d106a66ac430f7e8a651ee057fe62a3f1dad/Novos%20poligonos/Ativo%2019.svg" class="absolute top-10 right-10 w-24 h-24 md:w-32 md:h-32 opacity-80 mix-blend-overlay animate-spin-slow" alt="">
                     
-                    <div class="max-w-3xl mx-auto relative z-10">
-                        <h2 class="tipo-h1 !text-white mb-4 md:mb-6 !text-4xl md:!text-5xl lg:!text-6xl">Deleniti Atque?</h2>
-                        <p class="tipo-p !text-white font-bold text-base md:text-xl mb-8 md:mb-10">Corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi.</p>
+                    <div class="max-w-3xl mx-auto relative z-10 bg-brand-cream-light p-8 md:p-12 shadow-[6px_6px_0px_#14142c]">
+                        
+                        <!-- Ícones de Canto (Elemento Gráfico) -->
+                        <div class="absolute -top-5 right-6 md:-top-6 md:right-8 flex gap-2 z-20">
+                            <div class="w-10 h-10 md:w-12 md:h-12 bg-brand-cream-light border-2 border-brand-blue-dark flex items-center justify-center shadow-[4px_4px_0px_#14142c]">
+                                <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/Novos%20poligonos/Ativo%201.svg" class="w-6 h-6 md:w-8 md:h-8 object-contain" alt="">
+                            </div>
+                            <div class="w-10 h-10 md:w-12 md:h-12 bg-brand-cream-light border-2 border-brand-blue-dark flex items-center justify-center shadow-[4px_4px_0px_#14142c]">
+                                <i class="fi fi-rs-arrow-up-right text-xl md:text-2xl font-bold text-brand-blue"></i>
+                            </div>
+                        </div>
+
+                        <h2 class="tipo-h1 !text-brand-blue mb-4 md:mb-6 !text-4xl md:!text-5xl lg:!text-6xl mt-4 md:mt-0">Deleniti Atque?</h2>
+                        <p class="tipo-p !text-brand-blue-dark font-bold text-base md:text-xl mb-8 md:mb-10">Corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi.</p>
                         <a href="#form-lp" class="cmp-button cmp-button--primary w-full sm:w-auto !text-base md:!text-xl !py-3 md:!py-4 px-6 md:!px-10">Id Est Laborum <i class="fi fi-rs-download ml-2"></i></a>
                     </div>
                 </section>
                 
-                <footer class="bg-brand-blue-dark py-10 md:py-12 px-6 md:px-8 text-center md:text-left relative z-10">
-                    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8">
-                        <div>
+                <footer class="bg-brand-blue-dark py-10 md:py-12 px-6 md:px-8 text-center md:text-left relative z-10 border-t-2 border-brand-blue">
+                    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 md:gap-6">
+                        <div class="text-center md:text-left">
                             <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/logos/logo-poligono-white%201.png" alt="Lorem Ipsum" class="h-8 md:h-10 object-contain mb-4 mx-auto md:mx-0">
                             <p class="font-open text-brand-blue-light text-sm font-bold">Et dolorum fuga et harum quidem.</p>
                         </div>
+                        
+                        <!-- Redes Sociais no Rodapé -->
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <a href="https://api.whatsapp.com/send/?phone=551239241619&text=Ol%C3%A1%2C+gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+o+Pol%C3%ADgono+Sistema+de+Ensino%21&type=phone_number&app_absent=0" target="_blank" class="w-10 h-10 md:w-12 md:h-12 bg-white text-brand-blue-dark flex items-center justify-center text-lg md:text-xl hover:bg-brand-green hover:-translate-y-1 hover:shadow-[4px_4px_0px_#34c995] transition-all"><i class="fi fi-rs-comment"></i></a>
+                            <a href="https://www.instagram.com/sistemapoligono/" target="_blank" class="w-10 h-10 md:w-12 md:h-12 bg-white text-brand-blue-dark flex items-center justify-center text-lg md:text-xl hover:bg-brand-pink hover:-translate-y-1 hover:shadow-[4px_4px_0px_#ff3399] transition-all"><i class="fi fi-rs-camera"></i></a>
+                            <a href="https://www.linkedin.com/company/sistema-de-ensino-pol%C3%ADgono" target="_blank" class="w-10 h-10 md:w-12 md:h-12 bg-white text-brand-blue-dark flex items-center justify-center text-lg md:text-xl hover:bg-brand-blue-electric hover:-translate-y-1 hover:shadow-[4px_4px_0px_#0080ff] transition-all"><i class="fi fi-rs-briefcase"></i></a>
+                            <a href="https://www.youtube.com/@sistemapoligono" target="_blank" class="w-10 h-10 md:w-12 md:h-12 bg-white text-brand-blue-dark flex items-center justify-center text-lg md:text-xl hover:bg-red-600 hover:text-white hover:-translate-y-1 hover:shadow-[4px_4px_0px_#14142c] transition-all"><i class="fi fi-rs-play-alt"></i></a>
+                        </div>
+                        
                         <p class="font-open text-brand-cream-dark text-xs md:text-sm opacity-60">© 2026 Lorem Ipsum.<br>Rerum facilis est et expedita.</p>
                     </div>
                 </footer>
@@ -1055,15 +1146,15 @@ h4, h4 * { font-size: 28px !important; }
                 <!-- TY Content (Dobra 1: Agradecimento) -->
                 <section class="bg-brand-blue py-16 md:py-32 px-6 flex flex-col items-center justify-center relative overflow-hidden">
                     
-                    <div class="max-w-3xl text-center relative z-10 w-full mx-auto">
-                        <i class="fi fi-rs-check-circle text-6xl md:text-8xl text-brand-green mb-6 block drop-shadow-[4px_4px_0px_#14142c]"></i>
+                    <div class="max-w-3xl text-center relative z-10 w-full mx-auto bg-brand-cream-light p-8 md:p-12 shadow-[8px_8px_0px_#14142c]">
+                        <i class="fi fi-rs-check-circle text-[40px] text-brand-green mb-6 block"></i>
                         
-                        <h2 class="tipo-h2 !text-white !text-4xl sm:!text-5xl md:!text-6xl">Distinctio!</h2>
-                        <p class="tipo-p !text-brand-blue-ice text-base md:text-xl mt-6 mb-10 font-bold">Nam libero tempore, <strong class="text-brand-yellow">Cum Soluta Nobis 2026</strong> est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est.</p>
+                        <h2 class="tipo-h2 !text-brand-blue !text-4xl sm:!text-5xl md:!text-6xl">Distinctio!</h2>
+                        <p class="tipo-p !text-brand-blue-dark text-base md:text-xl mt-6 mb-10 font-bold">Nam libero tempore, <strong class="text-brand-pink">Cum Soluta Nobis 2026</strong> est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est.</p>
                         
                         <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
                             <button class="cmp-button cmp-button--primary w-full sm:w-auto"><i class="fi fi-rs-download mr-2"></i> Omnis Dolor</button>
-                            <a href="#artigos" class="cmp-button !border-white !text-white hover:!bg-white hover:!text-brand-blue-dark w-full sm:w-auto hover:-translate-y-1 hover:shadow-[6px_6px_0px_#14142c] transition-all">Repellendus Temporibus</a>
+                            <a href="#artigos" class="cmp-button cmp-button--secondary w-full sm:w-auto">Repellendus Temporibus</a>
                         </div>
                     </div>
                 </section>
@@ -1076,7 +1167,7 @@ h4, h4 * { font-size: 28px !important; }
                             
                             <!-- Blog Card 1 -->
                             <div class="cmp-card-media bg-white hover:-translate-y-2 hover:shadow-[8px_8px_0px_#14142c] border border-brand-blue-dark md:border-none p-0 flex flex-col">
-                                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400&q=80" alt="[Image of Schola]" class="w-full h-48 md:h-56 object-cover">
+                                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400&q=80" alt="" class="w-full h-48 md:h-56 object-cover">
                                 <div class="p-6 md:p-8 flex flex-col flex-grow">
                                     <span class="text-[10px] md:text-xs font-kanit font-bold text-brand-pink uppercase tracking-widest mb-3">Nemo Enim</span>
                                     <h4 class="tipo-h4 text-brand-blue-dark !text-xl md:!text-2xl">Quis Autem Vel Eum Iure Reprehenderit Qui In Ea Voluptate</h4>
@@ -1136,52 +1227,55 @@ h4, h4 * { font-size: 28px !important; }
         <!-- TEMPLATE DE E-MAIL 1 (ENTREGA DE MATERIAL) -->
         <section id="template-email-1" class="ds-section !bg-transparent !border-0 !p-0 !shadow-none mt-16">
             <div class="mb-4 bg-brand-cream-dark p-4 md:p-6 shadow-none md:shadow-hard">
-                <h2 class="ds-title !border-0 !mb-0 text-3xl md:text-5xl">Template: E-mail (Entrega de Isca)</h2>
+                <h2 class="ds-title !border-0 !mb-0 text-3xl md:text-5xl">Template: E-mail (Entrega)</h2>
                 <p class="tipo-p mb-0">E-mail de resposta rápida (Autoresponder). Design em bloco único garantindo a mais alta taxa de clique e conversão direta.</p>
             </div>
             
             <!-- Simulador de Cliente de E-mail (Browser Wrapper) -->
-            <div class="bg-slate-200 py-6 md:py-10 px-4 md:px-0 flex justify-center font-sans max-w-[1440px] mx-auto">
+            <div class="bg-brand-cream py-6 md:py-10 px-4 md:px-0 flex justify-center font-sans max-w-[1440px] mx-auto">
                 
                 <!-- Wrapper do Email (Tabela estrutural simulada via CSS inline para compatibilidade com E-mail Marketing) -->
-                <div class="bg-brand-cream w-full max-w-[600px] shadow-none md:shadow-[16px_16px_0px_#ff3399] relative z-10" style="background-color: #fff5d2; max-width: 600px; margin: 0 auto; width: 100%;">
+                <div class="bg-white w-full max-w-[600px] shadow-none relative z-10" style="background-color: #ffffff; max-width: 600px; margin: 0 auto; width: 100%;">
                     
                     <!-- Header -->
-                    <div class="bg-brand-blue-dark py-6 px-6 text-center" style="background-color: #14142c; padding: 20px 30px; text-align: center;">
-                        <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/logos/logo-poligono-white%201.png" alt="Lorem Ipsum" style="height: 30px; margin: 0 auto; display: block; max-width: 100%;">
+                    <div class="bg-white py-6 px-8 text-center" style="background-color: #ffffff; padding: 30px; text-align: center;">
+                        <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/logos/logo-poligono-color%201.png" alt="Lorem Ipsum" style="height: 35px; max-width: 100%; margin: 0 auto; display: block;">
                     </div>
 
                     <!-- Hero Image & Titulo -->
-                    <div class="bg-brand-blue text-center py-10 px-4 relative overflow-hidden" style="background-color: #0a00bd; text-align: center; padding: 40px 20px;">
-                        <h2 style="font-family: 'Anton', sans-serif; font-size: 32px; text-transform: uppercase; color: #ffffff; margin: 0; line-height: 1.1; letter-spacing: 1px;">Sit Amet<br><span style="color: #ff3399;">Consectetur.</span></h2>
+                    <div class="bg-brand-pink relative overflow-hidden flex items-center justify-between" style="background-color: #ff3399; padding: 40px 30px;">
+                        <div class="relative z-10 w-2/3 text-left">
+                            <h2 style="font-family: 'Anton', sans-serif; font-size: 36px; text-transform: uppercase; color: #14142c; margin: 0; line-height: 1.1; letter-spacing: 1px;">Sit Amet<br><span style="color: #ffffff;">Consectetur.</span></h2>
+                        </div>
+                        <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/Novos%20poligonos/Ativo%2018.svg" class="absolute -right-6 top-1/2 -translate-y-1/2 w-48 h-48 opacity-90" alt="">
                     </div>
 
                     <!-- Corpo da Mensagem -->
-                    <div class="p-6 md:p-10" style="padding: 30px 20px;">
-                        <p style="font-family: 'Open Sans', sans-serif; font-size: 16px; color: #14142c; line-height: 1.6; margin: 0 0 20px 0; font-weight: 700;">Ut et voluptates,</p>
-                        <p style="font-family: 'Open Sans', sans-serif; font-size: 15px; color: #14142c; line-height: 1.6; margin: 0 0 30px 0;">Repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+                    <div class="p-6 md:p-8" style="padding: 30px;">
+                        <p style="font-family: 'Open Sans', sans-serif; font-size: 16px; color: #14142c; line-height: 1.6; margin: 0 0 20px 0; font-weight: 700; text-align: left;">Ut et voluptates,</p>
                         
-                        <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
-                            <a href="#" style="display: block; max-width: 300px; margin: 0 auto; padding: 16px 20px; background-color: #ff3399; color: #14142c; text-decoration: none; font-family: 'Kanit', sans-serif; font-weight: 700; font-size: 16px; text-transform: uppercase; letter-spacing: 1px;">Neque Porro Quisquam</a>
+                        <p style="font-family: 'Open Sans', sans-serif; font-size: 15px; color: #14142c; line-height: 1.6; margin: 0 0 30px 0; text-align: left;">Repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+                        
+                        <div style="text-align: center; margin: 30px 0;">
+                            <a href="#" class="cmp-button cmp-button--primary" style="display: inline-flex; width: fit-content; text-decoration: none;">Neque Porro Quisquam</a>
                         </div>
-
-                        <p style="font-family: 'Open Sans', sans-serif; font-size: 12px; color: #666; line-height: 1.5; margin: 30px 0 0 0; text-align: center;">Est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora:<br><a href="#" style="color: #0a00bd; font-weight: bold; word-break: break-all;">https://lorem-ipsum.com/dolor-sit</a></p>
+                        
+                        <p style="font-family: 'Open Sans', sans-serif; font-size: 15px; color: #14142c; line-height: 1.6; margin: 0 0 20px 0; text-align: left;">Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est.</p>
+                        
+                        <p style="font-family: 'Open Sans', sans-serif; font-size: 15px; color: #14142c; line-height: 1.6; margin: 0; text-align: left;">Lorem ipsum dolor,<br><strong>Polígono</strong></p>
                     </div>
 
                     <!-- Footer do E-mail -->
-                    <div class="bg-brand-blue-dark p-6 text-center" style="background-color: #14142c; padding: 35px 20px; text-align: center;">
-                        <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/logos/logo-poligono-white%201.png" alt="Lorem Ipsum" style="height: 20px; margin: 0 auto 20px auto; display: block; opacity: 0.8; max-width: 100%;">
+                    <div class="bg-brand-blue flex flex-col sm:flex-row justify-between items-center gap-6" style="background-color: #0a00bd; padding: 30px;">
+                        <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/logos/logo-poligono-white%201.png" alt="Lorem Ipsum" style="height: 35px; max-width: 100%;">
                         
                         <!-- Redes Sociais -->
-                        <div class="flex flex-wrap justify-center gap-4 mb-6" style="margin-bottom: 25px;">
-                            <a href="https://api.whatsapp.com/send/?phone=551239241619&text=Ol%C3%A1%2C+gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+o+Pol%C3%ADgono+Sistema+de+Ensino%21&type=phone_number&app_absent=0" target="_blank" class="w-10 h-10 bg-white text-brand-blue-dark flex items-center justify-center text-lg hover:bg-brand-green hover:-translate-y-1 hover:shadow-[4px_4px_0px_#34c995] transition-all"><i class="fi fi-rs-comment"></i></a>
-                            <a href="https://www.instagram.com/sistemapoligono/" target="_blank" class="w-10 h-10 bg-white text-brand-blue-dark flex items-center justify-center text-lg hover:bg-brand-pink hover:-translate-y-1 hover:shadow-[4px_4px_0px_#ff3399] transition-all"><i class="fi fi-rs-camera"></i></a>
-                            <a href="https://www.linkedin.com/company/sistema-de-ensino-pol%C3%ADgono" target="_blank" class="w-10 h-10 bg-white text-brand-blue-dark flex items-center justify-center text-lg hover:bg-brand-blue-electric hover:-translate-y-1 hover:shadow-[4px_4px_0px_#0080ff] transition-all"><i class="fi fi-rs-briefcase"></i></a>
-                            <a href="https://www.youtube.com/@sistemapoligono" target="_blank" class="w-10 h-10 bg-white text-brand-blue-dark flex items-center justify-center text-lg hover:bg-red-600 hover:text-white hover:-translate-y-1 hover:shadow-[4px_4px_0px_#14142c] transition-all"><i class="fi fi-rs-play-alt"></i></a>
+                        <div class="flex gap-3">
+                            <a href="https://api.whatsapp.com/send/?phone=551239241619&text=Ol%C3%A1%2C+gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+o+Pol%C3%ADgono+Sistema+de+Ensino%21&type=phone_number&app_absent=0" target="_blank" class="w-10 h-10 bg-white text-brand-blue flex items-center justify-center text-xl rounded-full hover:bg-brand-yellow transition-colors"><i class="fi fi-rs-comment"></i></a>
+                            <a href="https://www.instagram.com/sistemapoligono/" target="_blank" class="w-10 h-10 bg-white text-brand-blue flex items-center justify-center text-xl rounded-full hover:bg-brand-pink transition-colors"><i class="fi fi-rs-camera"></i></a>
+                            <a href="https://www.linkedin.com/company/sistema-de-ensino-pol%C3%ADgono" target="_blank" class="w-10 h-10 bg-white text-brand-blue flex items-center justify-center text-xl rounded-full hover:bg-brand-blue-electric transition-colors"><i class="fi fi-rs-briefcase"></i></a>
+                            <a href="https://www.youtube.com/@sistemapoligono" target="_blank" class="w-10 h-10 bg-white text-brand-blue flex items-center justify-center text-xl rounded-full hover:text-red-600 transition-colors"><i class="fi fi-rs-play-alt"></i></a>
                         </div>
-
-                        <p style="font-family: 'Kanit', sans-serif; font-size: 14px; font-weight: 700; color: #81ceea; margin: 0 0 10px 0; text-transform: uppercase; letter-spacing: 1px;">Incidunt Ut Labore.</p>
-                        <p style="font-family: 'Open Sans', sans-serif; font-size: 11px; color: #fff5d2; margin: 0; opacity: 0.7;">© 2026 Lorem Ipsum.</p>
                     </div>
 
                 </div>
@@ -1195,66 +1289,76 @@ h4, h4 * { font-size: 28px !important; }
                 <p class="tipo-p mb-0">E-mail relacional. Desenvolvido para manter o utilizador atualizado e engajado, funcionando como um portal ou mini-blog editorial.</p>
             </div>
             
-            <div class="bg-slate-200 py-6 md:py-10 px-4 md:px-0 flex justify-center font-sans max-w-[1440px] mx-auto">
+            <div class="bg-brand-cream py-6 md:py-10 px-4 md:px-0 flex justify-center font-sans max-w-[1440px] mx-auto">
                 <!-- Wrapper do Email -->
-                <div class="bg-white w-full max-w-[600px] shadow-none md:shadow-[16px_16px_0px_#14142c]" style="background-color: #ffffff; max-width: 600px; margin: 0 auto; width: 100%;">
+                <div class="bg-white w-full max-w-[600px] shadow-none relative z-10" style="background-color: #ffffff; max-width: 600px; margin: 0 auto; width: 100%;">
                     
                     <!-- Header -->
-                    <div class="bg-white py-6 px-6 text-center" style="background-color: #ffffff; padding: 25px; text-align: center;">
-                        <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/logos/logo-poligono-color%201.png" alt="Lorem Ipsum" style="height: 30px; margin: 0 auto; display: block; max-width: 100%;">
+                    <div class="bg-white py-6 px-8 text-center" style="background-color: #ffffff; padding: 30px; text-align: center;">
+                        <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/logos/logo-poligono-color%201.png" alt="Lorem Ipsum" style="height: 35px; max-width: 100%; margin: 0 auto; display: block;">
+                    </div>
+
+                    <!-- Novo Header Azul com Elementos -->
+                    <div class="bg-brand-blue relative overflow-hidden flex items-center justify-between" style="background-color: #0a00bd; padding: 40px 30px; min-height: 160px;">
+                        <div class="relative z-10 w-2/3 text-left">
+                            <h2 style="font-family: 'Anton', sans-serif; font-size: 32px; text-transform: uppercase; color: #ffffff; margin: 0; line-height: 1.1; letter-spacing: 1px;">Lorem ipsum dolor<br>sit amet</h2>
+                        </div>
+                        <div class="absolute -right-4 md:right-0 top-1/2 -translate-y-1/2 w-32 h-32 md:w-40 md:h-40 flex items-center justify-center">
+                            <!-- Starburst amarelo -->
+                            <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/Novos%20poligonos/Ativo%2017.svg" class="absolute w-28 h-28 md:w-36 md:h-36 object-contain" alt="">
+                            <!-- Smiley verde sobreposto -->
+                            <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/Novos%20poligonos/Ativo%201.svg" class="absolute w-20 h-20 md:w-24 md:h-24 -top-1 -left-2 md:-top-2 md:-left-4 object-contain z-10" alt="">
+                        </div>
                     </div>
 
                     <!-- Artigo Principal Destacado -->
                     <div class="p-6 md:p-8 bg-brand-cream" style="padding: 30px 20px; background-color: #fff5d2;">
-                        <span style="display: inline-block; background: #ffb001; color: #14142c; font-family: 'Kanit', sans-serif; font-weight: 700; font-size: 11px; padding: 4px 8px; text-transform: uppercase; margin-bottom: 15px;">Dolore Magnam</span>
-                        <h2 style="font-family: 'Anton', sans-serif; font-size: 28px; text-transform: uppercase; color: #14142c; margin: 0 0 15px 0; line-height: 1.1;">Aliquam Quaerat Voluptatem Ut Enim Ad Minima?</h2>
+                        <span style="display: inline-block; background: #ffb001; color: #14142c; font-family: 'Open Sans', sans-serif; font-weight: 800; font-size: 11px; padding: 4px 8px; margin-bottom: 15px;">DOLORE MAGNAM</span>
+                        <h2 style="font-family: 'Open Sans', sans-serif; font-weight: 800; font-size: 24px; color: #14142c; margin: 0 0 15px 0; line-height: 1.1;">Aliquam quaerat voluptatem ut enim ad minima?</h2>
                         <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&q=80" alt="" style="width: 100%; height: auto; margin-bottom: 20px; display: block;">
                         <p style="font-family: 'Open Sans', sans-serif; font-size: 15px; color: #14142c; line-height: 1.6; margin: 0 0 20px 0;">Veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil.</p>
-                        <a href="#" style="display: inline-block; padding: 12px 20px; background-color: transparent; color: #14142c; border: 2px solid #14142c; text-decoration: none; font-family: 'Kanit', sans-serif; font-weight: 700; font-size: 13px; text-transform: uppercase;">Molestiae Consequatur &rarr;</a>
+                        <a href="#" class="hover:-translate-y-1 hover:shadow-[4px_4px_0px_#14142c] transition-all" style="display: inline-block; padding: 12px 20px; background-color: transparent; color: #14142c; border: 2px solid #14142c; text-decoration: none; font-family: 'Kanit', sans-serif; font-weight: 700; font-size: 13px; text-transform: uppercase;">Molestiae Consequatur &rarr;</a>
                     </div>
 
-                    <!-- Secundários (Substituído Table rigida por Flexbox / Blocos responsivos via CSS in-line simulation) -->
-                    <!-- Simulação: Em client de email verdadeiro usariamos media queries, aqui no HTML do sistema usamos classes Tailwind para fluidez visual -->
+                    <!-- Secundários -->
                     <div class="p-6 md:p-8 bg-white flex flex-col md:flex-row gap-8" style="background-color: #ffffff;">
                         
                         <!-- Coluna 1 -->
                         <div class="flex-1 w-full">
                             <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=300&q=80" alt="" style="width: 100%; margin-bottom: 15px; display: block;">
-                            <h3 style="font-family: 'Kanit', sans-serif; font-size: 18px; font-weight: 700; color: #0a00bd; margin: 0 0 10px 0; line-height: 1.2; text-transform: uppercase;">Vel Illum</h3>
+                            <h3 style="font-family: 'Open Sans', sans-serif; font-size: 18px; font-weight: 800; color: #0a00bd; margin: 0 0 10px 0; line-height: 1.2;">Vel illum</h3>
                             <p style="font-family: 'Open Sans', sans-serif; font-size: 14px; color: #14142c; margin: 0 0 15px 0;">Qui dolorem eum fugiat quo voluptas nulla pariatur. At vero eos et accusamus.</p>
-                            <a href="#" style="display: inline-block; padding: 10px 16px; background-color: transparent; color: #14142c; border: 2px solid #14142c; text-decoration: none; font-family: 'Kanit', sans-serif; font-weight: 700; font-size: 12px; text-transform: uppercase;">Et Iusto &rarr;</a>
+                            <a href="#" class="hover:-translate-y-1 hover:shadow-[4px_4px_0px_#14142c] transition-all" style="display: inline-block; padding: 10px 16px; background-color: transparent; color: #14142c; border: 2px solid #14142c; text-decoration: none; font-family: 'Kanit', sans-serif; font-weight: 700; font-size: 12px; text-transform: uppercase;">Et Iusto &rarr;</a>
                         </div>
                         
                         <!-- Coluna 2 -->
                         <div class="flex-1 w-full">
                             <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=300&q=80" alt="" style="width: 100%; margin-bottom: 15px; display: block;">
-                            <h3 style="font-family: 'Kanit', sans-serif; font-size: 18px; font-weight: 700; color: #0a00bd; margin: 0 0 10px 0; line-height: 1.2; text-transform: uppercase;">Odio Dignissimos</h3>
+                            <h3 style="font-family: 'Open Sans', sans-serif; font-size: 18px; font-weight: 800; color: #0a00bd; margin: 0 0 10px 0; line-height: 1.2;">Odio dignissimos</h3>
                             <p style="font-family: 'Open Sans', sans-serif; font-size: 14px; color: #14142c; margin: 0 0 15px 0;">Ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.</p>
-                            <a href="#" style="display: inline-block; padding: 10px 16px; background-color: transparent; color: #14142c; border: 2px solid #14142c; text-decoration: none; font-family: 'Kanit', sans-serif; font-weight: 700; font-size: 12px; text-transform: uppercase;">Et Quas &rarr;</a>
+                            <a href="#" class="hover:-translate-y-1 hover:shadow-[4px_4px_0px_#14142c] transition-all" style="display: inline-block; padding: 10px 16px; background-color: transparent; color: #14142c; border: 2px solid #14142c; text-decoration: none; font-family: 'Kanit', sans-serif; font-weight: 700; font-size: 12px; text-transform: uppercase;">Et Quas &rarr;</a>
                         </div>
 
                     </div>
 
                     <!-- Promo CTA Final (Bloco Forte) -->
-                    <div class="bg-brand-blue p-8 md:p-10 text-center relative" style="background-color: #0a00bd; padding: 40px 20px; text-align: center;">
-                        <h2 style="font-family: 'Anton', sans-serif; font-size: 28px; text-transform: uppercase; color: #fff; margin: 0 0 15px 0; line-height: 1.1; letter-spacing: 1px;">Molestias Excepturi Sint</h2>
-                        <p style="font-family: 'Open Sans', sans-serif; font-size: 15px; color: #fff; line-height: 1.6; margin: 0 0 25px 0;">Occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-                        <a href="#" style="display: block; max-width: 300px; margin: 0 auto; padding: 16px 20px; background-color: #ff3399; color: #14142c; text-decoration: none; font-family: 'Kanit', sans-serif; font-weight: 700; font-size: 14px; text-transform: uppercase;">Et Harum Quidem Rerum</a>
+                    <div class="bg-brand-cream-dark p-8 md:p-10 text-center relative" style="background-color: #fff5d2; padding: 40px 20px; text-align: center;">
+                        <h2 style="font-family: 'Open Sans', sans-serif; font-size: 28px; font-weight: 800; color: #14142c; margin: 0 0 15px 0; line-height: 1.1; letter-spacing: 0;">Molestias excepturi sint</h2>
+                        <p style="font-family: 'Open Sans', sans-serif; font-size: 15px; color: #14142c; line-height: 1.6; margin: 0 0 25px 0;">Occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+                        <a href="#" class="cmp-button cmp-button--primary" style="display: inline-flex; max-width: 300px; margin: 0 auto; text-decoration: none; font-family: 'Kanit', sans-serif; white-space: nowrap;">Et harum quidem</a>
                     </div>
 
-                    <!-- Footer Utilitário (Unsubscribe) -->
-                    <div class="bg-brand-cream-dark p-6 text-center" style="background-color: #f3e7d7; padding: 30px 20px; text-align: center;">
-                        <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/logos/logo-poligono-color%201.png" alt="Lorem Ipsum" style="height: 20px; margin: 0 auto 20px auto; display: block; filter: grayscale(100%); opacity: 0.5; max-width: 100%;">
+                    <!-- Footer do E-mail -->
+                    <div class="bg-brand-blue flex flex-col sm:flex-row justify-between items-center gap-6" style="background-color: #0a00bd; padding: 30px;">
+                        <img src="https://raw.githubusercontent.com/Design-8DHubify/sistema-poligono/d51864e38110537260d12d161de2f1ff2aa48dde/logos/logo-poligono-white%201.png" alt="Lorem Ipsum" style="height: 35px; max-width: 100%;">
                         
                         <!-- Redes Sociais -->
-                        <div class="flex flex-wrap justify-center gap-4 mb-6" style="margin-bottom: 25px;">
-                            <a href="https://api.whatsapp.com/send/?phone=551239241619&text=Ol%C3%A1%2C+gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+o+Pol%C3%ADgono+Sistema+de+Ensino%21&type=phone_number&app_absent=0" target="_blank" class="w-10 h-10 bg-white text-brand-blue-dark flex items-center justify-center text-lg hover:bg-brand-green hover:-translate-y-1 hover:shadow-[4px_4px_0px_#34c995] transition-all"><i class="fi fi-rs-comment"></i></a>
-                            <a href="https://www.instagram.com/sistemapoligono/" target="_blank" class="w-10 h-10 bg-white text-brand-blue-dark flex items-center justify-center text-lg hover:bg-brand-pink hover:-translate-y-1 hover:shadow-[4px_4px_0px_#ff3399] transition-all"><i class="fi fi-rs-camera"></i></a>
-                            <a href="https://www.linkedin.com/company/sistema-de-ensino-pol%C3%ADgono" target="_blank" class="w-10 h-10 bg-white text-brand-blue-dark flex items-center justify-center text-lg hover:bg-brand-blue-electric hover:-translate-y-1 hover:shadow-[4px_4px_0px_#0080ff] transition-all"><i class="fi fi-rs-briefcase"></i></a>
-                            <a href="https://www.youtube.com/@sistemapoligono" target="_blank" class="w-10 h-10 bg-white text-brand-blue-dark flex items-center justify-center text-lg hover:bg-red-600 hover:text-white hover:-translate-y-1 hover:shadow-[4px_4px_0px_#14142c] transition-all"><i class="fi fi-rs-play-alt"></i></a>
+                        <div class="flex gap-3">
+                            <a href="https://api.whatsapp.com/send/?phone=551239241619&text=Ol%C3%A1%2C+gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+o+Pol%C3%ADgono+Sistema+de+Ensino%21&type=phone_number&app_absent=0" target="_blank" class="w-10 h-10 bg-white text-brand-blue flex items-center justify-center text-xl rounded-full hover:bg-brand-yellow transition-colors"><i class="fi fi-rs-comment"></i></a>
+                            <a href="https://www.instagram.com/sistemapoligono/" target="_blank" class="w-10 h-10 bg-white text-brand-blue flex items-center justify-center text-xl rounded-full hover:bg-brand-pink transition-colors"><i class="fi fi-rs-camera"></i></a>
+                            <a href="https://www.linkedin.com/company/sistema-de-ensino-pol%C3%ADgono" target="_blank" class="w-10 h-10 bg-white text-brand-blue flex items-center justify-center text-xl rounded-full hover:bg-brand-blue-electric transition-colors"><i class="fi fi-rs-briefcase"></i></a>
+                            <a href="https://www.youtube.com/@sistemapoligono" target="_blank" class="w-10 h-10 bg-white text-brand-blue flex items-center justify-center text-xl rounded-full hover:text-red-600 transition-colors"><i class="fi fi-rs-play-alt"></i></a>
                         </div>
-
-                        <p style="font-family: 'Open Sans', sans-serif; font-size: 11px; color: #14142c; margin: 0;">Facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque. <a href="#" style="color: #ff3399; text-decoration: underline; font-weight: bold;">Nihil impedit quo minus</a>.</p>
                     </div>
 
                 </div>
@@ -1278,18 +1382,18 @@ h4, h4 * { font-size: 28px !important; }
                     <!-- O Pop-up (Alinhado/Flutuando à direita na simulação real) -->
                     <div class="relative bg-brand-cream shadow-none md:shadow-[16px_16px_0px_#ffb001] w-full max-w-[450px] z-10 flex flex-col md:translate-x-6 md:hover:-translate-y-1 transition-transform">
                         <!-- Botão de Fechar Expresso -->
-                        <button class="absolute -top-3 -right-3 md:-top-4 md:-right-4 bg-brand-pink text-brand-blue-dark font-bold w-10 h-10 md:w-12 md:h-12 flex items-center justify-center hover:bg-brand-yellow transition-colors md:hover:translate-y-0 text-xl md:text-2xl z-20" title="Claudere">&times;</button>
+                        <button class="absolute -top-3 -right-3 md:-top-4 md:-right-4 bg-brand-blue-dark text-white font-bold w-10 h-10 md:w-12 md:h-12 flex items-center justify-center hover:bg-brand-yellow hover:text-brand-blue-dark transition-colors md:hover:translate-y-0 text-xl md:text-2xl z-20" title="Claudere">&times;</button>
                         
-                        <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=600&q=80" class="w-full h-40 md:h-48 object-cover" alt="[Image of Notebooks]">
+                        <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=600&q=80" class="w-full h-40 md:h-48 object-cover" alt="">
                         
                         <div class="p-6 md:p-8">
-                            <span class="highlight-pink text-[10px] md:text-xs font-kanit font-bold uppercase mb-2">Id Quod Maxime</span>
+                            <span class="bg-brand-pink text-white px-2 py-1 inline-block text-[10px] md:text-xs font-kanit font-bold uppercase mb-2">Id Quod Maxime</span>
                             <h3 class="tipo-h3 mt-2 !text-brand-blue-dark leading-tight !text-2xl md:!text-3xl">Placeat Facere Possimus Omnis Voluptas</h3>
                             <p class="tipo-p text-sm mt-3 font-semibold">Assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus.</p>
                             
                             <form onsubmit="event.preventDefault();" class="space-y-4 mt-6">
                                 <div>
-                                    <input type="email" class="builder-input !p-3" placeholder="Saepe eveniet ut et voluptates..." required>
+                                    <input type="email" class="builder-input !p-3" placeholder="Lorem sit" required>
                                 </div>
                                 <button type="submit" class="cmp-button cmp-button--primary w-full !text-sm md:!text-base !py-3 md:!py-4">
                                     Repudiandae Sint <i class="fi fi-rs-paper-plane ml-2"></i>
@@ -1305,12 +1409,12 @@ h4, h4 * { font-size: 28px !important; }
                     <div class="absolute inset-0 bg-brand-blue-dark/80 z-0 backdrop-blur-sm"></div>
                     
                     <!-- O Pop-up Central -->
-                    <div class="relative bg-white shadow-none md:shadow-[16px_16px_0px_#ee018d] w-full max-w-[420px] z-10 p-8 md:p-10 text-center md:hover:scale-[1.02] transition-transform mx-4 md:mx-0">
+                    <div class="relative bg-white shadow-none md:shadow-[16px_16px_0px_#14142c] w-full max-w-[420px] z-10 p-8 md:p-10 text-center md:hover:scale-[1.02] transition-transform mx-4 md:mx-0">
                         <!-- Botão Inline Transparente de Fechar -->
                         <button class="absolute top-2 right-4 md:top-4 md:right-5 text-brand-blue-dark font-bold text-2xl md:text-3xl hover:text-brand-pink transition-colors bg-transparent border-none cursor-pointer" title="Claudere">&times;</button>
                         
                         <!-- Ícone Extravagante Destaque -->
-                        <div class="w-16 h-16 md:w-20 md:h-20 bg-brand-pink text-brand-blue-dark flex items-center justify-center text-3xl md:text-4xl mx-auto mb-6 md:mb-8 transition-all">
+                        <div class="w-16 h-16 md:w-20 md:h-20 bg-brand-blue text-white flex items-center justify-center text-3xl md:text-4xl mx-auto mb-6 md:mb-8 transition-all">
                             <i class="fi fi-rs-bell"></i>
                         </div>
                         
@@ -1414,6 +1518,8 @@ h4, h4 * { font-size: 28px !important; }
         // ==========================================
         // GALERIA DE ÍCONES PRO (UICONS)
         // ==========================================
+        let currentIconStyle = 'rs'; // rs = regular straight, ss = solid straight
+
         const iconList = [
             { class: 'fi-rs-star', name: 'Estrela', tags: 'favorito destaque star' },
             { class: 'fi-rs-graduation-cap', name: 'Graduação', tags: 'ensino escola universidade cap' },
@@ -1457,6 +1563,11 @@ h4, h4 * { font-size: 28px !important; }
             renderIcons();
         }
 
+        function syncIconStyle() {
+            currentIconStyle = document.getElementById('icon-style').value;
+            renderIcons();
+        }
+
         function renderIcons(filterQuery = '') {
             const grid = document.getElementById('icon-grid');
             if (!grid) return;
@@ -1477,18 +1588,19 @@ h4, h4 * { font-size: 28px !important; }
             }
 
             filtered.forEach(icon => {
+                const dynamicClass = icon.class.replace('-rs-', `-${currentIconStyle}-`);
                 const card = document.createElement('div');
                 card.className = 'bg-white p-3 md:p-4 flex flex-col items-center justify-between hover:-translate-y-2 transition-transform shadow-[4px_4px_0px_#14142c] md:shadow-[6px_6px_0px_#14142c] text-brand-blue-dark h-full';
                 card.innerHTML = `
                     <div class="flex flex-col items-center w-full mb-4">
-                        <i class="fi ${icon.class} text-4xl md:text-5xl mb-4 transition-colors" style="color: ${color};"></i>
+                        <i class="fi ${dynamicClass} text-4xl md:text-5xl mb-4 transition-colors" style="color: ${color};"></i>
                         <span class="font-kanit font-bold text-[10px] md:text-sm text-center truncate w-full uppercase" title="${icon.name}">${icon.name}</span>
                     </div>
                     <div class="w-full flex flex-col gap-2">
-                        <button class="cmp-button !px-2 !py-2 text-[10px] md:!text-xs !shadow-[3px_3px_0px_#14142c] w-full" onclick="copyIconHTML('${icon.class}', '${color}')">
+                        <button class="cmp-button !px-2 !py-2 text-[10px] md:!text-xs !shadow-[3px_3px_0px_#14142c] w-full" onclick="copyIconHTML('${dynamicClass}', '${color}')">
                             <i class="fi fi-rs-code mr-1"></i> HTML
                         </button>
-                        <button class="cmp-button cmp-button--primary !px-2 !py-2 text-[10px] md:!text-xs !shadow-[3px_3px_0px_#14142c] w-full" onclick="downloadIconPNG('${icon.class}')">
+                        <button class="cmp-button cmp-button--primary !px-2 !py-2 text-[10px] md:!text-xs !shadow-[3px_3px_0px_#14142c] w-full" onclick="downloadIconPNG('${dynamicClass}')">
                             <i class="fi fi-rs-download mr-1"></i> PNG
                         </button>
                     </div>
@@ -1731,12 +1843,12 @@ h4, h4 * { font-size: 28px !important; }
 #${uid} .plg-card:hover { transform: translate(-4px, -4px); box-shadow: 12px 12px 0px var(--hover-color, #14142C); }
 #${uid} .plg-card-icon { font-size: 40px; margin-bottom: 16px; display: block; }
 #${uid} .plg-card-desc { flex-grow: 1; margin-bottom: 24px; }
-#${uid} .plg-card-btn { display: inline-block; padding: 16px 32px; font-family: 'Kanit', sans-serif; font-weight: 700; text-transform: uppercase; text-decoration: none; text-align: center; color: #14142C; transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1); border: 2px solid transparent; box-shadow: none; width: 100%;}
+#${uid} .plg-card-btn { display: inline-block; padding: 16px 32px; font-family: 'Kanit', sans-serif; font-weight: 700; text-transform: uppercase; text-decoration: none; text-align: center; transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1); border: 2px solid transparent; box-shadow: none; width: 100%;}
 @media(min-width: 768px) { #${uid} .plg-card-btn { width: auto; } }
 #${uid} .plg-card-btn:hover { transform: translate(-4px, -4px); box-shadow: 6px 6px 0px #14142C; }
 `;
                 html = `<div id="${uid}"><div class="plg-cards-grid">` + items.map(i => {
-                    let btn = i.btnText ? `<a href="${i.btnUrl}" target="${i.btnTarget}" class="plg-card-btn" style="background-color:${i.color};">${i.btnText}</a>` : '';
+                    let btn = i.btnText ? `<a href="${i.btnUrl}" target="${i.btnTarget}" class="plg-card-btn" style="background-color:${i.color}; color: ${i.color === '#ff3399' || i.color === '#0a00bd' ? '#ffffff' : '#14142c'};">${i.btnText}</a>` : '';
                     return `
                     <div class="plg-card" style="--hover-color: ${i.color};">
                         <i class="fi ${i.icon} plg-card-icon" style="color:${i.color}"></i>
@@ -1944,6 +2056,9 @@ ${'<'}/script>`;
             // Garante que as fontes estão renderizadas e carregadas no ecrã
             await document.fonts.ready;
 
+            // Determina a família de fonte correta para o canvas de acordo com o estilo selecionado
+            const fontStyleFamily = iconClass.includes('-ss-') ? 'uicons-solid-straight' : 'uicons-regular-straight';
+
             // Elemento temporário para extrair o caractere (unicode) renderizado via CSS ::before
             const tempI = document.createElement('i');
             tempI.className = `fi ${iconClass}`;
@@ -1970,7 +2085,7 @@ ${'<'}/script>`;
             ctx.clearRect(0, 0, size, size);
 
             // Ajustes para desenhar o ícone no centro exato do canvas
-            ctx.font = `${size}px uicons-regular-straight`;
+            ctx.font = `${size}px ${fontStyleFamily}`;
             ctx.fillStyle = color;
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
